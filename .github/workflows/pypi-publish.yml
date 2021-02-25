@@ -26,4 +26,4 @@ jobs:
       run: |
         cd wqxlib-python
         python setup.py sdist bdist_wheel
-        twine upload dist/*
+        echo twine upload dist/*
