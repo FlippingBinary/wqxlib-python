@@ -41,17 +41,17 @@ class Header:
       self.__property = o.property
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.author = o.get('author', default = None)
-      self.organization = o.get('organization', default = None)
-      self.title = o.get('title', default = None)
-      self.creationTime = o.get('creationTime', default = None)
-      self.comment = o.get('comment', default = None)
-      self.dataService = o.get('dataService', default = None)
-      self.contactInfo = o.get('contactInfo', default = None)
-      self.notification = o.get('notification', default = None)
-      self.sensitivity = o.get('sensitivity', default = None)
+      self.author = o.get('author')
+      self.organization = o.get('organization')
+      self.title = o.get('title')
+      self.creationTime = o.get('creationTime')
+      self.comment = o.get('comment')
+      self.dataService = o.get('dataService')
+      self.contactInfo = o.get('contactInfo')
+      self.notification = o.get('notification')
+      self.sensitivity = o.get('sensitivity')
       # self.property is tricky because Python confuses it with the decorator
-      property = o.get('property', default = None)
+      property = o.get('property')
       if property is not None and not isinstance(property, dict):
         raise TypeError("Property 'property' must be a dict of 0 or more key/value pairs.")
       self.__property = {} if property is None else property

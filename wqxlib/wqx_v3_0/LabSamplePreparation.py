@@ -35,12 +35,12 @@ class LabSamplePreparation:
       self.__substanceDilutionFactor = o.substanceDilutionFactor
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.labSamplePreparationMethod = o.get('labSamplePreparationMethod', default = None)
-      self.preparationStartDate = o.get('preparationStartDate', default = None)
-      self.preparationStartTime = o.get('preparationStartTime', default = None)
-      self.preparationEndDate = o.get('preparationEndDate', default = None)
-      self.preparationEndTime = o.get('preparationEndTime', default = None)
-      self.substanceDilutionFactor = o.get('substanceDilutionFactor', default = None)
+      self.labSamplePreparationMethod = o.get('labSamplePreparationMethod')
+      self.preparationStartDate = o.get('preparationStartDate')
+      self.preparationStartTime = o.get('preparationStartTime')
+      self.preparationEndDate = o.get('preparationEndDate')
+      self.preparationEndTime = o.get('preparationEndTime')
+      self.substanceDilutionFactor = o.get('substanceDilutionFactor')
     else:
       # Assign attributes from named keywords with typechecking
       self.labSamplePreparationMethod = labSamplePreparationMethod

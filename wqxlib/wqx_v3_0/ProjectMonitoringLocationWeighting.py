@@ -53,16 +53,16 @@ class ProjectMonitoringLocationWeighting:
       self.__commentText = o.commentText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier', default = None)
-      self.locationWeightingFactorMeasure = o.get('locationWeightingFactorMeasure', default = None)
-      self.statisticalStratumText = o.get('statisticalStratumText', default = None)
-      self.locationCategoryName = o.get('locationCategoryName', default = None)
-      self.locationStatusName = o.get('locationStatusName', default = None)
-      self.referenceLocationTypeCode = o.get('referenceLocationTypeCode', default = None)
-      self.referenceLocationStartDate = o.get('referenceLocationStartDate', default = None)
-      self.referenceLocationEndDate = o.get('referenceLocationEndDate', default = None)
-      self.referenceLocationCitation = o.get('referenceLocationCitation', default = None)
-      self.commentText = o.get('commentText', default = None)
+      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier')
+      self.locationWeightingFactorMeasure = o.get('locationWeightingFactorMeasure')
+      self.statisticalStratumText = o.get('statisticalStratumText')
+      self.locationCategoryName = o.get('locationCategoryName')
+      self.locationStatusName = o.get('locationStatusName')
+      self.referenceLocationTypeCode = o.get('referenceLocationTypeCode')
+      self.referenceLocationStartDate = o.get('referenceLocationStartDate')
+      self.referenceLocationEndDate = o.get('referenceLocationEndDate')
+      self.referenceLocationCitation = o.get('referenceLocationCitation')
+      self.commentText = o.get('commentText')
     else:
       # Assign attributes from named keywords with typechecking
       self.monitoringLocationIdentifier = monitoringLocationIdentifier

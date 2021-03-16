@@ -21,8 +21,8 @@ class WQXTime:
       self.__timeZoneCode = o.timeZoneCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.time = o.get('time', default = None)
-      self.timeZoneCode = o.get('timeZoneCode', default = None)
+      self.time = o.get('time')
+      self.timeZoneCode = o.get('timeZoneCode')
     else:
       # Assign attributes from named keywords with typechecking
       self.time = time

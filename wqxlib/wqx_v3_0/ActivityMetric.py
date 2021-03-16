@@ -38,12 +38,12 @@ class ActivityMetric:
       self.__indexIdentifier = o.indexIdentifier
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.activityMetricType = o.get('activityMetricType', default = None)
-      self.metricValueMeasure = o.get('metricValueMeasure', default = None)
-      self.metricScore = o.get('metricScore', default = None)
-      self.metricSamplingPointPlaceInSeries = o.get('metricSamplingPointPlaceInSeries', default = None)
-      self.metricCommentText = o.get('metricCommentText', default = None)
-      self.indexIdentifier = o.get('indexIdentifier', default = None)
+      self.activityMetricType = o.get('activityMetricType')
+      self.metricValueMeasure = o.get('metricValueMeasure')
+      self.metricScore = o.get('metricScore')
+      self.metricSamplingPointPlaceInSeries = o.get('metricSamplingPointPlaceInSeries')
+      self.metricCommentText = o.get('metricCommentText')
+      self.indexIdentifier = o.get('indexIdentifier')
     else:
       # Assign attributes from named keywords with typechecking
       self.activityMetricType = activityMetricType

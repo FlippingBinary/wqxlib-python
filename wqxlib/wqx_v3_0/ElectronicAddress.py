@@ -20,8 +20,8 @@ class ElectronicAddress:
       self.__electronicAddressTypeName = o.electronicAddressTypeName
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.electronicAddressText = o.get('electronicAddressText', default = None)
-      self.electronicAddressTypeName = o.get('electronicAddressTypeName', default = None)
+      self.electronicAddressText = o.get('electronicAddressText')
+      self.electronicAddressTypeName = o.get('electronicAddressTypeName')
     else:
       # Assign attributes from named keywords with typechecking
       self.electronicAddressText = electronicAddressText

@@ -50,15 +50,15 @@ class TaxonomicDetails:
       self.__taxonomicDetailsCitation = o.taxonomicDetailsCitation
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.cellFormName = o.get('cellFormName', default = None)
-      self.cellShapeName = o.get('cellShapeName', default = None)
-      self.habitName = o.get('habitName', default = None)
-      self.voltinismName = o.get('voltinismName', default = None)
-      self.taxonomicPollutionTolerance = o.get('taxonomicPollutionTolerance', default = None)
-      self.taxonomicPollutionToleranceScaleText = o.get('taxonomicPollutionToleranceScaleText', default = None)
-      self.trophicLevelName = o.get('trophicLevelName', default = None)
-      self.functionalFeedingGroupName = o.get('functionalFeedingGroupName', default = None)
-      self.taxonomicDetailsCitation = o.get('taxonomicDetailsCitation', default = None)
+      self.cellFormName = o.get('cellFormName')
+      self.cellShapeName = o.get('cellShapeName')
+      self.habitName = o.get('habitName')
+      self.voltinismName = o.get('voltinismName')
+      self.taxonomicPollutionTolerance = o.get('taxonomicPollutionTolerance')
+      self.taxonomicPollutionToleranceScaleText = o.get('taxonomicPollutionToleranceScaleText')
+      self.trophicLevelName = o.get('trophicLevelName')
+      self.functionalFeedingGroupName = o.get('functionalFeedingGroupName')
+      self.taxonomicDetailsCitation = o.get('taxonomicDetailsCitation')
     else:
       # Assign attributes from named keywords with typechecking
       self.cellFormName = cellFormName

@@ -48,15 +48,15 @@ class Organization:
       self.__activityGroup = o.activityGroup
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.organizationDescription = o.get('organizationDescription', default = None)
-      self.electronicAddress = o.get('electronicAddress', default = None)
-      self.telephonic = o.get('telephonic', default = None)
-      self.organizationAddress = o.get('organizationAddress', default = None)
-      self.project = o.get('project', default = None)
-      self.monitoringLocation = o.get('monitoringLocation', default = None)
-      self.biologicalHabitatIndex = o.get('biologicalHabitatIndex', default = None)
-      self.activity = o.get('activity', default = None)
-      self.activityGroup = o.get('activityGroup', default = None)
+      self.organizationDescription = o.get('organizationDescription')
+      self.electronicAddress = o.get('electronicAddress')
+      self.telephonic = o.get('telephonic')
+      self.organizationAddress = o.get('organizationAddress')
+      self.project = o.get('project')
+      self.monitoringLocation = o.get('monitoringLocation')
+      self.biologicalHabitatIndex = o.get('biologicalHabitatIndex')
+      self.activity = o.get('activity')
+      self.activityGroup = o.get('activityGroup')
     else:
       # Assign attributes from named keywords with typechecking
       self.organizationDescription = organizationDescription

@@ -44,14 +44,14 @@ class WellInformation:
       self.__wellDepthMeasure = o.wellDepthMeasure
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.wellTypeText = o.get('wellTypeText', default = None)
-      self.aquiferTypeName = o.get('aquiferTypeName', default = None)
-      self.nationalAquiferCode = o.get('nationalAquiferCode', default = None)
-      self.aquiferInformation = o.get('aquiferInformation', default = None)
-      self.formationTypeText = o.get('formationTypeText', default = None)
-      self.wellHoleDepthMeasure = o.get('wellHoleDepthMeasure', default = None)
-      self.constructionDate = o.get('constructionDate', default = None)
-      self.wellDepthMeasure = o.get('wellDepthMeasure', default = None)
+      self.wellTypeText = o.get('wellTypeText')
+      self.aquiferTypeName = o.get('aquiferTypeName')
+      self.nationalAquiferCode = o.get('nationalAquiferCode')
+      self.aquiferInformation = o.get('aquiferInformation')
+      self.formationTypeText = o.get('formationTypeText')
+      self.wellHoleDepthMeasure = o.get('wellHoleDepthMeasure')
+      self.constructionDate = o.get('constructionDate')
+      self.wellDepthMeasure = o.get('wellDepthMeasure')
     else:
       # Assign attributes from named keywords with typechecking
       self.wellTypeText = wellTypeText

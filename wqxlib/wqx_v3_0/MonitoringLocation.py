@@ -28,10 +28,10 @@ class MonitoringLocation:
       self.__attachedBinaryObject = o.attachedBinaryObject
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.monitoringLocationIdentity = o.get('monitoringLocationIdentity', default = None)
-      self.monitoringLocationGeospatial = o.get('monitoringLocationGeospatial', default = None)
-      self.wellInformation = o.get('wellInformation', default = None)
-      self.attachedBinaryObject = o.get('attachedBinaryObject', default = None)
+      self.monitoringLocationIdentity = o.get('monitoringLocationIdentity')
+      self.monitoringLocationGeospatial = o.get('monitoringLocationGeospatial')
+      self.wellInformation = o.get('wellInformation')
+      self.attachedBinaryObject = o.get('attachedBinaryObject')
     else:
       # Assign attributes from named keywords with typechecking
       self.monitoringLocationIdentity = monitoringLocationIdentity

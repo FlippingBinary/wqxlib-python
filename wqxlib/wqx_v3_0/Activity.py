@@ -40,13 +40,13 @@ class Activity:
       self.__result = o.result
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.activityDescription = o.get('activityDescription', default = None)
-      self.activityLocation = o.get('activityLocation', default = None)
-      self.biologicalActivityDescription = o.get('biologicalActivityDescription', default = None)
-      self.sampleDescription = o.get('sampleDescription', default = None)
-      self.activityMetric = o.get(activityMetric, default = [])
-      self.attachedBinaryObject = o.get('attachedBinaryObject', default = [])
-      self.result = o.get('result', default = [])
+      self.activityDescription = o.get('activityDescription')
+      self.activityLocation = o.get('activityLocation')
+      self.biologicalActivityDescription = o.get('biologicalActivityDescription')
+      self.sampleDescription = o.get('sampleDescription')
+      self.activityMetric = o.get(activityMetric, [])
+      self.attachedBinaryObject = o.get('attachedBinaryObject', [])
+      self.result = o.get('result', [])
     else:
       # Assign attributes from named keywords with typechecking
       self.activityDescription = activityDescription

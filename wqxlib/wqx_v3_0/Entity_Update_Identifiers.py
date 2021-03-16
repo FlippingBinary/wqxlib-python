@@ -23,8 +23,8 @@ class IdentifierUpdate:
       self.__newIdentifier = o.newIdentifier
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.oldIdentifier = o.get('oldIdentifier', default = None)
-      self.newIdentifier = o.get('newIdentifier', default = None)
+      self.oldIdentifier = o.get('oldIdentifier')
+      self.newIdentifier = o.get('newIdentifier')
     else:
       # Assign attributes from named keywords with typechecking
       self.oldIdentifier = oldIdentifier
@@ -87,12 +87,12 @@ class UpdateIdentifiers:
       self.__activityGroupIdentifierUpdate = o.activityGroupIdentifierUpdate
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.organizationIdentifier = o.get('organizationIdentifier', default = None)
-      self.projectIdentifierUpdate = o.get('projectIdentifierUpdate', default = [])
-      self.monitoringLocationIdentifierUpdate = o.get('monitoringLocationIdentifierUpdate', default = [])
-      self.indexIdentifierUpdate = o.get('indexIdentifierUpdate', default = [])
-      self.activityIdentifierUpdate = o.get('activityIdentifierUpdate', default = [])
-      self.activityGroupIdentifierUpdate = o.get('activityGroupIdentifierUpdate', default = [])
+      self.organizationIdentifier = o.get('organizationIdentifier')
+      self.projectIdentifierUpdate = o.get('projectIdentifierUpdate', [])
+      self.monitoringLocationIdentifierUpdate = o.get('monitoringLocationIdentifierUpdate', [])
+      self.indexIdentifierUpdate = o.get('indexIdentifierUpdate', [])
+      self.activityIdentifierUpdate = o.get('activityIdentifierUpdate', [])
+      self.activityGroupIdentifierUpdate = o.get('activityGroupIdentifierUpdate', [])
     else:
       # Assign attributes from named keywords with typechecking
       self.organizationIdentifier = organizationIdentifier

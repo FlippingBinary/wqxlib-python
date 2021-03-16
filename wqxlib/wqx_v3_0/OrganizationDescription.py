@@ -29,10 +29,10 @@ class OrganizationDescription:
       self.__tribalCode = o.tribalCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.organizationIdentifier = o.get('organizationIdentifier', default = None)
-      self.organizationFormalName = o.get('organizationFormalName', default = None)
-      self.organizationDescriptionText = o.get('organizationDescriptionText', default = None)
-      self.tribalCode = o.get('tribalCode', default = None)
+      self.organizationIdentifier = o.get('organizationIdentifier')
+      self.organizationFormalName = o.get('organizationFormalName')
+      self.organizationDescriptionText = o.get('organizationDescriptionText')
+      self.tribalCode = o.get('tribalCode')
     else:
       # Assign attributes from named keywords with typechecking
       self.organizationIdentifier = organizationIdentifier

@@ -16,7 +16,7 @@ class WQXDelete:
       self.__organizationDelete = o.organizationDelete
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.organizationDelete = o.get('organizationDelete', default = None)
+      self.organizationDelete = o.get('organizationDelete')
     else:
       # Assign attributes from named keywords with typechecking
       self.organizationDelete = organizationDelete

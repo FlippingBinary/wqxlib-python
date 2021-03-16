@@ -33,11 +33,11 @@ class ReferenceMethod:
       self.__methodDescriptionText = o.methodDescriptionText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.methodIdentifier = o.get('methodIdentifier', default = None)
-      self.methodIdentifierContext = o.get('methodIdentifierContext', default = None)
-      self.methodName = o.get('methodName', default = None)
-      self.methodQualifierTypeName = o.get('methodQualifierTypeName', default = None)
-      self.methodDescriptionText = o.get('methodDescriptionText', default = None)
+      self.methodIdentifier = o.get('methodIdentifier')
+      self.methodIdentifierContext = o.get('methodIdentifierContext')
+      self.methodName = o.get('methodName')
+      self.methodQualifierTypeName = o.get('methodQualifierTypeName')
+      self.methodDescriptionText = o.get('methodDescriptionText')
     else:
       # Assign attributes from named keywords with typechecking
       self.methodIdentifier = methodIdentifier

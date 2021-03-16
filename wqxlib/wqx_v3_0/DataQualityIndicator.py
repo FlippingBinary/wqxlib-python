@@ -32,11 +32,11 @@ class DataQuality:
       self.__lowerConfidenceLimitValue = o.lowerConfidenceLimitValue
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.precisionValue = o.get('precisionValue', default = None)
-      self.biasValue = o.get('biasValue', default = None)
-      self.confidenceIntervalValue = o.get('confidenceIntervalValue', default = None)
-      self.upperConfidenceLimitValue = o.get('upperConfidenceLimitValue', default = None)
-      self.lowerConfidenceLimitValue = o.get('lowerConfidenceLimitValue', default = None)
+      self.precisionValue = o.get('precisionValue')
+      self.biasValue = o.get('biasValue')
+      self.confidenceIntervalValue = o.get('confidenceIntervalValue')
+      self.upperConfidenceLimitValue = o.get('upperConfidenceLimitValue')
+      self.lowerConfidenceLimitValue = o.get('lowerConfidenceLimitValue')
     else:
       # Assign attributes from named keywords with typechecking
       self.precisionValue = precisionValue

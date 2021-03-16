@@ -41,14 +41,14 @@ class BiologicalHabitatCollectionInformation:
       self.__netInformation = o.netInformation
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.collectionDuration = o.get('collectionDuration', default = None)
-      self.collectionArea = o.get('collectionArea', default = None)
-      self.collectionEffort = o.get('collectionEffort', default = None)
-      self.reachLengthMeasure = o.get('reachLengthMeasure', default = None)
-      self.reachWidthMeasure = o.get('reachWidthMeasure', default = None)
-      self.collectionDescriptionText = o.get('collectionDescriptionText', default = None)
-      self.passCount = o.get('passCount', default = None)
-      self.netInformation = o.get('netInformation', default = None)
+      self.collectionDuration = o.get('collectionDuration')
+      self.collectionArea = o.get('collectionArea')
+      self.collectionEffort = o.get('collectionEffort')
+      self.reachLengthMeasure = o.get('reachLengthMeasure')
+      self.reachWidthMeasure = o.get('reachWidthMeasure')
+      self.collectionDescriptionText = o.get('collectionDescriptionText')
+      self.passCount = o.get('passCount')
+      self.netInformation = o.get('netInformation')
     else:
       # Assign attributes from named keywords with typechecking
       self.collectionDuration = collectionDuration

@@ -44,14 +44,14 @@ class OrganizationAddress:
       self.__countyCode = o.countyCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.addressTypeName = o.get('addressTypeName', default = None)
-      self.addressText = o.get('addressText', default = None)
-      self.supplementalAddressText = o.get('supplementalAddressText', default = None)
-      self.localityName = o.get('localityName', default = None)
-      self.stateCode = o.get('stateCode', default = None)
-      self.postalCode = o.get('postalCode', default = None)
-      self.countryCode = o.get('countryCode', default = None)
-      self.countyCode = o.get('countyCode', default = None)
+      self.addressTypeName = o.get('addressTypeName')
+      self.addressText = o.get('addressText')
+      self.supplementalAddressText = o.get('supplementalAddressText')
+      self.localityName = o.get('localityName')
+      self.stateCode = o.get('stateCode')
+      self.postalCode = o.get('postalCode')
+      self.countryCode = o.get('countryCode')
+      self.countyCode = o.get('countyCode')
     else:
       # Assign attributes from named keywords with typechecking
       self.addressTypeName = addressTypeName

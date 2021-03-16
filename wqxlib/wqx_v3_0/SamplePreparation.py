@@ -40,13 +40,13 @@ class SamplePreparation:
       self.__sampleTransportStorageDescription = o.sampleTransportStorageDescription
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.samplePreparationMethod = o.get('samplePreparationMethod', default = None)
-      self.sampleContainerLabelName = o.get('sampleContainerLabelName', default = None)
-      self.sampleContainerTypeName = o.get('sampleContainerTypeName', default = None)
-      self.sampleContainerColorName = o.get('sampleContainerColorName', default = None)
-      self.chemicalPreservativeUsedName = o.get('chemicalPreservativeUsedName', default = None)
-      self.thermalPreservativeUsedName = o.get('thermalPreservativeUsedName', default = None)
-      self.sampleTransportStorageDescription = o.get('sampleTransportStorageDescription', default = None)
+      self.samplePreparationMethod = o.get('samplePreparationMethod')
+      self.sampleContainerLabelName = o.get('sampleContainerLabelName')
+      self.sampleContainerTypeName = o.get('sampleContainerTypeName')
+      self.sampleContainerColorName = o.get('sampleContainerColorName')
+      self.chemicalPreservativeUsedName = o.get('chemicalPreservativeUsedName')
+      self.thermalPreservativeUsedName = o.get('thermalPreservativeUsedName')
+      self.sampleTransportStorageDescription = o.get('sampleTransportStorageDescription')
     else:
       # Assign attributes from named keywords with typechecking
       self.samplePreparationMethod = samplePreparationMethod

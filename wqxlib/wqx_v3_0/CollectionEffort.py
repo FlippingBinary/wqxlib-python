@@ -21,8 +21,8 @@ class CollectionEffort:
       self.__gearProcedureUnitCode = o.gearProcedureUnitCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.measureValue = o.get('measureValue', default = None)
-      self.gearProcedureUnitCode = o.get('gearProcedureUnitCode', default = None)
+      self.measureValue = o.get('measureValue')
+      self.gearProcedureUnitCode = o.get('gearProcedureUnitCode')
     else:
       # Assign attributes from named keywords with typechecking
       self.measureValue = measureValue

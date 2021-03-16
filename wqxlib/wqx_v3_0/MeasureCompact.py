@@ -21,8 +21,8 @@ class MeasureCompact:
       self.__measureUnitCode = o.measureUnitCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.measureValue = o.get('measureValue', default = None)
-      self.measureUnitCode = o.get('measureUnitCode', default = None)
+      self.measureValue = o.get('measureValue')
+      self.measureUnitCode = o.get('measureUnitCode')
     else:
       # Assign attributes from named keywords with typechecking
       self.measureValue = measureValue

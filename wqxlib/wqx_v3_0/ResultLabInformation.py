@@ -60,18 +60,18 @@ class ResultLabInformation:
       self.__taxonomistAccreditationAuthorityName = o.taxonomistAccreditationAuthorityName
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.laboratoryName = o.get('laboratoryName', default = None)
-      self.analysisStartDate = o.get('analysisStartDate', default = None)
-      self.analysisStartTime = o.get('analysisStartTime', default = None)
-      self.analysisEndDate = o.get('analysisEndDate', default = None)
-      self.analysisEndTime = o.get('analysisEndTime', default = None)
-      self.laboratoryCommentText = o.get('laboratoryCommentText', default = None)
-      self.resultDetectionQuantitationLimit = o.get('resultDetectionQuantitationLimit', default = None)
-      self.laboratorySampleSplitRatio = o.get('laboratorySampleSplitRatio', default = None)
-      self.laboratoryAccreditationIndicator = o.get('laboratoryAccreditationIndicator', default = None)
-      self.laboratoryAccreditationAuthorityName = o.get('laboratoryAccreditationAuthorityName', default = None)
-      self.taxonomistAccreditationIndicator = o.get('taxonomistAccreditationIndicator', default = None)
-      self.taxonomistAccreditationAuthorityName = o.get('taxonomistAccreditationAuthorityName', default = None)
+      self.laboratoryName = o.get('laboratoryName')
+      self.analysisStartDate = o.get('analysisStartDate')
+      self.analysisStartTime = o.get('analysisStartTime')
+      self.analysisEndDate = o.get('analysisEndDate')
+      self.analysisEndTime = o.get('analysisEndTime')
+      self.laboratoryCommentText = o.get('laboratoryCommentText')
+      self.resultDetectionQuantitationLimit = o.get('resultDetectionQuantitationLimit')
+      self.laboratorySampleSplitRatio = o.get('laboratorySampleSplitRatio')
+      self.laboratoryAccreditationIndicator = o.get('laboratoryAccreditationIndicator')
+      self.laboratoryAccreditationAuthorityName = o.get('laboratoryAccreditationAuthorityName')
+      self.taxonomistAccreditationIndicator = o.get('taxonomistAccreditationIndicator')
+      self.taxonomistAccreditationAuthorityName = o.get('taxonomistAccreditationAuthorityName')
     else:
       # Assign attributes from named keywords with typechecking
       self.laboratoryName = laboratoryName

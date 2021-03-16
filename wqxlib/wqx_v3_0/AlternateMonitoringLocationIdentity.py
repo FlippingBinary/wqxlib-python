@@ -21,8 +21,8 @@ class AlternateMonitoringLocationIdentity:
       self.__monitoringLocationIdentifierContext = o.monitoringLocationIdentifierContext
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier', default = None)
-      self.monitoringLocationIdentifierContext = o.get('monitoringLocationIdentifierContext', default = None)
+      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier')
+      self.monitoringLocationIdentifierContext = o.get('monitoringLocationIdentifierContext')
     else:
       # Assign attributes from named keywords with typechecking
       self.monitoringLocationIdentifier = monitoringLocationIdentifier

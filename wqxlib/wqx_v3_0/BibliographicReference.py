@@ -37,12 +37,12 @@ class BibliographicReference:
       self.__resourceIdentifier = resourceIdentifier
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.resourceTitleName = o.get('resourceTitleName', default = None)
-      self.resourceCreatorName = o.get('resourceCreatorName', default = None)
-      self.resourceSubjectText = o.get('resourceSubjectText', default = None)
-      self.resourcePublisherName = o.get('resourcePublisherName', default = None)
-      self.resourceDate = o.get('resourceDate', default = None)
-      self.resourceIdentifier = o.get('resourceIdentifier', default = None)
+      self.resourceTitleName = o.get('resourceTitleName')
+      self.resourceCreatorName = o.get('resourceCreatorName')
+      self.resourceSubjectText = o.get('resourceSubjectText')
+      self.resourcePublisherName = o.get('resourcePublisherName')
+      self.resourceDate = o.get('resourceDate')
+      self.resourceIdentifier = o.get('resourceIdentifier')
     else:
       # Assign attributes from named keywords with typechecking
       self.resourceTitleName = resourceTitleName

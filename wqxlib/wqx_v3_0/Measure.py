@@ -26,9 +26,9 @@ class Measure:
       self.__measureQualifierCode = o.measureQualifierCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.__resultMeasureValue = o.get('resultMeasureValue', default = None)
-      self.__measureUnitCode = o.get('measureUnitCode', default = None)
-      self.__measureQualifierCode = o.get('measureQualifierCode', default = [])
+      self.__resultMeasureValue = o.get('resultMeasureValue')
+      self.__measureUnitCode = o.get('measureUnitCode')
+      self.__measureQualifierCode = o.get('measureQualifierCode', [])
     else:
       # Assign attributes from named keywords with typechecking
       self.__resultMeasureValue = resultMeasureValue

@@ -33,9 +33,9 @@ class Document:
       self.__payload = o.payload
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.id = o.get('id', default = None)
-      self.header = o.get('header', default = None)
-      self.payload = o.get('payload', default = None)
+      self.id = o.get('id')
+      self.header = o.get('header')
+      self.payload = o.get('payload')
     else:
       # Assign attributes from named keywords with typechecking
       self.header = header

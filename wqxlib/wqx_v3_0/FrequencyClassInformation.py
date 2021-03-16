@@ -29,10 +29,10 @@ class FrequencyClassInformation:
       self.__upperClassBoundValue = o.upperClassBoundValue
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.frequencyClassDescriptorCode = o.get('frequencyClassDescriptorCode', default = None)
-      self.frequencyClassDescriptorUnitCode = o.get('frequencyClassDescriptorUnitCode', default = None)
-      self.lowerClassBoundValue = o.get('lowerClassBoundValue', default = None)
-      self.upperClassBoundValue = o.get('upperClassBoundValue', default = None)
+      self.frequencyClassDescriptorCode = o.get('frequencyClassDescriptorCode')
+      self.frequencyClassDescriptorUnitCode = o.get('frequencyClassDescriptorUnitCode')
+      self.lowerClassBoundValue = o.get('lowerClassBoundValue')
+      self.upperClassBoundValue = o.get('upperClassBoundValue')
     else:
       # Assign attributes from named keywords with typechecking
       self.frequencyClassDescriptorCode = frequencyClassDescriptorCode

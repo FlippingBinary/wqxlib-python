@@ -41,13 +41,13 @@ class ActivityLocation:
       self.__activityLocationDescriptionText = o.activityLocationDescriptionText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.latitudeMeasure = o.get('latitudeMeasure', default = None)
-      self.longitudeMeasure = o.get('longitudeMeasure', default = None)
-      self.sourceMapScale = o.get('sourceMapScale', default = None)
-      self.horizontalAccuracyMeasure = o.get('horizontalAccuracyMeasure', default = None)
-      self.horizontalCollectionMethodName = o.get('horizontalCollectionMethodName', default = None)
-      self.horizontalCoordinateReferenceSystemDatumName = o.get('horizontalCoordinateReferenceSystemDatumName', default = None)
-      self.activityLocationDescriptionText = o.get('activityLocationDescriptionText', default = None)
+      self.latitudeMeasure = o.get('latitudeMeasure')
+      self.longitudeMeasure = o.get('longitudeMeasure')
+      self.sourceMapScale = o.get('sourceMapScale')
+      self.horizontalAccuracyMeasure = o.get('horizontalAccuracyMeasure')
+      self.horizontalCollectionMethodName = o.get('horizontalCollectionMethodName')
+      self.horizontalCoordinateReferenceSystemDatumName = o.get('horizontalCoordinateReferenceSystemDatumName')
+      self.activityLocationDescriptionText = o.get('activityLocationDescriptionText')
     else:
       # Assign attributes from named keywords with typechecking
       self.latitudeMeasure = latitudeMeasure

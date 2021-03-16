@@ -37,12 +37,12 @@ class ActivityMetricType:
       self.__formulaDescriptionText = o.formulaDescriptionText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.metricTypeIdentifier = o.get('metricTypeIdentifier', default = None)
-      self.metricTypeIdentifierContext = o.get('metricTypeIdentifierContext', default = None)
-      self.metricTypeName = o.get('metricTypeName', default = None)
-      self.metricTypeCitation = o.get('metricTypeCitation', default = None)
-      self.metricTypeScaleText = o.get('metricTypeScaleText', default = None)
-      self.formulaDescriptionText = o.get('formulaDescriptionText', default = None)
+      self.metricTypeIdentifier = o.get('metricTypeIdentifier')
+      self.metricTypeIdentifierContext = o.get('metricTypeIdentifierContext')
+      self.metricTypeName = o.get('metricTypeName')
+      self.metricTypeCitation = o.get('metricTypeCitation')
+      self.metricTypeScaleText = o.get('metricTypeScaleText')
+      self.formulaDescriptionText = o.get('formulaDescriptionText')
     else:
       # Assign attributes from named keywords with typechecking
       self.metricTypeIdentifier = metricTypeIdentifier

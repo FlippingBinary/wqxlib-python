@@ -41,13 +41,13 @@ class BiologicalHabitatIndex:
       self.__monitoringLocationIdentifier = o.monitoringLocationIdentifier
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.indexIdentifier = o.get('indexIdentifier', default = None)
-      self.indexType = o.get('indexType', default = None)
-      self.indexScore = o.get('indexScore', default = None)
-      self.indexQualifierCode = o.get('indexQualifierCode', default = None)
-      self.indexCommentText = o.get('indexCommentText', default = None)
-      self.indexCalculatedDate = o.get('indexCalculatedDate', default = None)
-      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier', default = None)
+      self.indexIdentifier = o.get('indexIdentifier')
+      self.indexType = o.get('indexType')
+      self.indexScore = o.get('indexScore')
+      self.indexQualifierCode = o.get('indexQualifierCode')
+      self.indexCommentText = o.get('indexCommentText')
+      self.indexCalculatedDate = o.get('indexCalculatedDate')
+      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier')
     else:
       # Assign attributes from named keywords with typechecking
       self.indexIdentifier = indexIdentifier

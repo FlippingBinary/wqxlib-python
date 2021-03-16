@@ -34,10 +34,10 @@ class Payload:
       self.__wqxDelete = o.wqxDelete
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.operation = o.get('operation', default = None)
-      self.wqx = o.get('wqx', default = None)
-      self.wqxUpdateIdentifiers = o.get('wqxUpdateIdentifiers', default = None)
-      self.wqxDelete = o.get('wqxDelete', default = None)
+      self.operation = o.get('operation')
+      self.wqx = o.get('wqx')
+      self.wqxUpdateIdentifiers = o.get('wqxUpdateIdentifiers')
+      self.wqxDelete = o.get('wqxDelete')
     else:
       # Assign attributes from named keywords with typechecking
       self.operation = operation

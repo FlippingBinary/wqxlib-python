@@ -37,12 +37,12 @@ class SampleDescription:
       self.__hydrologicEvent = o.hydrologicEvent
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.sampleCollectionMethod = o.get('sampleCollectionMethod', default = None)
-      self.sampleCollectionEquipmentName = o.get('sampleCollectionEquipmentName', default = None)
-      self.sampleCollectionEquipmentCommentText = o.get('sampleCollectionEquipmentCommentText', default = None)
-      self.samplePreparation = o.get('samplePreparation', default = None)
-      self.hydrologicCondition = o.get('hydrologicCondition', default = None)
-      self.hydrologicEvent = o.get('hydrologicEvent', default = None)
+      self.sampleCollectionMethod = o.get('sampleCollectionMethod')
+      self.sampleCollectionEquipmentName = o.get('sampleCollectionEquipmentName')
+      self.sampleCollectionEquipmentCommentText = o.get('sampleCollectionEquipmentCommentText')
+      self.samplePreparation = o.get('samplePreparation')
+      self.hydrologicCondition = o.get('hydrologicCondition')
+      self.hydrologicEvent = o.get('hydrologicEvent')
     else:
       # Assign attributes from named keywords with typechecking
       self.sampleCollectionMethod = sampleCollectionMethod

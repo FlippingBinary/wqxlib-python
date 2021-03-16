@@ -46,14 +46,14 @@ class Project:
       self.__projectMonitoringLocationWeighting = o.projectMonitoringLocationWeighting
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.projectIdentifier = o.get('projectIdentifier', default = None)
-      self.projectName = o.get('projectName', default = None)
-      self.projectDescriptionText = o.get('projectDescriptionText', default = None)
-      self.samplingDesignTypeCode = o.get('samplingDesignTypeCode', default = None)
-      self.qAPPApprovedIndicator = o.get('qAPPApprovedIndicator', default = None)
-      self.qAPPApprovalAgencyName = o.get('qAPPApprovalAgencyName', default = None)
-      self.attachedBinaryObject = o.get('attachedBinaryObject', default = None)
-      self.projectMonitoringLocationWeighting = o.get('projectMonitoringLocationWeighting', default = None)
+      self.projectIdentifier = o.get('projectIdentifier')
+      self.projectName = o.get('projectName')
+      self.projectDescriptionText = o.get('projectDescriptionText')
+      self.samplingDesignTypeCode = o.get('samplingDesignTypeCode')
+      self.qAPPApprovedIndicator = o.get('qAPPApprovedIndicator')
+      self.qAPPApprovalAgencyName = o.get('qAPPApprovalAgencyName')
+      self.attachedBinaryObject = o.get('attachedBinaryObject')
+      self.projectMonitoringLocationWeighting = o.get('projectMonitoringLocationWeighting')
     else:
       # Assign attributes from named keywords with typechecking
       self.projectIdentifier = projectIdentifier

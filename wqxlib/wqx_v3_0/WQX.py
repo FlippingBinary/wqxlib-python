@@ -15,7 +15,7 @@ class WQX:
       self.__organization = o.organization
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.organization = o.get('organization', default = None)
+      self.organization = o.get('organization')
     else:
       # Assign attributes from named keywords with typechecking
       self.organization = organization

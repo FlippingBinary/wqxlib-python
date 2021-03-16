@@ -40,13 +40,13 @@ class Result:
       self.__labSamplePreparation = o.labSamplePreparation
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.resultDescription = o.get('resultDescription', default = None)
-      self.biologicalResultDescription = o.get('biologicalResultDescription', default = None)
-      self.attachedBinaryObject = o.get('attachedBinaryObject', default = None)
-      self.resultAnalyticalMethod = o.get('resultAnalyticalMethod', default = None)
-      self.comparableAnalyticalMethod = o.get('comparableAnalyticalMethod', default = None)
-      self.resultLabInformation = o.get('resultLabInformation', default = None)
-      self.labSamplePreparation = o.get('labSamplePreparation', default = None)
+      self.resultDescription = o.get('resultDescription')
+      self.biologicalResultDescription = o.get('biologicalResultDescription')
+      self.attachedBinaryObject = o.get('attachedBinaryObject')
+      self.resultAnalyticalMethod = o.get('resultAnalyticalMethod')
+      self.comparableAnalyticalMethod = o.get('comparableAnalyticalMethod')
+      self.resultLabInformation = o.get('resultLabInformation')
+      self.labSamplePreparation = o.get('labSamplePreparation')
     else:
       # Assign attributes from named keywords with typechecking
       self.resultDescription = resultDescription

@@ -29,10 +29,10 @@ class AquiferInformation:
       self.__localAquiferDescriptionText = o.localAquiferDescriptionText
     elif isinstance(o, dict):
       # Assign attribute from dictionary with typechecking
-      self.localAquiferCode = o.get('localAquiferCode', default = None)
-      self.localAquiferCodeContext = o.get('localAquiferCodeContext', default = None)
-      self.localAquiferName = o.get('localAquiferName', default = None)
-      self.localAquiferDescriptionText = o.get('localAquiferDescriptionText', default = None)
+      self.localAquiferCode = o.get('localAquiferCode')
+      self.localAquiferCodeContext = o.get('localAquiferCodeContext')
+      self.localAquiferName = o.get('localAquiferName')
+      self.localAquiferDescriptionText = o.get('localAquiferDescriptionText')
     else:
       # Assign attributes from named keywords with typechecking
       self.localAquiferCode = localAquiferCode

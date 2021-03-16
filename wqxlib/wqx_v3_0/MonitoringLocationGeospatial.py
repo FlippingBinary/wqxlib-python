@@ -63,19 +63,19 @@ class MonitoringLocationGeospatial:
       self.__countyCode = o.countyCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.latitudeMeasure = o.get('latitudeMeasure', default = None)
-      self.longitudeMeasure = o.get('longitudeMeasure', default = None)
-      self.sourceMapScale = o.get('sourceMapScale', default = None)
-      self.horizontalAccuracyMeasure = o.get('horizontalAccuracyMeasure', default = None)
-      self.verticalAccuracyMeasure = o.get('verticalAccuracyMeasure', default = None)
-      self.horizontalCollectionMethodName = o.get('horizontalCollectionMethodName', default = None)
-      self.horizontalCoordinateReferenceSystemDatumName = o.get('horizontalCoordinateReferenceSystemDatumName', default = None)
-      self.verticalMeasure = o.get('verticalMeasure', default = None)
-      self.verticalCollectionMethodName = o.get('verticalCollectionMethodName', default = None)
-      self.verticalCoordinateReferenceSystemDatumName = o.get('verticalCoordinateReferenceSystemDatumName', default = None)
-      self.countryCode = o.get('countryCode', default = None)
-      self.stateCode = o.get('stateCode', default = None)
-      self.countyCode = o.get('countyCode', default = None)
+      self.latitudeMeasure = o.get('latitudeMeasure')
+      self.longitudeMeasure = o.get('longitudeMeasure')
+      self.sourceMapScale = o.get('sourceMapScale')
+      self.horizontalAccuracyMeasure = o.get('horizontalAccuracyMeasure')
+      self.verticalAccuracyMeasure = o.get('verticalAccuracyMeasure')
+      self.horizontalCollectionMethodName = o.get('horizontalCollectionMethodName')
+      self.horizontalCoordinateReferenceSystemDatumName = o.get('horizontalCoordinateReferenceSystemDatumName')
+      self.verticalMeasure = o.get('verticalMeasure')
+      self.verticalCollectionMethodName = o.get('verticalCollectionMethodName')
+      self.verticalCoordinateReferenceSystemDatumName = o.get('verticalCoordinateReferenceSystemDatumName')
+      self.countryCode = o.get('countryCode')
+      self.stateCode = o.get('stateCode')
+      self.countyCode = o.get('countyCode')
     else:
       # Assign attributes from named keywords with typechecking
       self.latitudeMeasure = latitudeMeasure

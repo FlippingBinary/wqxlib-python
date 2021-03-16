@@ -33,11 +33,11 @@ class IndexType:
       self.__indexTypeScaleText = o.indexTypeScaleText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.indexTypeIdentifier = o.get('indexTypeIdentifier', default = None)
-      self.indexTypeIdentifierContext = o.get('indexTypeIdentifierContext', default = None)
-      self.indexTypeName = o.get('indexTypeName', default = None)
-      self.indexTypeCitation = o.get('indexTypeCitation', default = None)
-      self.indexTypeScaleText = o.get('indexTypeScaleText', default = None)
+      self.indexTypeIdentifier = o.get('indexTypeIdentifier')
+      self.indexTypeIdentifierContext = o.get('indexTypeIdentifierContext')
+      self.indexTypeName = o.get('indexTypeName')
+      self.indexTypeCitation = o.get('indexTypeCitation')
+      self.indexTypeScaleText = o.get('indexTypeScaleText')
     else:
       # Assign attributes from named keywords with typechecking
       self.indexTypeIdentifier = indexTypeIdentifier

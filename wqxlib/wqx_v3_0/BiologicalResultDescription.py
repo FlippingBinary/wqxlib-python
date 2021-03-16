@@ -58,17 +58,17 @@ class BiologicalResultDescription:
       self.__frequencyClassInformation = o.frequencyClassInformation
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.biologicalIntentName = o.get('biologicalIntentName', default = None)
-      self.biologicalIndividualIdentifier = o.get('biologicalIndividualIdentifier', default = None)
-      self.subjectTaxonomicName = o.get('subjectTaxonomicName', default = None)
-      self.subjectTaxonomicNameUserSupplied = o.get('subjectTaxonomicNameUserSupplied', default = None)
-      self.subjectTaxonomicNameUserSuppliedReferenceText = o.get('subjectTaxonomicNameUserSuppliedReferenceText', default = None)
-      self.unidentifiedSpeciesIdentifier = o.get('unidentifiedSpeciesIdentifier', default = None)
-      self.sampleTissueAnatomyName = o.get('sampleTissueAnatomyName', default = None)
-      self.groupSummaryCount = o.get('groupSummaryCount', default = None)
-      self.groupSummaryWeightMeasure = o.get('groupSummaryWeightMeasure', default = None)
-      self.taxonomicDetails = o.get('taxonomicDetails', default = None)
-      self.frequencyClassInformation = o.get('frequencyClassInformation', default = None)
+      self.biologicalIntentName = o.get('biologicalIntentName')
+      self.biologicalIndividualIdentifier = o.get('biologicalIndividualIdentifier')
+      self.subjectTaxonomicName = o.get('subjectTaxonomicName')
+      self.subjectTaxonomicNameUserSupplied = o.get('subjectTaxonomicNameUserSupplied')
+      self.subjectTaxonomicNameUserSuppliedReferenceText = o.get('subjectTaxonomicNameUserSuppliedReferenceText')
+      self.unidentifiedSpeciesIdentifier = o.get('unidentifiedSpeciesIdentifier')
+      self.sampleTissueAnatomyName = o.get('sampleTissueAnatomyName')
+      self.groupSummaryCount = o.get('groupSummaryCount')
+      self.groupSummaryWeightMeasure = o.get('groupSummaryWeightMeasure')
+      self.taxonomicDetails = o.get('taxonomicDetails')
+      self.frequencyClassInformation = o.get('frequencyClassInformation')
     else:
       # Assign attributes from named keywords with typechecking
       self.biologicalIntentName = biologicalIntentName

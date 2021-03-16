@@ -16,7 +16,7 @@ class WQXUpdateIdentifiers:
       self.__updateIdentifiers = o.updateIdentifiers
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.updateIdentifiers = o.get('updateIdentifiers', default = None)
+      self.updateIdentifiers = o.get('updateIdentifiers')
     else:
       # Assign attributes from named keywords with typechecking
       self.updateIdentifiers = updateIdentifiers

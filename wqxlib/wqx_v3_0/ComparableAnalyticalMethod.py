@@ -25,9 +25,9 @@ class ComparableAnalyticalMethod:
       self.__methodModificationText = o.methodModificationText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.methodIdentifier = o.get('methodIdentifier', default = None)
-      self.methodIdentifierContext = o.get('methodIdentifierContext', default = None)
-      self.methodModificationText = o.get('methodModificationText', default = None)
+      self.methodIdentifier = o.get('methodIdentifier')
+      self.methodIdentifierContext = o.get('methodIdentifierContext')
+      self.methodModificationText = o.get('methodModificationText')
     else:
       # Assign attributes from named keywords with typechecking
       self.methodIdentifier = methodIdentifier

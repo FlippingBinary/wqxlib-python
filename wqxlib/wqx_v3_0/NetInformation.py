@@ -30,11 +30,11 @@ class NetInformation:
       self.__currentSpeedMeasure = o.currentSpeedMeasure
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.netTypeName = o.get('netTypeName', default = None)
-      self.netSurfaceAreaMeasure = o.get('netSurfaceAreaMeasure', default = None)
-      self.netMeshSizeMeasure = o.get('netMeshSizeMeasure', default = None)
-      self.boatSpeedMeasure = o.get('boatSpeedMeasure', default = None)
-      self.currentSpeedMeasure = o.get('currentSpeedMeasure', default = None)
+      self.netTypeName = o.get('netTypeName')
+      self.netSurfaceAreaMeasure = o.get('netSurfaceAreaMeasure')
+      self.netMeshSizeMeasure = o.get('netMeshSizeMeasure')
+      self.boatSpeedMeasure = o.get('boatSpeedMeasure')
+      self.currentSpeedMeasure = o.get('currentSpeedMeasure')
     else:
       # Assign attributes from named keywords with typechecking
       self.netTypeName = netTypeName

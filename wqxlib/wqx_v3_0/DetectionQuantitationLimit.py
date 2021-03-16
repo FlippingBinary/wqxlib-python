@@ -25,9 +25,9 @@ class DetectionQuantitationLimit:
       self.__detectionQuantitationLimitCommentText = o.detectionQuantitationLimitCommentText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.detectionQuantitationLimitTypeName = o.get('detectionQuantitationLimitTypeName', default = None)
-      self.detectionQuantitationLimitMeasure = o.get('detectionQuantitationLimitMeasure', default = None)
-      self.detectionQuantitationLimitCommentText = o.get('detectionQuantitationLimitCommentText', default = None)
+      self.detectionQuantitationLimitTypeName = o.get('detectionQuantitationLimitTypeName')
+      self.detectionQuantitationLimitMeasure = o.get('detectionQuantitationLimitMeasure')
+      self.detectionQuantitationLimitCommentText = o.get('detectionQuantitationLimitCommentText')
     else:
       # Assign attributes from named keywords with typechecking
       self.detectionQuantitationLimitTypeName = detectionQuantitationLimitTypeName

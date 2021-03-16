@@ -57,17 +57,17 @@ class MonitoringLocationIdentity:
       self.__contributingDrainageAreaMeasure = o.contributingDrainageAreaMeasure
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier', default = None)
-      self.monitoringLocationName = o.get('monitoringLocationName', default = None)
-      self.monitoringLocationTypeName = o.get('monitoringLocationTypeName', default = None)
-      self.monitoringLocationDescriptionText = o.get('monitoringLocationDescriptionText', default = None)
-      self.hucEightDigitCode = o.get('hucEightDigitCode', default = None)
-      self.hucTwelveDigitCode = o.get('hucTwelveDigitCode', default = None)
-      self.tribalLandIndicator = o.get('tribalLandIndicator', default = None)
-      self.tribalLandName = o.get('tribalLandName', default = None)
-      self.alternateMonitoringLocationIdentity = o.get('alternateMonitoringLocationIdentity', default = None)
-      self.drainageAreaMeasure = o.get('drainageAreaMeasure', default = None)
-      self.contributingDrainageAreaMeasure = o.get('contributingDrainageAreaMeasure', default = None)
+      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier')
+      self.monitoringLocationName = o.get('monitoringLocationName')
+      self.monitoringLocationTypeName = o.get('monitoringLocationTypeName')
+      self.monitoringLocationDescriptionText = o.get('monitoringLocationDescriptionText')
+      self.hucEightDigitCode = o.get('hucEightDigitCode')
+      self.hucTwelveDigitCode = o.get('hucTwelveDigitCode')
+      self.tribalLandIndicator = o.get('tribalLandIndicator')
+      self.tribalLandName = o.get('tribalLandName')
+      self.alternateMonitoringLocationIdentity = o.get('alternateMonitoringLocationIdentity')
+      self.drainageAreaMeasure = o.get('drainageAreaMeasure')
+      self.contributingDrainageAreaMeasure = o.get('contributingDrainageAreaMeasure')
     else:
       # Assign attributes from named keywords with typechecking
       self.monitoringLocationIdentifier = monitoringLocationIdentifier

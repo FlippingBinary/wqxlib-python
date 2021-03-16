@@ -28,10 +28,10 @@ class BiologicalActivityDescription:
       self.__habitatSelectionMethod = o.habitatSelectionMethod
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.assemblageSampledName = o.get('assemblageSampledName', default = None)
-      self.biologicalHabitatCollectionInformation = o.get('biologicalHabitatCollectionInformation', default = None)
-      self.toxicityTestType = o.get('toxicityTestType', default = None)
-      self.habitatSelectionMethod = o.get('habitatSelectionMethod', default = None)
+      self.assemblageSampledName = o.get('assemblageSampledName')
+      self.biologicalHabitatCollectionInformation = o.get('biologicalHabitatCollectionInformation')
+      self.toxicityTestType = o.get('toxicityTestType')
+      self.habitatSelectionMethod = o.get('habitatSelectionMethod')
     else:
       # Assign attributes from named keywords with typechecking
       self.assemblageSampledName = assemblageSampledName

@@ -24,9 +24,9 @@ class Telephonic:
       self.__telephoneExtensionNumberText = o.telephoneExtensionNumberText
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.telephoneNumberText = o.get('telephoneNumberText', default = None)
-      self.telephoneNumberTypeName = o.get('telephoneNumberTypeName', default = None)
-      self.telephoneExtensionNumberText = o.get('telephoneExtensionNumberText', default = None)
+      self.telephoneNumberText = o.get('telephoneNumberText')
+      self.telephoneNumberTypeName = o.get('telephoneNumberTypeName')
+      self.telephoneExtensionNumberText = o.get('telephoneExtensionNumberText')
     else:
       # Assign attributes from named keywords with typechecking
       self.telephoneNumberText = telephoneNumberText

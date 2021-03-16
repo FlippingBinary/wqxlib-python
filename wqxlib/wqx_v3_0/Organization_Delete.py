@@ -38,12 +38,12 @@ class OrganizationDelete:
       self.__indexIdentifier = o.indexIdentifier
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.organizationIdentifier = o.get('organizationIdentifier', default = None)
-      self.projectIdentifier = o.get('projectIdentifier', default = None)
-      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier', default = None)
-      self.activityIdentifier = o.get('activityIdentifier', default = None)
-      self.activityGroupIdentifier = o.get('activityGroupIdentifier', default = None)
-      self.indexIdentifier = o.get('indexIdentifier', default = None)
+      self.organizationIdentifier = o.get('organizationIdentifier')
+      self.projectIdentifier = o.get('projectIdentifier')
+      self.monitoringLocationIdentifier = o.get('monitoringLocationIdentifier')
+      self.activityIdentifier = o.get('activityIdentifier')
+      self.activityGroupIdentifier = o.get('activityGroupIdentifier')
+      self.indexIdentifier = o.get('indexIdentifier')
     else:
       # Assign attributes from named keywords with typechecking
       self.organizationIdentifier = organizationIdentifier

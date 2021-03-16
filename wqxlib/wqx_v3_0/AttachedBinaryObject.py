@@ -21,8 +21,8 @@ class AttachedBinaryObject:
       self.__binaryObjectFileTypeCode = o.binaryObjectFileTypeCode
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.binaryObjectFileName = o.get('binaryObjectFileName', default = None)
-      self.binaryObjectFileTypeCode = o.get('binaryObjectFileTypeCode', default = None)
+      self.binaryObjectFileName = o.get('binaryObjectFileName')
+      self.binaryObjectFileTypeCode = o.get('binaryObjectFileTypeCode')
     else:
       # Assign attributes from named keywords with typechecking
       self.binaryObjectFileName = binaryObjectFileName

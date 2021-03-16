@@ -32,11 +32,11 @@ class ActivityGroup:
       self.__replaceActivities = o.replaceActivities
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.activityGroupIdentifier = o.get('activityGroupIdentifier', default = None)
-      self.activityGroupName = o.get('activityGroupName', default = None)
-      self.activityGroupTypeCode = o.get('activityGroupTypeCode', default = None)
-      self.activityIdentifier = o.get('activityIdentifier', default = None)
-      self.replaceActivities = o.get('replaceActivities', default = False)
+      self.activityGroupIdentifier = o.get('activityGroupIdentifier')
+      self.activityGroupName = o.get('activityGroupName')
+      self.activityGroupTypeCode = o.get('activityGroupTypeCode')
+      self.activityIdentifier = o.get('activityIdentifier')
+      self.replaceActivities = o.get('replaceActivities', False)
     else:
       # Assign attributes from named keywords with typechecking
       self.activityGroupIdentifier = activityGroupIdentifier
