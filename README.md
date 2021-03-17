@@ -2,6 +2,8 @@
 
 This is a Python library for creating XML documents for direct submission to WQX Web without using an import configuration file. If your use-case is complex, this feature may save you the hassle of uploading incremental changes to an import configuration file as you detect more edge cases or struggle to make an import configuration file which is flexible enough for your purposes. Just modify your code to produce the proper XML file and use the `WQXWeb` class from the sister project [`wqxweblib`](https://github.com/FlippingBinary/wqxweblib-python) to upload it. It's also useful for submitting new monitoring locations or other types of data which are one-off situations. Sometimes it's easier to just build the XML file directly than it is to first create an import configuration file (or copy one) and specify the parameters in a CSV or XSL file. If you find a bug, please submit a pull request on [Github](https://github.com/FlippingBinary/wqxlib-python) or open an issue there. I'm also open to suggestions for how to improve the creation of XML files. Currently, it's quite complex due to its flexibility.
 
+This code is supported by the National Science Foundation under Award No. OIA-1458952. Any opinions, findings and conclusions, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
 ## Contents
 
 - [Python library for WQX (wqxlib)](#python-library-for-wqx-wqxlib)
