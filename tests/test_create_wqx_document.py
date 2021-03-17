@@ -1,19 +1,12 @@
 import unittest
 import xml.etree.cElementTree as ET
-from wqxlib import (
-  Document,
-  Header,
-  Payload,
-  Submission
-)
-from wqxlib.wqx_v3_0 import (
-  MonitoringLocation,
-  MonitoringLocationGeospatial,
-  MonitoringLocationIdentity,
-  Organization,
-  OrganizationDescription,
-  WQX
-)
+
+from wqxlib import Document, Header, Payload, Submission
+from wqxlib.wqx_v3_0 import (WQX, MonitoringLocation,
+                             MonitoringLocationGeospatial,
+                             MonitoringLocationIdentity, Organization,
+                             OrganizationDescription)
+
 
 class TestCreateWQXDocument(unittest.TestCase):
 

@@ -1,6 +1,7 @@
 #import setuptools
 import runpy
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 version_meta = runpy.run_path("./version.py")
 VERSION = version_meta["__version__"]
