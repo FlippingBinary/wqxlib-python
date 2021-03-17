@@ -1,23 +1,32 @@
 from io import BytesIO
+from typing import List
 from zipfile import ZipFile
+
 from .Document import Document
+from .ImportConfiguration import ImportConfiguration
+
 
 class Submission:
   __document: Document
+  __importConfiguration: ImportConfiguration
 
   def __init__(self, o=None, *,
-    document:Document = None
+    document:Document = None,
+    importConfiguration:ImportConfiguration = None,
   ):
     if isinstance(o, Document):
       # Assign attributes from object without typechecking
       self.__document = o.document
+      self.__importConfiguration = o.importConfiguration
     elif isinstance(o, dict):
       # Assign attributes from dictionary with typechecking
-      self.document = o.get('document', default = None)
+      self.document = o.get('document')
+      self.importConfiguration = o.get('importConfiguration')
     else:
       # Assign attributes from named keywords with typechecking
       self.document = document
-  
+      self.importConfiguration = importConfiguration
+
   @property
   def document(self) -> Document:
     return self.__document
@@ -26,6 +35,15 @@ class Submission:
     if val is not None and not isinstance(val, Document):
       raise TypeError("Attribute 'document' must be a Document object.")
     self.__document = None if val is None else Document(val)
+
+  @property
+  def importConfiguration(self) -> ImportConfiguration:
+    return self.__importConfiguration
+  @importConfiguration.setter
+  def importConfiguration(self, val:ImportConfiguration) -> None:
+    if val is not None and not isinstance(val, ImportConfiguration):
+      raise TypeError("Attribute 'importConfiguration' must be a ImportConfiguration object.")
+    self.__importConfiguration = None if val is None else ImportConfiguration(val)
 
   def generateZIP(self, fileName:str=None):
     if not isinstance(fileName, str):
