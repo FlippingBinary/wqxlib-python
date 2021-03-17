@@ -1,11 +1,10 @@
-from .ReferenceMethod import ReferenceMethod
-from .SimpleContent import (
-  PreparationEndDate,
-  PreparationStartDate,
-  SubstanceDilutionFactor
-)
-from .WQXTime import WQXTime
 from yattag import Doc
+
+from .ReferenceMethod import ReferenceMethod
+from .SimpleContent import (PreparationEndDate, PreparationStartDate,
+                            SubstanceDilutionFactor)
+from .WQXTime import WQXTime
+
 
 class LabSamplePreparation:
   """Describes Lab Sample Preparation procedures which may alter the original state of the Sample and produce Lab subsamples.  These Lab Subsamples are analyized and reported by the Lab as Sample results."""

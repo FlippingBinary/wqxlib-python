@@ -1,14 +1,12 @@
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .AquiferInformation import AquiferInformation
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (
-  AquiferTypeName,
-  ConstructionDate,
-  FormationTypeText,
-  NationalAquiferCode,
-  WellTypeText
-)
-from yattag import Doc
+from .SimpleContent import (AquiferTypeName, ConstructionDate,
+                            FormationTypeText, NationalAquiferCode,
+                            WellTypeText)
+
 
 class WellInformation:
   """Description of the attributes of a well."""

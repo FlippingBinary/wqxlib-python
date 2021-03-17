@@ -1,17 +1,15 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .BibliographicReference import BibliographicReference
-from .SimpleContent import (
-  CellFormName,
-  CellShapeName,
-  FunctionalFeedingGroupName,
-  HabitName,
-  TaxonomicPollutionTolerance,
-  TaxonomicPollutionToleranceScaleText,
-  TrophicLevelName,
-  VoltinismName
-)
-from typing import List, Union
-from yattag import Doc
+from .SimpleContent import (CellFormName, CellShapeName,
+                            FunctionalFeedingGroupName, HabitName,
+                            TaxonomicPollutionTolerance,
+                            TaxonomicPollutionToleranceScaleText,
+                            TrophicLevelName, VoltinismName)
+
 
 class TaxonomicDetails:
   """This section allows for the further definition of user-defined details for taxa."""

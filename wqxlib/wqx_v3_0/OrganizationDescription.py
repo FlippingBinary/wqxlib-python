@@ -1,11 +1,10 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  OrganizationDescriptionText,
-  OrganizationFormalName,
-  OrganizationIdentifier,
-  TribalCode
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (OrganizationDescriptionText,
+                            OrganizationFormalName, OrganizationIdentifier,
+                            TribalCode)
+
 
 class OrganizationDescription:
   """The particular word(s) regularly connected with a unique framework of authority within which a person or persons act, or are designated to act, towards some purpose."""

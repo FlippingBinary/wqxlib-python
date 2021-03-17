@@ -1,8 +1,7 @@
-from .SimpleContent import (
-  ElectronicAddressText,
-  ElectronicAddressTypeName
-)
 from yattag import Doc
+
+from .SimpleContent import ElectronicAddressText, ElectronicAddressTypeName
+
 
 class ElectronicAddress:
   """A location within a system of worldwide electronic communication where a computer user can access information or receive electronic mail."""

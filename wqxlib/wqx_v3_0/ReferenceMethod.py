@@ -1,12 +1,10 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  MethodDescriptionText,
-  MethodIdentifier,
-  MethodIdentifierContext,
-  MethodName,
-  MethodQualifierTypeName
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (MethodDescriptionText, MethodIdentifier,
+                            MethodIdentifierContext, MethodName,
+                            MethodQualifierTypeName)
+
 
 class ReferenceMethod:
   """Identifies the procedures, processes, and references required to determine the methods used to obtain a result."""

@@ -1,11 +1,10 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  FrequencyClassDescriptorCode,
-  FrequencyClassDescriptorUnitCode,
-  LowerClassBoundValue,
-  UpperClassBoundValue
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (FrequencyClassDescriptorCode,
+                            FrequencyClassDescriptorUnitCode,
+                            LowerClassBoundValue, UpperClassBoundValue)
+
 
 class FrequencyClassInformation:
   """This section allows for the definition of a subgroup of biological communities by life stage, physical attribute, or abnormality to support frequency class studies."""

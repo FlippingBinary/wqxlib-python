@@ -1,9 +1,8 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  Time,
-  TimeZoneCode
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import Time, TimeZoneCode
+
 
 class WQXTime:
   """Custom WQX datatype that defines a local time and corresponding time zone in which the time is measured."""

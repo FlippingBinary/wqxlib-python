@@ -1,10 +1,13 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .AttachedBinaryObject import AttachedBinaryObject
 from .MonitoringLocationGeospatial import MonitoringLocationGeospatial
 from .MonitoringLocationIdentity import MonitoringLocationIdentity
 from .WellInformation import WellInformation
-from typing import List, Union
-from yattag import Doc
+
 
 class MonitoringLocation:
   """An identifiable location where an environmental sample, onsite measurement, and/or observation is determined."""

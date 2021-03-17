@@ -1,18 +1,14 @@
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (
-  CountryCode,
-  CountyCode,
-  HorizontalCollectionMethodName,
-  HorizontalCoordinateReferenceSystemDatumName,
-  LatitudeMeasure,
-  LongitudeMeasure,
-  SourceMapScale,
-  StateCode,
-  VerticalCollectionMethodName,
-  VerticalCoordinateReferenceSystemDatumName
-)
-from yattag import Doc
+from .SimpleContent import (CountryCode, CountyCode,
+                            HorizontalCollectionMethodName,
+                            HorizontalCoordinateReferenceSystemDatumName,
+                            LatitudeMeasure, LongitudeMeasure, SourceMapScale,
+                            StateCode, VerticalCollectionMethodName,
+                            VerticalCoordinateReferenceSystemDatumName)
+
 
 class MonitoringLocationGeospatial:
   """Monitoring location geographic location."""

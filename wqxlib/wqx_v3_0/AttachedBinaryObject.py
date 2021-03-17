@@ -1,9 +1,8 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  BinaryObjectFileName,
-  BinaryObjectFileTypeCode
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import BinaryObjectFileName, BinaryObjectFileTypeCode
+
 
 class AttachedBinaryObject:
   """Reference document, image, photo, GIS data layer, laboratory material or other electronic object attached within a data exchange, as well as information used to describe the object."""

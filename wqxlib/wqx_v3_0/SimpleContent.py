@@ -2,6 +2,7 @@ from datetime import date, time
 from decimal import Decimal
 from typing import Union
 
+
 class ActivityConductingOrganizationText(str):
   """A name of the Organization conducting an activity."""
   def __init__(self, o=''):
@@ -1121,4 +1122,3 @@ class WellTypeText(str):
   def __init__(self, o=''):
     if len(o) > 255:
       raise ValueError("WellTypeText must be between 0 and 255 characters.")
-

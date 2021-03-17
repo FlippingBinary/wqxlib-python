@@ -1,9 +1,12 @@
 from enum import Enum
+
 from yattag import Doc, indent
-from .wqx_v3_0.WQX import WQX
-from .wqx_v3_0.WQX_Update_Identifiers import WQXUpdateIdentifiers
-from .wqx_v3_0.WQX_Delete import WQXDelete
+
 from .exceptions import WQXException
+from .wqx_v3_0.WQX import WQX
+from .wqx_v3_0.WQX_Delete import WQXDelete
+from .wqx_v3_0.WQX_Update_Identifiers import WQXUpdateIdentifiers
+
 
 class OperationType( Enum ):
   UPDATE_INSERT = 'Update-Insert'

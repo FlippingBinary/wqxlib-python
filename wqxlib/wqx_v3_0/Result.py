@@ -1,3 +1,7 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .AttachedBinaryObject import AttachedBinaryObject
 from .BiologicalResultDescription import BiologicalResultDescription
@@ -6,8 +10,7 @@ from .LabSamplePreparation import LabSamplePreparation
 from .ResultAnalyticalMethod import ResultAnalyticalMethod
 from .ResultDescription import ResultDescription
 from .ResultLabInformation import ResultLabInformation
-from typing import List, Union
-from yattag import Doc
+
 
 class Result:
   """Describes the results of a field measurement, observation, or laboratory analysis."""

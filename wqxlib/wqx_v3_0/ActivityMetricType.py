@@ -1,13 +1,11 @@
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .BibliographicReference import BibliographicReference
-from .SimpleContent import (
-  FormulaDescriptionText,
-  MetricTypeIdentifier,
-  MetricTypeIdentifierContext,
-  MetricTypeName,
-  MetricTypeScaleText
-)
-from yattag import Doc
+from .SimpleContent import (FormulaDescriptionText, MetricTypeIdentifier,
+                            MetricTypeIdentifierContext, MetricTypeName,
+                            MetricTypeScaleText)
+
 
 class ActivityMetricType:
   """This section identifies the metric type reported as part of an activity metric."""

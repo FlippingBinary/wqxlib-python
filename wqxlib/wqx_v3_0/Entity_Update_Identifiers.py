@@ -1,11 +1,10 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  NewIdentifier,
-  OldIdentifier,
-  OrganizationIdentifier
-)
 from typing import List, Union
+
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import NewIdentifier, OldIdentifier, OrganizationIdentifier
+
 
 class IdentifierUpdate:
   """Allows a Project Identifier to be changed."""

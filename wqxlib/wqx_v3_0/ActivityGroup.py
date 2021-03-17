@@ -1,11 +1,9 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  ActivityGroupIdentifier,
-  ActivityGroupName,
-  ActivityGroupTypeCode,
-  ActivityIdentifier
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (ActivityGroupIdentifier, ActivityGroupName,
+                            ActivityGroupTypeCode, ActivityIdentifier)
+
 
 class ActivityGroup:
   """Allows for the grouping of activities."""

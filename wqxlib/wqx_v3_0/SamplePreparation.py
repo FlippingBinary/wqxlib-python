@@ -1,13 +1,11 @@
+from yattag import Doc
+
 from .ReferenceMethod import ReferenceMethod
 from .SimpleContent import (
-  ChemicalPreservativeUsedName,
-  SampleContainerColorName,
-  SampleContainerLabelName,
-  SampleContainerTypeName,
-  SampleTransportStorageDescription,
-  ThermalPreservativeUsedName
-)
-from yattag import Doc
+    ChemicalPreservativeUsedName, SampleContainerColorName,
+    SampleContainerLabelName, SampleContainerTypeName,
+    SampleTransportStorageDescription, ThermalPreservativeUsedName)
+
 
 class SamplePreparation:
   """Describes a sample preparation procedure which may be conducted on an initial Sample or on subsequent subsamples."""

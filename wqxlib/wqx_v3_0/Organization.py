@@ -1,3 +1,7 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .Activity import Activity
 from .ActivityGroup import ActivityGroup
@@ -8,8 +12,7 @@ from .OrganizationAddress import OrganizationAddress
 from .OrganizationDescription import OrganizationDescription
 from .Project import Project
 from .Telephonic import Telephonic
-from typing import List, Union
-from yattag import Doc
+
 
 class Organization:
   """Schema used to transfer organization information."""

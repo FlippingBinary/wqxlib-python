@@ -1,24 +1,20 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (
-  ActivityConductingOrganizationText,
-  ActivityEndDate,
-  ActivityIdentifier,
-  ActivityIdentifierUserSupplied,
-  ActivityMediaName,
-  ActivityMediaSubdivisionName,
-  ActivityRelativeDepthName,
-  ActivityStartDate,
-  ActivityTypeCode,
-  CommentText,
-  DepthAltitudeReferencePointText,
-  MonitoringLocationIdentifier,
-  ProjectIdentifier,
-  SamplingComponentName
-)
+from .SimpleContent import (ActivityConductingOrganizationText,
+                            ActivityEndDate, ActivityIdentifier,
+                            ActivityIdentifierUserSupplied, ActivityMediaName,
+                            ActivityMediaSubdivisionName,
+                            ActivityRelativeDepthName, ActivityStartDate,
+                            ActivityTypeCode, CommentText,
+                            DepthAltitudeReferencePointText,
+                            MonitoringLocationIdentifier, ProjectIdentifier,
+                            SamplingComponentName)
 from .WQXTime import WQXTime
-from typing import List, Union
-from yattag import Doc
+
 
 class ActivityDescription:
   """Basic identification information for an activity conducted within a project."""

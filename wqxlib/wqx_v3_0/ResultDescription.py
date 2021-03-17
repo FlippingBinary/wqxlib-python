@@ -1,32 +1,20 @@
+from yattag import Doc
+
 from .DataQualityIndicator import DataQuality
 from .Measure import Measure
 from .MeasureCompact import MeasureCompact
 from .SimpleContent import (
-  CharacteristicName,
-  CharacteristicNameUserSupplied,
-  CommentText,
-  DataLoggerLineName,
-  DepthAltitudeReferencePointText,
-  MethodSpeciationName,
-  ProportionSampleProcessedNumeric,
-  RecordIdentifierUserSupplied,
-  ResultDetectionConditionText,
-  ResultParticleSizeBasisText,
-  ResultSampleFractionText,
-  ResultSamplingPointCommentText,
-  ResultSamplingPointName,
-  ResultSamplingPointPlaceInSeries,
-  ResultSamplingPointType,
-  ResultStatusIdentifier,
-  ResultTemperatureBasisText,
-  ResultTimeBasisText,
-  ResultValueTypeName,
-  ResultWeightBasisText,
-  StatisticalBaseCode,
-  StatisticalNValueNumeric,
-  TargetCount
-)
-from yattag import Doc
+    CharacteristicName, CharacteristicNameUserSupplied, CommentText,
+    DataLoggerLineName, DepthAltitudeReferencePointText, MethodSpeciationName,
+    ProportionSampleProcessedNumeric, RecordIdentifierUserSupplied,
+    ResultDetectionConditionText, ResultParticleSizeBasisText,
+    ResultSampleFractionText, ResultSamplingPointCommentText,
+    ResultSamplingPointName, ResultSamplingPointPlaceInSeries,
+    ResultSamplingPointType, ResultStatusIdentifier,
+    ResultTemperatureBasisText, ResultTimeBasisText, ResultValueTypeName,
+    ResultWeightBasisText, StatisticalBaseCode, StatisticalNValueNumeric,
+    TargetCount)
+
 
 class ResultDescription:
   """Describes the results of a field measurement, observation, or laboratory analysis."""

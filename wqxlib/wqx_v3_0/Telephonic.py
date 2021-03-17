@@ -1,9 +1,8 @@
-from .SimpleContent import (
-  TelephoneExtensionNumberText,
-  TelephoneNumberText,
-  TelephoneNumberTypeName
-)
 from yattag import Doc
+
+from .SimpleContent import (TelephoneExtensionNumberText, TelephoneNumberText,
+                            TelephoneNumberTypeName)
+
 
 class Telephonic:
   """An identification of a telephone connection."""

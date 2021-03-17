@@ -13,7 +13,6 @@ from .BiologicalHabitatCollectionInformation import *
 from .BiologicalHabitatIndex import *
 from .CollectionEffort import *
 from .ComparableAnalyticalMethod import *
-from .ComparableAnalyticalMethod import *
 from .DataQualityIndicator import *
 from .DetectionQuantitationLimit import *
 from .ElectronicAddress import *
@@ -28,8 +27,8 @@ from .MonitoringLocation import *
 from .MonitoringLocationGeospatial import *
 from .MonitoringLocationIdentity import MonitoringLocationIdentity
 from .NetInformation import *
-from .Organization_Delete import *
 from .Organization import *
+from .Organization_Delete import *
 from .OrganizationAddress import *
 from .OrganizationDescription import *
 from .Project import *
@@ -45,7 +44,7 @@ from .SimpleContent import *
 from .TaxonomicDetails import *
 from .Telephonic import *
 from .WellInformation import *
+from .WQX import *
 from .WQX_Delete import *
 from .WQX_Update_Identifiers import *
-from .WQX import *
 from .WQXTime import *

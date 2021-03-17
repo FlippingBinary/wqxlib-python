@@ -1,7 +1,10 @@
 from datetime import datetime
 from typing import List, Union
+
 from yattag import Doc
+
 from .exceptions import WQXException
+
 
 class Header:
   __author: str

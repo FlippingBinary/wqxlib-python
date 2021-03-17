@@ -1,9 +1,8 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  GearProcedureUnitCode,
-  MeasureValue
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import GearProcedureUnitCode, MeasureValue
+
 
 class CollectionEffort:
   """The fields to describe the effort used a collection."""

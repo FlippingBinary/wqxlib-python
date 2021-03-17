@@ -1,3 +1,7 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .ActivityDescription import ActivityDescription
 from .ActivityLocation import ActivityLocation
@@ -6,8 +10,7 @@ from .AttachedBinaryObject import AttachedBinaryObject
 from .BiologicalActivityDescription import BiologicalActivityDescription
 from .Result import Result
 from .SampleDescription import SampleDescription
-from typing import List, Union
-from yattag import Doc
+
 
 class Activity:
   """Allows for the reporting of monitoring activities conducted at a Monitoring Location."""

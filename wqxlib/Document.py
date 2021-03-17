@@ -1,10 +1,13 @@
-from collections import Counter
 import re
+from collections import Counter
 from typing import List, Union
+
 from yattag import Doc, indent
+
+from .exceptions import WQXException
 from .Header import Header
 from .Payload import Payload
-from .exceptions import WQXException
+
 
 class ID(str):
   """The type ID is used for an attribute that uniquely identifies an element in an XML document. An ID value must be an NCName. This means that it must start with a letter or underscore, and can only contain letters, digits, underscores, hyphens, and periods."""

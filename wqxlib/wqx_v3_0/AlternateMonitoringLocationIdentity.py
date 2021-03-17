@@ -1,9 +1,9 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  MonitoringLocationIdentifier,
-  MonitoringLocationIdentifierContext
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (MonitoringLocationIdentifier,
+                            MonitoringLocationIdentifierContext)
+
 
 class AlternateMonitoringLocationIdentity:
   """Alternate identifications of a monitoring location."""

@@ -1,13 +1,10 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  ResourceCreatorName,
-  ResourceDate,
-  ResourceIdentifier,
-  ResourcePublisherName,
-  ResourceSubjectText,
-  ResourceTitleName
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (ResourceCreatorName, ResourceDate,
+                            ResourceIdentifier, ResourcePublisherName,
+                            ResourceSubjectText, ResourceTitleName)
+
 
 class BibliographicReference:
   """The descriptors used to identify and catalog an object."""

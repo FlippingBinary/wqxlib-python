@@ -1,14 +1,9 @@
-from .SimpleContent import (
-  AddressText,
-  AddressTypeName,
-  CountryCode,
-  CountyCode,
-  LocalityName,
-  PostalCode,
-  StateCode,
-  SupplementalAddressText
-)
 from yattag import Doc
+
+from .SimpleContent import (AddressText, AddressTypeName, CountryCode,
+                            CountyCode, LocalityName, PostalCode, StateCode,
+                            SupplementalAddressText)
+
 
 class OrganizationAddress:
   """The physical address of an organization."""

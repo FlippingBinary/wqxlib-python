@@ -1,19 +1,18 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .FrequencyClassInformation import FrequencyClassInformation
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (
-  BiologicalIndividualIdentifier,
-  BiologicalIntentName,
-  GroupSummaryCount,
-  SampleTissueAnatomyName,
-  SubjectTaxonomicName,
-  SubjectTaxonomicNameUserSupplied,
-  SubjectTaxonomicNameUserSuppliedReferenceText,
-  UnidentifiedSpeciesIdentifier
-)
+from .SimpleContent import (BiologicalIndividualIdentifier,
+                            BiologicalIntentName, GroupSummaryCount,
+                            SampleTissueAnatomyName, SubjectTaxonomicName,
+                            SubjectTaxonomicNameUserSupplied,
+                            SubjectTaxonomicNameUserSuppliedReferenceText,
+                            UnidentifiedSpeciesIdentifier)
 from .TaxonomicDetails import TaxonomicDetails
-from typing import List, Union
-from yattag import Doc
+
 
 class BiologicalResultDescription:
   """Allows for the reporting of biological result information."""

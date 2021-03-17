@@ -1,18 +1,16 @@
+from typing import List, Union
+
+from yattag import Doc
+
 from ..exceptions import WQXException
-from .AlternateMonitoringLocationIdentity import AlternateMonitoringLocationIdentity
+from .AlternateMonitoringLocationIdentity import \
+    AlternateMonitoringLocationIdentity
 from .MeasureCompact import MeasureCompact
 from .SimpleContent import (
-  HUCEightDigitCode,
-  HUCTwelveDigitCode,
-  MonitoringLocationDescriptionText,
-  MonitoringLocationIdentifier,
-  MonitoringLocationName,
-  MonitoringLocationTypeName,
-  TribalLandIndicator,
-  TribalLandName
-)
-from typing import List, Union
-from yattag import Doc
+    HUCEightDigitCode, HUCTwelveDigitCode, MonitoringLocationDescriptionText,
+    MonitoringLocationIdentifier, MonitoringLocationName,
+    MonitoringLocationTypeName, TribalLandIndicator, TribalLandName)
+
 
 class MonitoringLocationIdentity:
   """Basic identification information for the location/site that is monitored or used for sampling."""

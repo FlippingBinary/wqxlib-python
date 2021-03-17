@@ -1,14 +1,12 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  ActivityGroupIdentifier,
-  ActivityIdentifier,
-  IndexIdentifier,
-  MonitoringLocationIdentifier,
-  OrganizationIdentifier,
-  ProjectIdentifier
-)
 from typing import List, Union
+
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (ActivityGroupIdentifier, ActivityIdentifier,
+                            IndexIdentifier, MonitoringLocationIdentifier,
+                            OrganizationIdentifier, ProjectIdentifier)
+
 
 class OrganizationDelete:
   """Schema used to delete organization information"""

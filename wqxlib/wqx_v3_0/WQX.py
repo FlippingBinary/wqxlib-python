@@ -1,6 +1,8 @@
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .Organization import Organization
-from yattag import Doc
+
 
 class WQX:
   """Main Schema used to transfer water monitoring results to EPA Office of Water."""

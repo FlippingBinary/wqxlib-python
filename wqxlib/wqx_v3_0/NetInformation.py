@@ -1,9 +1,9 @@
+from yattag import Doc
+
 from ..exceptions import WQXException
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (
-  NetTypeName
-)
-from yattag import Doc
+from .SimpleContent import NetTypeName
+
 
 class NetInformation:
   """Allows for the reporting of net sample collection information."""

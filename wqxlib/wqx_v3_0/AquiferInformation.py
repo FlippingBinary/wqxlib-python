@@ -1,11 +1,9 @@
-from ..exceptions import WQXException
-from .SimpleContent import (
-  LocalAquiferCode,
-  LocalAquiferCodeContext,
-  LocalAquiferDescriptionText,
-  LocalAquiferName
-)
 from yattag import Doc
+
+from ..exceptions import WQXException
+from .SimpleContent import (LocalAquiferCode, LocalAquiferCodeContext,
+                            LocalAquiferDescriptionText, LocalAquiferName)
+
 
 class AquiferInformation:
   """Identifies the procedures, processes, and references required to determine the methods used to obtain a result."""
