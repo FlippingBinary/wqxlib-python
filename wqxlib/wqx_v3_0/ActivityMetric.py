@@ -21,7 +21,7 @@ class ActivityMetric:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         activityMetricType: ActivityMetricType = None,
         metricValueMeasure: MeasureCompact = None,

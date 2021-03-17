@@ -13,7 +13,7 @@ class Telephonic:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         telephoneNumberText: TelephoneNumberText = None,
         telephoneNumberTypeName: TelephoneNumberTypeName = None,

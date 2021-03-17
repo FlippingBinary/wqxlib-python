@@ -19,7 +19,7 @@ class MonitoringLocation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         monitoringLocationIdentity: MonitoringLocationIdentity = None,
         monitoringLocationGeospatial: MonitoringLocationGeospatial = None,

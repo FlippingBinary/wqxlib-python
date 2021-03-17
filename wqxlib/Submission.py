@@ -10,7 +10,7 @@ class Submission:
   __document: Document
   __importConfiguration: ImportConfiguration
 
-  def __init__(self, o=None, *,
+  def __init__(self, o:dict=None, *,
     document:Document = None,
     importConfiguration:ImportConfiguration = None,
   ):

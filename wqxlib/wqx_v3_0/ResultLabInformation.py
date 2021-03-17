@@ -31,7 +31,7 @@ class ResultLabInformation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         laboratoryName: LaboratoryName = None,
         analysisStartDate: AnalysisStartDate = None,

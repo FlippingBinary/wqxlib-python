@@ -15,7 +15,7 @@ class DetectionQuantitationLimit:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         detectionQuantitationLimitTypeName: DetectionQuantitationLimitTypeName = None,
         detectionQuantitationLimitMeasure: MeasureCompact = None,

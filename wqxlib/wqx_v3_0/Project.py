@@ -25,7 +25,7 @@ class Project:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         projectIdentifier: ProjectIdentifier = None,
         projectName: ProjectName = None,

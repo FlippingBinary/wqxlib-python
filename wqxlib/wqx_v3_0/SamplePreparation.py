@@ -20,7 +20,7 @@ class SamplePreparation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         samplePreparationMethod: ReferenceMethod = None,
         sampleContainerLabelName: SampleContainerLabelName = None,

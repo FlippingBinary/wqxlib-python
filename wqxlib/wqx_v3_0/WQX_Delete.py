@@ -11,7 +11,7 @@ class WQXDelete:
 
     __organizationDelete: List[OrganizationDelete]
 
-    def __init__(self, o=None, *, organizationDelete: List[OrganizationDelete] = None):
+    def __init__(self, o:dict=None, *, organizationDelete: List[OrganizationDelete] = None):
         if isinstance(o, WQXDelete):
             # Assign attributes from object without typechecking
             self.__organizationDelete = o.organizationDelete

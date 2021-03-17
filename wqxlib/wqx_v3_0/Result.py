@@ -25,7 +25,7 @@ class Result:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         resultDescription: ResultDescription = None,
         biologicalResultDescription: BiologicalResultDescription = None,

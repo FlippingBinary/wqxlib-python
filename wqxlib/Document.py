@@ -30,7 +30,7 @@ class Document:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         id: ID = None,
         header: Header = None,

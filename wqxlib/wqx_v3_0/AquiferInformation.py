@@ -15,7 +15,7 @@ class AquiferInformation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         localAquiferCode: LocalAquiferCode = None,
         localAquiferCodeContext: LocalAquiferCodeContext = None,

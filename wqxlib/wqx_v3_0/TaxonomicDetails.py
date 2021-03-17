@@ -26,7 +26,7 @@ class TaxonomicDetails:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         cellFormName: CellFormName = None,
         cellShapeName: CellShapeName = None,

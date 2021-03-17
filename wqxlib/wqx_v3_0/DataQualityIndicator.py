@@ -16,7 +16,7 @@ class DataQuality:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         precisionValue: PrecisionValue = None,
         biasValue: BiasValue = None,

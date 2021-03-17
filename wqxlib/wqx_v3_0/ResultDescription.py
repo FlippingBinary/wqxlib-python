@@ -48,7 +48,7 @@ class ResultDescription:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         dataLoggerLineName: DataLoggerLineName = None,
         resultDetectionConditionText: ResultDetectionConditionText = None,

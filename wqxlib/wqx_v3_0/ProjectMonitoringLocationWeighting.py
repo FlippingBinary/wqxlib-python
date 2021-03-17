@@ -26,7 +26,7 @@ class ProjectMonitoringLocationWeighting:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         monitoringLocationIdentifier: MonitoringLocationIdentifier = None,
         locationWeightingFactorMeasure: MeasureCompact = None,

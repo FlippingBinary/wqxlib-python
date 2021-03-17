@@ -17,7 +17,7 @@ class ResultAnalyticalMethod:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         methodIdentifier: MethodIdentifier = None,
         methodIdentifierContext: MethodIdentifierContext = None,

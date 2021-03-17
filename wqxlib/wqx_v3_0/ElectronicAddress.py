@@ -11,7 +11,7 @@ class ElectronicAddress:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         electronicAddressText: ElectronicAddressText = None,
         electronicAddressTypeName: ElectronicAddressTypeName = None

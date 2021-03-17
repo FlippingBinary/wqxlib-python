@@ -10,7 +10,7 @@ class WQXTime:
     __time: Time
     __timeZoneCode: TimeZoneCode
 
-    def __init__(self, o=None, *, time: Time = None, timeZoneCode: TimeZoneCode = None):
+    def __init__(self, o:dict=None, *, time: Time = None, timeZoneCode: TimeZoneCode = None):
         if isinstance(o, WQXTime):
             # Assign attributes from object without typechecking
             self.__time = o.time

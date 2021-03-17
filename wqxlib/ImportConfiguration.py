@@ -17,7 +17,7 @@ class ImportConfiguration:
   __organizationDescription: OrganizationDescription
   __telephonic: Telephonic
 
-  def __init__(self, o=None, *,
+  def __init__(self, o:dict=None, *,
     activityDescription: ActivityDescription = None
     electronicAddress: ElectronicAddress = None
     organizationAddress: OrganizationAddress = None

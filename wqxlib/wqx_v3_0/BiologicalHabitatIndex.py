@@ -20,7 +20,7 @@ class BiologicalHabitatIndex:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         indexIdentifier: IndexIdentifier = None,
         indexType: IndexType = None,

@@ -22,7 +22,7 @@ class WellInformation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         wellTypeText: WellTypeText = None,
         aquiferTypeName: AquiferTypeName = None,

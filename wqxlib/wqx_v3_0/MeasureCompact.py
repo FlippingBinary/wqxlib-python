@@ -12,7 +12,7 @@ class MeasureCompact:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         measureValue: MeasureValue = None,
         measureUnitCode: MeasureUnitCode = None

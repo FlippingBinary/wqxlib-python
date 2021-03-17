@@ -20,7 +20,7 @@ class OrganizationDelete:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         organizationIdentifier: OrganizationIdentifier = None,
         projectIdentifier: List[ProjectIdentifier] = None,

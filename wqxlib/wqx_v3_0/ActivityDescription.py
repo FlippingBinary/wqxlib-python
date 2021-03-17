@@ -41,7 +41,7 @@ class ActivityDescription:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         activityIdentifier: ActivityIdentifier = None,
         activityIdentifierUserSupplied: ActivityIdentifierUserSupplied = None,

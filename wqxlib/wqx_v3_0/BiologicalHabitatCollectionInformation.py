@@ -20,7 +20,7 @@ class BiologicalHabitatCollectionInformation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         collectionDuration: MeasureCompact = None,
         collectionArea: MeasureCompact = None,

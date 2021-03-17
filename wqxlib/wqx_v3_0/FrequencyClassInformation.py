@@ -16,7 +16,7 @@ class FrequencyClassInformation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         frequencyClassDescriptorCode: FrequencyClassDescriptorCode = None,
         frequencyClassDescriptorUnitCode: FrequencyClassDescriptorUnitCode = None,

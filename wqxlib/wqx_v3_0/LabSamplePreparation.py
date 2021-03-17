@@ -18,7 +18,7 @@ class LabSamplePreparation:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         labSamplePreparationMethod: ReferenceMethod = None,
         preparationStartDate: PreparationStartDate = None,

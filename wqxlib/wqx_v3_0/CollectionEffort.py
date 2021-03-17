@@ -12,7 +12,7 @@ class CollectionEffort:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         measureValue: MeasureValue = None,
         gearProcedureUnitCode: GearProcedureUnitCode = None

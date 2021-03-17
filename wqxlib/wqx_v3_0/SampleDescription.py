@@ -20,7 +20,7 @@ class SampleDescription:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         sampleCollectionMethod: ReferenceMethod = None,
         sampleCollectionEquipmentName: SampleCollectionEquipmentName = None,

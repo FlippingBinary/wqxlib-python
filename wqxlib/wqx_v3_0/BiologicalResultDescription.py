@@ -31,7 +31,7 @@ class BiologicalResultDescription:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         biologicalIntentName: BiologicalIntentName = None,
         biologicalIndividualIdentifier: BiologicalIndividualIdentifier = None,

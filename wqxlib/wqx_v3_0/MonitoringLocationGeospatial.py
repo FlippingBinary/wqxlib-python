@@ -29,7 +29,7 @@ class MonitoringLocationGeospatial:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         latitudeMeasure: LatitudeMeasure = None,
         longitudeMeasure: LongitudeMeasure = None,

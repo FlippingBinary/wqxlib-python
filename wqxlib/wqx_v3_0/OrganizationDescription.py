@@ -16,7 +16,7 @@ class OrganizationDescription:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         organizationIdentifier: OrganizationIdentifier = None,
         organizationFormalName: OrganizationFormalName = None,

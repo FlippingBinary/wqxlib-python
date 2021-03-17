@@ -17,7 +17,7 @@ class IndexType:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         indexTypeIdentifier: IndexTypeIdentifier = None,
         indexTypeIdentifierContext: IndexTypeIdentifierContext = None,

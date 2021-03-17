@@ -9,7 +9,7 @@ class WQX:
 
     __organization: Organization
 
-    def __init__(self, o=None, *, organization: Organization = None):
+    def __init__(self, o:dict=None, *, organization: Organization = None):
         if isinstance(o, WQX):
             # Assign attributes from object without typechecking
             self.__organization = o.organization

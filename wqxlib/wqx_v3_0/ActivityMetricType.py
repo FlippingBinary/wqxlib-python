@@ -19,7 +19,7 @@ class ActivityMetricType:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         metricTypeIdentifier: MetricTypeIdentifier = None,
         metricTypeIdentifierContext: MetricTypeIdentifierContext = None,

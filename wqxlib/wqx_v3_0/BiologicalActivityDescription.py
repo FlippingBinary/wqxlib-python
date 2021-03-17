@@ -16,7 +16,7 @@ class BiologicalActivityDescription:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         assemblageSampledName: AssemblageSampledName = None,
         biologicalHabitatCollectionInformation: BiologicalHabitatCollectionInformation = None,

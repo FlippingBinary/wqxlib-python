@@ -26,7 +26,7 @@ class Payload:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         operation=None,
         wqx=None,

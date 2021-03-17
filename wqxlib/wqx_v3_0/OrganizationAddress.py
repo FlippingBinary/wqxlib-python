@@ -19,7 +19,7 @@ class OrganizationAddress:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         addressTypeName: AddressTypeName = None,
         addressText: AddressText = None,

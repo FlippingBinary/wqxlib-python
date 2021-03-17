@@ -20,7 +20,7 @@ class Header:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         author=None,
         organization=None,

@@ -29,7 +29,7 @@ class MonitoringLocationIdentity:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         monitoringLocationIdentifier: MonitoringLocationIdentifier = None,
         monitoringLocationName: MonitoringLocationName = None,

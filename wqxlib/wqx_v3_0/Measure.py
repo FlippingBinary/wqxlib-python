@@ -16,7 +16,7 @@ class Measure:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         resultMeasureValue: ResultMeasureValue = None,
         measureUnitCode: MeasureUnitCode = None,

@@ -18,7 +18,7 @@ class BibliographicReference:
 
     def __init__(
         self,
-        o=None,
+        o:dict=None,
         *,
         resourceTitleName: ResourceTitleName = None,
         resourceCreatorName: ResourceCreatorName = None,
