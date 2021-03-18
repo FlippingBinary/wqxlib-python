@@ -83,11 +83,11 @@ class UpdateIdentifiers:
         o: dict = None,
         *,
         organizationIdentifier: OrganizationIdentifier = None,
-        projectIdentifierUpdate: List[IdentifierUpdate] = [],
-        monitoringLocationIdentifierUpdate: List[IdentifierUpdate] = [],
-        indexIdentifierUpdate: List[IdentifierUpdate] = [],
-        activityIdentifierUpdate: List[IdentifierUpdate] = [],
-        activityGroupIdentifierUpdate: List[IdentifierUpdate] = []
+        projectIdentifierUpdate: List[IdentifierUpdate] = None,
+        monitoringLocationIdentifierUpdate: List[IdentifierUpdate] = None,
+        indexIdentifierUpdate: List[IdentifierUpdate] = None,
+        activityIdentifierUpdate: List[IdentifierUpdate] = None,
+        activityGroupIdentifierUpdate: List[IdentifierUpdate] = None
     ):
         if isinstance(o, UpdateIdentifiers):
             # Assign attributes from object without typechecking
@@ -114,11 +114,25 @@ class UpdateIdentifiers:
         else:
             # Assign attributes from named keywords with typechecking
             self.organizationIdentifier = organizationIdentifier
-            self.projectIdentifierUpdate = projectIdentifierUpdate
-            self.monitoringLocationIdentifierUpdate = monitoringLocationIdentifierUpdate
-            self.indexIdentifierUpdate = indexIdentifierUpdate
-            self.activityIdentifierUpdate = activityIdentifierUpdate
-            self.activityGroupIdentifierUpdate = activityGroupIdentifierUpdate
+            self.projectIdentifierUpdate = (
+                projectIdentifierUpdate if projectIdentifierUpdate is not None else []
+            )
+            self.monitoringLocationIdentifierUpdate = (
+                monitoringLocationIdentifierUpdate
+                if monitoringLocationIdentifierUpdate is not None
+                else []
+            )
+            self.indexIdentifierUpdate = (
+                indexIdentifierUpdate if indexIdentifierUpdate is not None else []
+            )
+            self.activityIdentifierUpdate = (
+                activityIdentifierUpdate if activityIdentifierUpdate is not None else []
+            )
+            self.activityGroupIdentifierUpdate = (
+                activityGroupIdentifierUpdate
+                if activityGroupIdentifierUpdate is not None
+                else []
+            )
 
     @property
     def organizationIdentifier(self) -> OrganizationIdentifier:

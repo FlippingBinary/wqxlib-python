@@ -228,7 +228,7 @@ class Organization:
         else:
             self.__activityGroup = [ActivityGroup(val)]
 
-    def generateXML(self, name: str = "Organization") -> str:
+    def generateXML(self, name: str = "Organization") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
         tag = doc.tag

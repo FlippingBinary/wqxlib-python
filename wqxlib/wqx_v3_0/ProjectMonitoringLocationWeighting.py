@@ -186,7 +186,9 @@ class ProjectMonitoringLocationWeighting:
     def commentText(self, val: CommentText) -> None:
         self.__commentText = None if val is None else CommentText(val)
 
-    def generateXML(self, name: str = "ProjectMonitoringLocationWeighting") -> str:
+    def generateXML(  # noqa: C901
+        self, name: str = "ProjectMonitoringLocationWeighting"
+    ) -> str:
         doc = Doc()
         asis = doc.asis
         line = doc.line

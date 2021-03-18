@@ -43,7 +43,7 @@ class BiologicalResultDescription:
         biologicalIndividualIdentifier: BiologicalIndividualIdentifier = None,
         subjectTaxonomicName: SubjectTaxonomicName = None,
         subjectTaxonomicNameUserSupplied: SubjectTaxonomicNameUserSupplied = None,
-        subjectTaxonomicNameUserSuppliedReferenceText: SubjectTaxonomicNameUserSuppliedReferenceText = None,
+        subjectTaxonomicNameUserSuppliedReferenceText: SubjectTaxonomicNameUserSuppliedReferenceText = None,  # noqa: B950
         unidentifiedSpeciesIdentifier: UnidentifiedSpeciesIdentifier = None,
         sampleTissueAnatomyName: SampleTissueAnatomyName = None,
         groupSummaryCount: GroupSummaryCount = None,
@@ -219,7 +219,7 @@ class BiologicalResultDescription:
         else:
             self.__frequencyClassInformation = [FrequencyClassInformation(val)]
 
-    def generateXML(self, name: str = "BiologicalResultDescription") -> str:
+    def generateXML(self, name: str = "BiologicalResultDescription") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
         line = doc.line

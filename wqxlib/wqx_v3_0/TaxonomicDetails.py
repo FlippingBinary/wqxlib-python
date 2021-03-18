@@ -185,7 +185,7 @@ class TaxonomicDetails:
             None if val is None else BibliographicReference(val)
         )
 
-    def generateXML(self, name: str = "TaxonomicDetails") -> str:
+    def generateXML(self, name: str = "TaxonomicDetails") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
         line = doc.line

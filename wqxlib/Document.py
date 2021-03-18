@@ -10,10 +10,15 @@ from .Payload import Payload
 
 
 class ID(str):
-    """The type ID is used for an attribute that uniquely identifies an element in an XML document. An ID value must be an NCName. This means that it must start with a letter or underscore, and can only contain letters, digits, underscores, hyphens, and periods."""
+    """
+    The type ID is used for an attribute that uniquely identifies an element in an XML
+    document. An ID value must be an NCName. This means that it must start with a letter
+    or underscore, and can only contain letters, digits, underscores, hyphens, and
+    periods.
+    """
 
     __pattern = re.compile(
-        r"^[:A-Z_a-z\xC0-\xD6\xD8-\xF6\xF8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][-:0-9.A-Z_a-z\xC0-\xD6\xD8-\xF6\xF8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\xB7\u0300-\u036F\u203F-\u2040]*$"
+        r"^[:A-Z_a-z\xC0-\xD6\xD8-\xF6\xF8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][-:0-9.A-Z_a-z\xC0-\xD6\xD8-\xF6\xF8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\xB7\u0300-\u036F\u203F-\u2040]*$"  # noqa: B950
     )
 
     def __init__(self, o=None):
@@ -22,7 +27,9 @@ class ID(str):
 
 
 class Document:
-    """The base document type used for submission to WQXWeb."""
+    """
+    The base document type used for submission to WQXWeb.
+    """
 
     __id: ID
     __header: Header
@@ -84,10 +91,12 @@ class Document:
         else:
             self.__payload = [Payload(val)]
 
-    def list_data_rule_violations(self) -> List[str]:
-        """List all data rule (not XSD rules) violations of the enclosed Document.
+    def list_data_rule_violations(self) -> List[str]:  # noqa: C901
+        """
+        List all data rule (not XSD rules) violations of the enclosed Document.
         This function returns an empty list if none of the tests fail, but that does
-        not guarantee the data will be accepted by WQX."""
+        not guarantee the data will be accepted by WQX.
+        """
         violations: List[str] = []
 
         for payload in self.__payload:
@@ -96,8 +105,9 @@ class Document:
                 continue
 
             data_rule_1 = """
-        Data Rule #1: When ElectronicAddressText or ElectronicAddressTypeName is reported, both must be reported.
-        """
+            Data Rule #1: When ElectronicAddressText or ElectronicAddressTypeName is
+            reported, both must be reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -114,8 +124,9 @@ class Document:
                         violations.append(data_rule_1.strip())
 
             data_rule_2 = """
-        Data Rule #2: When TelephoneNumberText or TelephoneNumberTypeName is reported, both must be reported.
-        """
+            Data Rule #2: When TelephoneNumberText or TelephoneNumberTypeName is
+            reported, both must be reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -132,8 +143,9 @@ class Document:
                         violations.append(data_rule_2.strip())
 
             data_rule_3 = """
-        Data Rule #3: When AddressText or AddressTypeName is reported, both must be reported.
-        """
+            Data Rule #3: When AddressText or AddressTypeName is reported, both must be
+            reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -150,8 +162,9 @@ class Document:
                         violations.append(data_rule_3.strip())
 
             data_rule_4 = """
-        When HorizonitalCollectionMethodName is “Interpolation-Map”, SourceMapScaleNumeric must be reported.
-        """
+            When HorizonitalCollectionMethodName is “Interpolation-Map”,
+            SourceMapScaleNumeric must be reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -179,18 +192,19 @@ class Document:
                                 is None
                             )
                             and (
-                                monitoring_location.monitoringLocationGeospatial.horizontalCollectionMethodName
+                                monitoring_location.monitoringLocationGeospatial.horizontalCollectionMethodName  # noqa: B950
                                 == "Interpolation-Map"
                             )
                         ):
                             violations.append(data_rule_4.strip())
 
             data_rule_5 = """
-        When VerticalMeasure's MeasureValue is reported, the following also must be reported:
-        VerticalMeasure's MeasureUnitCode,
-        VerticalCollectionMethodName,
-        VerticalCoordinateReferenceSystemDatumName.
-        """
+            When VerticalMeasure's MeasureValue is reported, the following also must be
+            reported:
+              VerticalMeasure's MeasureUnitCode,
+              VerticalCollectionMethodName,
+              VerticalCoordinateReferenceSystemDatumName.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -204,20 +218,20 @@ class Document:
                             is not None
                         )
                         and (
-                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureValue
+                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureValue  # noqa: B950
                             is not None
                         )
                         and (
                             (
-                                monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureUnitCode
+                                monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureUnitCode  # noqa: B950
                                 is None
                             )
                             or (
-                                monitoring_location.monitoringLocationGeospatial.verticalCollectionMethodName
+                                monitoring_location.monitoringLocationGeospatial.verticalCollectionMethodName  # noqa: B950
                                 is None
                             )
                             or (
-                                monitoring_location.monitoringLocationGeospatial.verticalCoordinateReferenceSystemDatumName
+                                monitoring_location.monitoringLocationGeospatial.verticalCoordinateReferenceSystemDatumName  # noqa: B950
                                 is None
                             )
                         )
@@ -225,8 +239,9 @@ class Document:
                         violations.append(data_rule_5.strip())
 
             data_rule_6 = """
-        Either ProjectDescriptionText or Project's AttachedBinaryObject must be reported.
-        """
+            Either ProjectDescriptionText or Project's AttachedBinaryObject must be
+            reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -239,12 +254,14 @@ class Document:
                         violations.append(data_rule_6.strip())
 
             data_rule_7 = """
-        Activity Depth/Height can be reported in only one of the following two ways (but not both):
-        a. Specific depth using ActivityDepthHeightMeasure's MeasureValue.
-        b. Depth Range using ActivityTopDepthHeightMeasure's MeasureValue and
-        ActivityBottomDepthHeightMeasure's MeasureValue.
-          i. This method must be used when ActivityTypeCode is “Sample-Integrated Vertical Profile”.
-        """
+            Activity Depth/Height can be reported in only one of the following two ways
+            (but not both):
+              a. Specific depth using ActivityDepthHeightMeasure's MeasureValue.
+              b. Depth Range using ActivityTopDepthHeightMeasure's MeasureValue and
+              ActivityBottomDepthHeightMeasure's MeasureValue.
+                i. This method must be used when ActivityTypeCode is “Sample-Integrated
+                Vertical Profile”.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -272,7 +289,7 @@ class Document:
                                     is not None
                                 )
                                 and (
-                                    activity.activityDescription.activityTopDepthHeightMeasure.measureValue
+                                    activity.activityDescription.activityTopDepthHeightMeasure.measureValue  # noqa: B950
                                     is not None
                                 )
                             )
@@ -282,7 +299,7 @@ class Document:
                                     is not None
                                 )
                                 and (
-                                    activity.activityDescription.activityBottomDepthHeightMeasure.measureValue
+                                    activity.activityDescription.activityBottomDepthHeightMeasure.measureValue  # noqa: B950
                                     is not None
                                 )
                             )
@@ -291,8 +308,9 @@ class Document:
                         violations.append(data_rule_7.strip())
 
             data_rule_8 = """
-        When ActivityTypeCode contains the word 'Logger', DataLoggerLineName must be reported.
-        """
+            When ActivityTypeCode contains the word 'Logger', DataLoggerLineName must be
+            reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -309,8 +327,9 @@ class Document:
                                 violations.append(data_rule_8.strip())
 
             data_rule_9 = """
-        When ActivityMediaName is "Tissue" then BiologicalIntentName must also be "Tissue" (and visa-versa)
-        """
+            When ActivityMediaName is "Tissue" then BiologicalIntentName must also be
+            "Tissue" (and visa-versa)
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -352,8 +371,9 @@ class Document:
                             violations.append(data_rule_9.strip())
 
             data_rule_10 = """
-        When ActivityMediaName (or BiologicalIntentName) is "Tissue", then SampleTissueAnatomyName must be reported.
-        """
+            When ActivityMediaName (or BiologicalIntentName) is "Tissue", then
+            SampleTissueAnatomyName must be reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -386,8 +406,9 @@ class Document:
                                 violations.append(data_rule_10.strip())
 
             data_rule_11 = """
-        When ActivityMediaName is "Biological" then AssemblageSampledName must be reported
-        """
+            When ActivityMediaName is "Biological" then AssemblageSampledName must be
+            reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -411,10 +432,11 @@ class Document:
                         violations.append(data_rule_11.strip())
 
             data_rule_12 = """
-        When ResultDetectionConditionText is 'Not Detected', 'Present Above Quantification Limit' or 'Present Below
-        Quantification Limit', then DetectionQuantitationLimitTypeName and DetectionQuantitationLimitMeasure must be
-        reported.
-        """
+            When ResultDetectionConditionText is 'Not Detected', 'Present Above
+            Quantification Limit' or 'Present Below Quantification Limit', then
+            DetectionQuantitationLimitTypeName and DetectionQuantitationLimitMeasure must
+            be reported.
+            """
             data_rule_12_pattern_1 = [
                 "Not Detected",
                 "Present Above Quantification Limit",
@@ -437,7 +459,7 @@ class Document:
                                 not any(
                                     i.detectionQuantitationLimitTypeName is not None
                                     and i.detectionQuantitationLimitMeasure is not None
-                                    for i in result.resultLabInformation.resultDetectionQuantitationLimit
+                                    for i in result.resultLabInformation.resultDetectionQuantitationLimit  # noqa: B950
                                 )
                             )
                         ):
@@ -459,9 +481,9 @@ class Document:
                             violations.append(data_rule_13.strip())
 
             data_rule_14 = """
-        When DetectionQuantitationLimit's MeasureValue is reported, DetectionQuantitationLimit's MeasureUnitCode must
-        be reported.
-        """
+            When DetectionQuantitationLimit's MeasureValue is reported,
+            DetectionQuantitationLimit's MeasureUnitCode must be reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -481,24 +503,25 @@ class Document:
                                 ):
                                     if (
                                         (
-                                            result_detection_quantitation_limit.detectionQuantitationLimitMeasure
+                                            result_detection_quantitation_limit.detectionQuantitationLimitMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            result_detection_quantitation_limit.detectionQuantitationLimitMeasure.measureValue
+                                            result_detection_quantitation_limit.detectionQuantitationLimitMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            result_detection_quantitation_limit.detectionQuantitationLimitMeasure.measureUnitCode
+                                            result_detection_quantitation_limit.detectionQuantitationLimitMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     ):
                                         violations.append(data_rule_14.strip())
 
             data_rule_15 = """
-        ActivityDescription’s MonitoringLocationIdentifier may be required depending on the value provided for
-        ActivityTypeCode. See the domain value list for ActivityTypeCode for more information.
-        """
+            ActivityDescription’s MonitoringLocationIdentifier may be required depending
+            on the value provided for ActivityTypeCode. See the domain value list for
+            ActivityTypeCode for more information.
+            """
             data_rule_15_domain = []
             if (
                 (payload.wqx is not None)
@@ -520,11 +543,12 @@ class Document:
                         violations.append(data_rule_15.strip())
 
             data_rule_16 = """
-        ResultAnalyticalMethod may be required depending on the value provided for ActivityTypeCode. See the domain
-        value list for ActivityTypeCode for more information.
-        a. However, ResultAnalyticalMethod is never required if BiologicalIntentName is "Individual", "Population
-        Census", "Frequency Class", or "Group Summary"
-        """
+            ResultAnalyticalMethod may be required depending on the value provided for
+            ActivityTypeCode. See the domain value list for ActivityTypeCode for more
+            information.
+              a. However, ResultAnalyticalMethod is never required if BiologicalIntentName
+              is "Individual", "Population Census", "Frequency Class", or "Group Summary"
+            """
             data_rule_16_pattern = [
                 "Individual",
                 "Population Census",
@@ -547,8 +571,8 @@ class Document:
                                     is not None
                                 )
                                 and (
-                                    not result.biologicalResultDescription.biologicalIntentName
-                                    in data_rule_16_pattern
+                                    result.biologicalResultDescription.biologicalIntentName
+                                    not in data_rule_16_pattern
                                 )
                                 and (result.resultAnalyticalMethod is None)
                                 and (activity.activityDescription is not None)
@@ -564,9 +588,10 @@ class Document:
                                 violations.append(data_rule_16.strip())
 
             data_rule_17 = """
-        ResultSampleFractionText may be required depending on the value provided for CharacteristicName. See the
-        domain value list for CharacteristicName for more information.
-        """
+            ResultSampleFractionText may be required depending on the value provided for
+            CharacteristicName. See the domain value list for CharacteristicName for more
+            information.
+            """
             data_rule_17_domain = []  # TODO: Add domain values
             if (
                 (payload.wqx is not None)
@@ -594,17 +619,22 @@ class Document:
                                 violations.append(data_rule_17.strip())
 
             data_rule_18 = """
-        ResultAnalyticalMethod’s MethodIdentifierContext must either match a value from the AnalyticalMethodContext
-        domain list or it must be the same as the value for the OrganizationIdentifier provided in the submission file.
-        a. If the MethodIdentifierContext matches a value from the domain list, then the MethodIdentifier must also
-        match a value from the AnalyticalMethod domain list (for that Context). Furthermore, MethodName,
-        MethodQualifierTypeName, and MethodDescriptionText are not required and will be ignored (since only the
-        Identifier and IdentifierContext are needed to uniquely identify the Analytical Method).
-        b. If the MethodIdentifierContext matches your OrganizationIdentifier (indicating your own method), then
-        MethodIdentifier and MethodName are both required, but do not need to match a value from the domain list
-        (since they are your own). Additionally, MethodQualifierTypeName and MethodDescriptionText can be
-        provided, but are optional, to further describe the Analytical Method used."
-        """
+            ResultAnalyticalMethod’s MethodIdentifierContext must either match a value
+            from the AnalyticalMethodContext domain list or it must be the same as the
+            value for the OrganizationIdentifier provided in the submission file.
+              a. If the MethodIdentifierContext matches a value from the domain list,
+              then the MethodIdentifier must also match a value from the AnalyticalMethod
+              domain list (for that Context). Furthermore, MethodName,
+              MethodQualifierTypeName, and MethodDescriptionText are not required and
+              will be ignored (since only the Identifier and IdentifierContext are needed
+              to uniquely identify the Analytical Method).
+              b. If the MethodIdentifierContext matches your OrganizationIdentifier
+              (indicating your own method), then MethodIdentifier and MethodName are both
+              required, but do not need to match a value from the domain list (since they
+              are your own). Additionally, MethodQualifierTypeName and
+              MethodDescriptionText can be provided, but are optional, to further
+              describe the Analytical Method used.
+            """
             data_rule_18_domain = []
             if (
                 (payload.wqx is not None)
@@ -622,21 +652,24 @@ class Document:
                                 )
                                 and (
                                     result.resultAnalyticalMethod.methodIdentifierContext
-                                    != payload.wqx.organization.organizationDescription.organizationIdentifier
+                                    != payload.wqx.organization.organizationDescription.organizationIdentifier  # noqa: B950
                                 )
                                 and (
-                                    not result.resultAnalyticalMethod.methodIdentifierContext
-                                    in data_rule_18_domain
+                                    result.resultAnalyticalMethod.methodIdentifierContext
+                                    not in data_rule_18_domain
                                 )
                             ):
                                 violations.append(data_rule_18.strip())
 
             data_rule_19 = """
-        ProjectIdentifier, MonitoringLocationIdentifier, ActivityIdentifier, IndexIdentifier and ActivityGroupIdentifier must be
-        unique within an Organization. The value for each of these identifiers may occur only once in a submission file.
-        a. Unique identifiers are treated as case-insensitive by WQX. For example, the following three identifiers would
-        be treated as identical: “Mx571”, “mx571”, “MX571”.
-        """
+            ProjectIdentifier, MonitoringLocationIdentifier, ActivityIdentifier,
+            IndexIdentifier and ActivityGroupIdentifier must be unique within an
+            Organization. The value for each of these identifiers may occur only once in
+            a submission file.
+              a. Unique identifiers are treated as case-insensitive by WQX. For example,
+              the following three identifiers would be treated as identical: “Mx571”,
+              “mx571”, “MX571”.
+            """
             identifiers: List[str] = []
             if (payload.wqx is not None) and (payload.wqx.organization is not None):
                 if payload.wqx.organization.project is not None:
@@ -650,11 +683,11 @@ class Document:
                         if (
                             monitoring_location.monitoringLocationIdentity is not None
                         ) and (
-                            monitoring_location.monitoringLocationIdentity.monitoringLocationIdentifier
+                            monitoring_location.monitoringLocationIdentity.monitoringLocationIdentifier  # noqa: B950
                             is not None
                         ):
                             identifiers.append(
-                                monitoring_location.monitoringLocationIdentity.monitoringLocationIdentifier.lower()
+                                monitoring_location.monitoringLocationIdentity.monitoringLocationIdentifier.lower()  # noqa: B950
                             )
                 if payload.wqx.organization.biologicalHabitatIndex is not None:
                     for (
@@ -692,12 +725,13 @@ class Document:
 
             # pylint: disable=unused-variable
             data_rule_20 = """
-        """
+            """  # noqa: F841
 
             data_rule_21 = """
-        ResultMeasure's ResultMeasureValue may be constrained to a list of domain values depending on the value
-        provided for CharacteristicName. See the domain value list for CharacteristicName for more information.
-        """
+            ResultMeasure's ResultMeasureValue may be constrained to a list of domain
+            values depending on the value provided for CharacteristicName. See the domain
+            value list for CharacteristicName for more information.
+            """
             data_rule_21_trigger = []
             data_rule_21_domain = []
             if (
@@ -722,11 +756,11 @@ class Document:
                                 violations.append(data_rule_21.strip())
 
             data_rule_22 = """
-        If a numeric value is reported for ResultMeasureValue, then ResultMeasure's MeasureUnitCode and
-        ResultValueTypeName are required.
-        a. The exception to this is when the ResultMeasureValue is a Characteristic Pick List Value. These do not
-        have units.
-        """
+            If a numeric value is reported for ResultMeasureValue, then ResultMeasure's
+            MeasureUnitCode and ResultValueTypeName are required.
+              a. The exception to this is when the ResultMeasureValue is a Characteristic
+              Pick List Value. These do not have units.
+            """
             data_rule_22_exceptions = []
             if (
                 (payload.wqx is not None)
@@ -748,7 +782,7 @@ class Document:
                                     not in data_rule_22_exceptions
                                 )
                                 and (
-                                    result.resultDescription.resultMeasure.resultMeasureValue.isnumeric()
+                                    result.resultDescription.resultMeasure.resultMeasureValue.isnumeric()  # noqa: B950
                                 )
                                 and (
                                     (
@@ -764,8 +798,8 @@ class Document:
                                 violations.append(data_rule_22.strip())
 
             data_rule_23 = """
-        If a CountyCode is reported then a StateCode must also be reported.
-        """
+            If a CountyCode is reported then a StateCode must also be reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -797,8 +831,8 @@ class Document:
                             violations.append(data_rule_23.strip())
 
             data_rule_24 = """
-        If NetTypeName = "Net/Horizontal Tow" then BoatSpeedMeasure is required.
-        """
+            If NetTypeName = "Net/Horizontal Tow" then BoatSpeedMeasure is required.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -808,19 +842,19 @@ class Document:
                     if (
                         (activity.biologicalActivityDescription is not None)
                         and (
-                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation
+                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation  # noqa: B950
                             is not None
                         )
                         and (
-                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation
+                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation  # noqa: B950
                             is not None
                         )
                         and (
                             "Net/Horizontal Tow"
-                            == activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netTypeName
+                            == activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netTypeName  # noqa: B950
                         )
                         and (
-                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure
+                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure  # noqa: B950
                             is None
                         )
                     ):
@@ -828,23 +862,28 @@ class Document:
 
             # pylint: disable=unused-variable
             data_rule_25 = """
-        If NetTypeName is reported then the SampleCollectionEquipmentName must be one that relates to that type of
-        equipment.
-        """
+            If NetTypeName is reported then the SampleCollectionEquipmentName must be
+            one that relates to that type of equipment.
+            """  # noqa: F841
             # TODO: Figure out how to report violations of this rule
 
             data_rule_26 = """
-        ActivityMetric's MetricTypeIdentifierContext must either match a value from the MetricTypeContext domain list or it
-        must be the same as the value for the OrganizationIdentifier provided in the submission file.
-        a. If the MetricTypeIdentifierContext matches a value from the domain list, then the MetricTypeIdentifier must
-        also match a value from the MetricType domain list (for that Context). Furthermore, MetricTypeName,
-        MetricTypeCitation, MetricTypeScaleText, and FormulaDescriptionText are not required and will be ignored
-        (since only the Identifier and IdentifierContext are needed to uniquely identify the MetricType).
-        b. If the MetricTypeIdentifierContext matches your OrganizationIdentifier (indicating your own metric), then
-        MetricTypeIdentifier and MetricTypeName are both required, but do not need to match a value from the
-        domain list (since they are your own). Additionally, MetricTypeCitation, MetricTypeScaleText, and
-        FormulaDescriptionText can be provided, but are optional, to further describe the Metric Type used.
-        """
+            ActivityMetric's MetricTypeIdentifierContext must either match a value from
+            the MetricTypeContext domain list or it must be the same as the value for the
+            OrganizationIdentifier provided in the submission file.
+              a. If the MetricTypeIdentifierContext matches a value from the domain list,
+              then the MetricTypeIdentifier must also match a value from the MetricType
+              domain list (for that Context). Furthermore, MetricTypeName,
+              MetricTypeCitation, MetricTypeScaleText, and FormulaDescriptionText are not
+              required and will be ignored (since only the Identifier and
+              IdentifierContext are needed to uniquely identify the MetricType).
+              b. If the MetricTypeIdentifierContext matches your OrganizationIdentifier
+              (indicating your own metric), then MetricTypeIdentifier and MetricTypeName
+              are both required, but do not need to match a value from the domain list
+              (since they are your own). Additionally, MetricTypeCitation,
+              MetricTypeScaleText, and FormulaDescriptionText can be provided, but are
+              optional, to further describe the Metric Type used.
+            """
             data_rule_26_metric_type_context_domain = []
             data_rule_26_metric_type_domain = []
             if (
@@ -858,7 +897,7 @@ class Document:
                             if activity_metric.activityMetricType is not None:
                                 if (
                                     activity_metric.activityMetricType.metricTypeIdentifierContext
-                                    == payload.wqx.organization.organizationDescription.organizationIdentifier
+                                    == payload.wqx.organization.organizationDescription.organizationIdentifier  # noqa: B950
                                 ):
                                     if (
                                         activity_metric.activityMetricType.metricTypeIdentifier
@@ -881,8 +920,9 @@ class Document:
                                     violations.append(data_rule_26.strip())
 
             data_rule_27 = """
-        If BiologicalIntentName is "Group Summary" then GroupSummaryCount or GroupSummaryWeight must be reported
-        """
+            If BiologicalIntentName is "Group Summary" then GroupSummaryCount or
+            GroupSummaryWeight must be reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -903,7 +943,7 @@ class Document:
                                         is None
                                     )
                                     or (
-                                        result.biologicalResultDescription.groupSummaryWeightMeasure
+                                        result.biologicalResultDescription.groupSummaryWeightMeasure  # noqa: B950
                                         is None
                                     )
                                 )
@@ -911,8 +951,9 @@ class Document:
                                 violations.append(data_rule_27.strip())
 
             data_rule_28 = """
-        If BiologicalIntentName is "Frequency Class" then Result's CharacteristicName must be "Count"
-        """
+            If BiologicalIntentName is "Frequency Class" then Result's CharacteristicName
+            must be "Count"
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -934,9 +975,9 @@ class Document:
                                 violations.append(data_rule_28.strip())
 
             data_rule_29 = """
-        If BiologicalIntentName is "Population Census" then Result's CharacteristicName must be "Count" or "Total Sample
-        Weight"
-        """
+            If BiologicalIntentName is "Population Census" then Result's
+            CharacteristicName must be "Count" or "Total Sample Weight"
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -966,9 +1007,10 @@ class Document:
                                 violations.append(data_rule_29.strip())
 
             data_rule_30 = """
-        FrequencyClassDescriptorUnitCode may be required depending on the value provided for
-        FrequencyClassDescriptorCode. See the domain value list for FrequencyClassType for more information.
-        """
+            FrequencyClassDescriptorUnitCode may be required depending on the value
+            provided for FrequencyClassDescriptorCode. See the domain value list for
+            FrequencyClassType for more information.
+            """
             data_rule_30_domain = []
             if (
                 (payload.wqx is not None)
@@ -989,25 +1031,25 @@ class Document:
                                 ):
                                     if (
                                         (
-                                            frequency_class_information.frequencyClassDescriptorUnitCode
+                                            frequency_class_information.frequencyClassDescriptorUnitCode  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            frequency_class_information.frequencyClassDescriptorCode
+                                            frequency_class_information.frequencyClassDescriptorCode  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            frequency_class_information.frequencyClassDescriptorCode
+                                            frequency_class_information.frequencyClassDescriptorCode  # noqa: B950
                                             in data_rule_30_domain
                                         )
                                     ):
                                         violations.append(data_rule_30.strip())
 
             data_rule_31 = """
-        FrequencyClassInformation's LowerClassBoundValue and UpperClassBoundValue may be required depending on
-        the value provided for FrequencyClassDescriptorCode. See the domain value list for FrequencyClassType for more
-        information
-        """
+            FrequencyClassInformation's LowerClassBoundValue and UpperClassBoundValue may
+            be required depending on the value provided for FrequencyClassDescriptorCode.
+            See the domain value list for FrequencyClassType for more information.
+            """
             data_rule_31_domain = []
             if (
                 (payload.wqx is not None)
@@ -1038,20 +1080,20 @@ class Document:
                                             )
                                         )
                                         and (
-                                            frequency_class_information.frequencyClassDescriptorCode
+                                            frequency_class_information.frequencyClassDescriptorCode  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            frequency_class_information.frequencyClassDescriptorCode
+                                            frequency_class_information.frequencyClassDescriptorCode  # noqa: B950
                                             in data_rule_31_domain
                                         )
                                     ):
                                         violations.append(data_rule_31.strip())
 
             data_rule_32 = """
-        Biological Intent Name and Subject Taxonomic Name must be reported when Activity Media Name is "Biological" or
-        "Tissue"
-        """
+            Biological Intent Name and Subject Taxonomic Name must be reported when
+            Activity Media Name is "Biological" or "Tissue"
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -1081,8 +1123,9 @@ class Document:
                                 violations.append(data_rule_32.strip())
 
             data_rule_33 = """
-        Either Result Measure Value and/or Result Detection Condition Text must be reported
-        """
+            Either Result Measure Value and/or Result Detection Condition Text must be
+            reported.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -1108,8 +1151,9 @@ class Document:
                                 violations.append(data_rule_33.strip())
 
             data_rule_34 = """
-        Habitat Selection Method is required when Activity Assemblage is "Benthic Macroinvertebrates"
-        """
+            Habitat Selection Method is required when Activity Assemblage is
+            "Benthic Macroinvertebrates"
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -1137,8 +1181,8 @@ class Document:
                         violations.append(data_rule_34.strip())
 
             data_rule_35 = """
-        Measure Unit is required when Measure Value is supplied
-        """
+            Measure Unit is required when Measure Value is supplied.
+            """
             if (payload.wqx is not None) and (payload.wqx.organization is not None):
                 if payload.wqx.organization.activity is not None:
                     for activity in payload.wqx.organization.activity:
@@ -1164,11 +1208,11 @@ class Document:
                                         is not None
                                     )
                                     and (
-                                        result.resultDescription.resultDepthHeightMeasure.measureValue
+                                        result.resultDescription.resultDepthHeightMeasure.measureValue  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        result.resultDescription.resultDepthHeightMeasure.measureUnitCode
+                                        result.resultDescription.resultDepthHeightMeasure.measureUnitCode  # noqa: B950
                                         is None
                                     )
                                 ):
@@ -1183,39 +1227,39 @@ class Document:
                                             is not None
                                         )
                                         and (
-                                            activity.activityDescription.activityDepthHeightMeasure.measureValue
+                                            activity.activityDescription.activityDepthHeightMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.activityDescription.activityDepthHeightMeasure.measureUnitCode
+                                            activity.activityDescription.activityDepthHeightMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            activity.activityDescription.activityTopDepthHeightMeasure
+                                            activity.activityDescription.activityTopDepthHeightMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.activityDescription.activityTopDepthHeightMeasure.measureValue
+                                            activity.activityDescription.activityTopDepthHeightMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.activityDescription.activityTopDepthHeightMeasure.measureUnitCode
+                                            activity.activityDescription.activityTopDepthHeightMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            activity.activityDescription.activityBottomDepthHeightMeasure
+                                            activity.activityDescription.activityBottomDepthHeightMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.activityDescription.activityBottomDepthHeightMeasure.measureValue
+                                            activity.activityDescription.activityBottomDepthHeightMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.activityDescription.activityBottomDepthHeightMeasure.measureUnitCode
+                                            activity.activityDescription.activityBottomDepthHeightMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
@@ -1228,136 +1272,136 @@ class Document:
                                     is not None
                                 )
                                 and (
-                                    activity.activityLocation.horizontalAccuracyMeasure.measureValue
+                                    activity.activityLocation.horizontalAccuracyMeasure.measureValue  # noqa: B950
                                     is not None
                                 )
                                 and (
-                                    activity.activityLocation.horizontalAccuracyMeasure.measureUnitCode
+                                    activity.activityLocation.horizontalAccuracyMeasure.measureUnitCode  # noqa: B950
                                     is None
                                 )
                             )
                             or (
                                 (activity.biologicalActivityDescription is not None)
                                 and (
-                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation
+                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation  # noqa: B950
                                     is not None
                                 )
                                 and (
                                     (
                                         (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureValue
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureUnitCode
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureValue
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureUnitCode
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureValue
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureUnitCode
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureValue
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureUnitCode
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation
+                                            activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation  # noqa: B950
                                             is not None
                                         )
                                         and (
                                             (
                                                 (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureValue
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureValue  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureUnitCode
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureUnitCode  # noqa: B950
                                                     is None
                                                 )
                                             )
                                             or (
                                                 (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureValue
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureValue  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureUnitCode
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureUnitCode  # noqa: B950
                                                     is None
                                                 )
                                             )
                                             or (
                                                 (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureValue
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureValue  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureUnitCode
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureUnitCode  # noqa: B950
                                                     is None
                                                 )
                                             )
                                             or (
                                                 (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureValue
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureValue  # noqa: B950
                                                     is not None
                                                 )
                                                 and (
-                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureUnitCode
+                                                    activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureUnitCode  # noqa: B950
                                                     is None
                                                 )
                                             )
@@ -1390,19 +1434,19 @@ class Document:
                                     for (
                                         detection_quantitation_limit
                                     ) in (
-                                        result.resultLabInformation.resultDetectionQuantitationLimit
+                                        result.resultLabInformation.resultDetectionQuantitationLimit  # noqa: B950
                                     ):
                                         if (
                                             (
-                                                detection_quantitation_limit.detectionQuantitationLimitMeasure
+                                                detection_quantitation_limit.detectionQuantitationLimitMeasure  # noqa: B950
                                                 is not None
                                             )
                                             and (
-                                                detection_quantitation_limit.detectionQuantitationLimitMeasure.measureValue
+                                                detection_quantitation_limit.detectionQuantitationLimitMeasure.measureValue  # noqa: B950
                                                 is not None
                                             )
                                             and (
-                                                detection_quantitation_limit.detectionQuantitationLimitMeasure.measureUnitCode
+                                                detection_quantitation_limit.detectionQuantitationLimitMeasure.measureUnitCode  # noqa: B950
                                                 is None
                                             )
                                         ):
@@ -1410,15 +1454,15 @@ class Document:
                                 if (
                                     (result.biologicalResultDescription is not None)
                                     and (
-                                        result.biologicalResultDescription.groupSummaryWeightMeasure
+                                        result.biologicalResultDescription.groupSummaryWeightMeasure  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        result.biologicalResultDescription.groupSummaryWeightMeasure.measureValue
+                                        result.biologicalResultDescription.groupSummaryWeightMeasure.measureValue  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        result.biologicalResultDescription.groupSummaryWeightMeasure.measureUnitCode
+                                        result.biologicalResultDescription.groupSummaryWeightMeasure.measureUnitCode  # noqa: B950
                                         is None
                                     )
                                 ):
@@ -1436,43 +1480,43 @@ class Document:
                                 and (
                                     (
                                         (
-                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure
+                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureValue
+                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure
+                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureValue
+                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure
+                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureValue
+                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
@@ -1486,29 +1530,29 @@ class Document:
                                 and (
                                     (
                                         (
-                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure
+                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureValue
+                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
                                     or (
                                         (
-                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure
+                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureValue
+                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
@@ -1519,15 +1563,15 @@ class Document:
                                 and (
                                     (
                                         (
-                                            monitoring_location.wellInformation.wellHoleDepthMeasure
+                                            monitoring_location.wellInformation.wellHoleDepthMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureValue
+                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureUnitCode
+                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
@@ -1537,11 +1581,11 @@ class Document:
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellDepthMeasure.measureValue
+                                            monitoring_location.wellInformation.wellDepthMeasure.measureValue  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellDepthMeasure.measureUnitCode
+                                            monitoring_location.wellInformation.wellDepthMeasure.measureUnitCode  # noqa: B950
                                             is None
                                         )
                                     )
@@ -1556,23 +1600,23 @@ class Document:
                         ) in project.projectMonitoringLocationWeighting:
                             if (
                                 (
-                                    project_monitoring_location_weighting.locationWeightingFactorMeasure
+                                    project_monitoring_location_weighting.locationWeightingFactorMeasure  # noqa: B950
                                     is not None
                                 )
                                 and (
-                                    project_monitoring_location_weighting.locationWeightingFactorMeasure.measureValue
+                                    project_monitoring_location_weighting.locationWeightingFactorMeasure.measureValue  # noqa: B950
                                     is not None
                                 )
                                 and (
-                                    project_monitoring_location_weighting.locationWeightingFactorMeasure.measureUnitCode
+                                    project_monitoring_location_weighting.locationWeightingFactorMeasure.measureUnitCode  # noqa: B950
                                     is None
                                 )
                             ):
                                 violations.append(data_rule_35.strip())
 
             data_rule_36 = """
-        Measure Value is required when Measurement Unit is supplied
-        """
+            Measure Value is required when Measurement Unit is supplied.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -1603,7 +1647,7 @@ class Document:
                                     is None
                                 )
                                 and (
-                                    result.resultDescription.resultDepthHeightMeasure.measureUnitCode
+                                    result.resultDescription.resultDepthHeightMeasure.measureUnitCode  # noqa: B950
                                     is not None
                                 )
                             ):
@@ -1618,11 +1662,11 @@ class Document:
                                         is not None
                                     )
                                     and (
-                                        activity.activityDescription.activityDepthHeightMeasure.measureValue
+                                        activity.activityDescription.activityDepthHeightMeasure.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        activity.activityDescription.activityDepthHeightMeasure.measureUnitCode
+                                        activity.activityDescription.activityDepthHeightMeasure.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 )
@@ -1632,25 +1676,25 @@ class Document:
                                         is not None
                                     )
                                     and (
-                                        activity.activityDescription.activityTopDepthHeightMeasure.measureValue
+                                        activity.activityDescription.activityTopDepthHeightMeasure.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        activity.activityDescription.activityTopDepthHeightMeasure.measureUnitCode
+                                        activity.activityDescription.activityTopDepthHeightMeasure.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 )
                                 or (
                                     (
-                                        activity.activityDescription.activityBottomDepthHeightMeasure
+                                        activity.activityDescription.activityBottomDepthHeightMeasure  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        activity.activityDescription.activityBottomDepthHeightMeasure.measureValue
+                                        activity.activityDescription.activityBottomDepthHeightMeasure.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        activity.activityDescription.activityBottomDepthHeightMeasure.measureUnitCode
+                                        activity.activityDescription.activityBottomDepthHeightMeasure.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 )
@@ -1674,125 +1718,125 @@ class Document:
                         or (
                             (activity.biologicalActivityDescription is not None)
                             and (
-                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation
+                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation  # noqa: B950
                                 is not None
                             )
                             and (
                                 (
                                     (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureValue
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureUnitCode
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionDuration.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 )
                                 or (
                                     (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureValue
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureUnitCode
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.collectionArea.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 )
                                 or (
                                     (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureValue
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureUnitCode
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachLengthMeasure.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 )
                                 or (
                                     (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureValue
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureUnitCode
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.reachWidthMeasure.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 )
                                 or (
                                     (
-                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation
+                                        activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation  # noqa: B950
                                         is not None
                                     )
                                     and (
                                         (
                                             (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure  # noqa: B950
                                                 is not None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureValue
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureValue  # noqa: B950
                                                 is None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureUnitCode
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netSurfaceAreaMeasure.measureUnitCode  # noqa: B950
                                                 is not None
                                             )
                                         )
                                         or (
                                             (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure  # noqa: B950
                                                 is not None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureValue
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureValue  # noqa: B950
                                                 is None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureUnitCode
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.netMeshSizeMeasure.measureUnitCode  # noqa: B950
                                                 is not None
                                             )
                                         )
                                         or (
                                             (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure  # noqa: B950
                                                 is not None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureValue
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureValue  # noqa: B950
                                                 is None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureUnitCode
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.boatSpeedMeasure.measureUnitCode  # noqa: B950
                                                 is not None
                                             )
                                         )
                                         or (
                                             (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure  # noqa: B950
                                                 is not None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureValue
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureValue  # noqa: B950
                                                 is None
                                             )
                                             and (
-                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureUnitCode
+                                                activity.biologicalActivityDescription.biologicalHabitatCollectionInformation.netInformation.currentSpeedMeasure.measureUnitCode  # noqa: B950
                                                 is not None
                                             )
                                         )
@@ -1829,15 +1873,15 @@ class Document:
                                 ):
                                     if (
                                         (
-                                            detection_quantitation_limit.detectionQuantitationLimitMeasure
+                                            detection_quantitation_limit.detectionQuantitationLimitMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            detection_quantitation_limit.detectionQuantitationLimitMeasure.measureValue
+                                            detection_quantitation_limit.detectionQuantitationLimitMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            detection_quantitation_limit.detectionQuantitationLimitMeasure.measureUnitCode
+                                            detection_quantitation_limit.detectionQuantitationLimitMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     ):
@@ -1849,11 +1893,11 @@ class Document:
                                     is not None
                                 )
                                 and (
-                                    result.biologicalResultDescription.groupSummaryWeightMeasure.measureValue
+                                    result.biologicalResultDescription.groupSummaryWeightMeasure.measureValue  # noqa: B950
                                     is None
                                 )
                                 and (
-                                    result.biologicalResultDescription.groupSummaryWeightMeasure.measureUnitCode
+                                    result.biologicalResultDescription.groupSummaryWeightMeasure.measureUnitCode  # noqa: B950
                                     is not None
                                 )
                             ):
@@ -1871,43 +1915,43 @@ class Document:
                                 and (
                                     (
                                         (
-                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure
+                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureValue
+                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationGeospatial.horizontalAccuracyMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     )
                                     or (
                                         (
-                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure
+                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureValue
+                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationGeospatial.verticalAccuracyMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     )
                                     or (
                                         (
-                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure
+                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureValue
+                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationGeospatial.verticalMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     )
@@ -1921,29 +1965,29 @@ class Document:
                                 and (
                                     (
                                         (
-                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure
+                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureValue
+                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationIdentity.drainageAreaMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     )
                                     or (
                                         (
-                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure
+                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureValue
+                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureUnitCode
+                                            monitoring_location.monitoringLocationIdentity.contributingDrainageAreaMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     )
@@ -1954,15 +1998,15 @@ class Document:
                                 and (
                                     (
                                         (
-                                            monitoring_location.wellInformation.wellHoleDepthMeasure
+                                            monitoring_location.wellInformation.wellHoleDepthMeasure  # noqa: B950
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureValue
+                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureUnitCode
+                                            monitoring_location.wellInformation.wellHoleDepthMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     )
@@ -1972,11 +2016,11 @@ class Document:
                                             is not None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellDepthMeasure.measureValue
+                                            monitoring_location.wellInformation.wellDepthMeasure.measureValue  # noqa: B950
                                             is None
                                         )
                                         and (
-                                            monitoring_location.wellInformation.wellDepthMeasure.measureUnitCode
+                                            monitoring_location.wellInformation.wellDepthMeasure.measureUnitCode  # noqa: B950
                                             is not None
                                         )
                                     )
@@ -1992,23 +2036,24 @@ class Document:
                             ) in project.projectMonitoringLocationWeighting:
                                 if (
                                     (
-                                        project_monitoring_location_weighting.locationWeightingFactorMeasure
+                                        project_monitoring_location_weighting.locationWeightingFactorMeasure  # noqa: B950
                                         is not None
                                     )
                                     and (
-                                        project_monitoring_location_weighting.locationWeightingFactorMeasure.measureValue
+                                        project_monitoring_location_weighting.locationWeightingFactorMeasure.measureValue  # noqa: B950
                                         is None
                                     )
                                     and (
-                                        project_monitoring_location_weighting.locationWeightingFactorMeasure.measureUnitCode
+                                        project_monitoring_location_weighting.locationWeightingFactorMeasure.measureUnitCode  # noqa: B950
                                         is not None
                                     )
                                 ):
                                     violations.append(data_rule_36.strip())
 
             data_rule_37 = """
-        Target Count is required when the Activity Assemblage is "Benthic Macroinvertebrates"
-        """
+            Target Count is required when the Activity Assemblage is
+            "Benthic Macroinvertebrates"
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -2030,8 +2075,9 @@ class Document:
                                 violations.append(data_rule_37.strip())
 
             data_rule_38 = """
-        Percent Sample Processed Numeric is required when the Activity Assemblage is "Benthic Macroinvertebrates"
-        """
+            Percent Sample Processed Numeric is required when the Activity Assemblage is
+            "Benthic Macroinvertebrates"
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -2054,8 +2100,8 @@ class Document:
                                 violations.append(data_rule_38.strip())
 
             data_rule_39 = """
-        Percent Sample Processed Numeric must be a positive number between 0 and 1"
-        """
+            Percent Sample Processed Numeric must be a positive number between 0 and 1"
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -2085,13 +2131,14 @@ class Document:
 
             # pylint: disable=unused-variable
             data_rule_40 = """
-        Removed (v3.0) Sample Collection Method is required when Activity Type Code contains the word "Sample"
-        """
+            Removed (v3.0) Sample Collection Method is required when Activity Type Code
+            contains the word "Sample"
+            """  # noqa: F841
             # Not enforced because rule indicates it was removed.
 
             data_rule_41 = """
-        Statistical N-Value Numeric must be a positive whole number
-        """
+            Statistical N-Value Numeric must be a positive whole number.
+            """
             if (
                 (payload.wqx is not None)
                 and (payload.wqx.organization is not None)
@@ -2123,8 +2170,10 @@ class Document:
         return violations
 
     def list_xsd_rule_violations(self) -> List[str]:
-        """This function is not yet implemented. XSD rule violations will cause
-        generateXML to raise a WQXException, which should be handled when called."""
+        """
+        This function is not yet implemented. XSD rule violations will cause generateXML
+        to raise a WQXException, which should be handled when called.
+        """
         violations: List[str] = []
 
         return violations
@@ -2138,7 +2187,8 @@ class Document:
 
         if len(violations) > 0:
             raise WQXException(
-                f"The document contains {len(violations)} data rule violations. Use list_rule_violations function for list."
+                f"The document contains {len(violations)} data rule violations. Use "
+                "list_rule_violations function for list."
             )
 
         if self.__id is None:

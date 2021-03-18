@@ -460,7 +460,7 @@ class ResultDescription:
             None if val is None else RecordIdentifierUserSupplied(val)
         )
 
-    def generateXML(self, name: str = "ResultDescription") -> str:
+    def generateXML(self, name: str = "ResultDescription") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
         line = doc.line

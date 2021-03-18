@@ -261,7 +261,7 @@ class ResultLabInformation:
             None if val is None else TaxonomistAccreditationAuthorityName(val)
         )
 
-    def generateXML(self, name: str = "ResultLabInformation") -> str:
+    def generateXML(self, name: str = "ResultLabInformation") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
         line = doc.line

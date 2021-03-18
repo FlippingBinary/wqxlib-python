@@ -35,7 +35,7 @@ class ActivityLocation:
         sourceMapScale: SourceMapScale = None,
         horizontalAccuracyMeasure: MeasureCompact = None,
         horizontalCollectionMethodName: HorizontalCollectionMethodName = None,
-        horizontalCoordinateReferenceSystemDatumName: HorizontalCoordinateReferenceSystemDatumName = None,
+        horizontalCoordinateReferenceSystemDatumName: HorizontalCoordinateReferenceSystemDatumName = None,  # noqa: B950
         activityLocationDescriptionText: ActivityLocationDescriptionText = None
     ):
         if isinstance(o, ActivityLocation):
@@ -124,7 +124,7 @@ class ActivityLocation:
     def horizontalCoordinateReferenceSystemDatumName(
         self, val: HorizontalCoordinateReferenceSystemDatumName
     ) -> None:
-        self.__horizontalCoordinateReferenceSystemDatumName = HorizontalCoordinateReferenceSystemDatumName(
+        self.__horizontalCoordinateReferenceSystemDatumName = HorizontalCoordinateReferenceSystemDatumName(  # noqa: B950
             val
         )
 

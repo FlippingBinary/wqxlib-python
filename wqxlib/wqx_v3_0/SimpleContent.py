@@ -53,8 +53,9 @@ class ActivityGroupTypeCode(str):
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 50:
-            raise ValueError("ActivityGroupTypeCode must be between 1 and 50 "
-            "characters.")
+            raise ValueError(
+                "ActivityGroupTypeCode must be between 1 and 50 " "characters."
+            )
 
 
 class ActivityIdentifier(str):
@@ -244,8 +245,9 @@ class AssemblageSampledName(str):
 
     def __init__(self, o=""):
         if len(o) > 50:
-            raise ValueError("AssemblageSampledName must be between 0 and 50 "
-            "characters.")
+            raise ValueError(
+                "AssemblageSampledName must be between 0 and 50 " "characters."
+            )
 
 
 class BiasValue(str):
@@ -290,8 +292,9 @@ class BinaryObjectFileName(str):
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 255:
-            raise ValueError("BinaryObjectFileName must be between 1 and 255 "
-            "characters.")
+            raise ValueError(
+                "BinaryObjectFileName must be between 1 and 255 " "characters."
+            )
 
 
 class BinaryObjectFileTypeCode(str):
@@ -585,8 +588,9 @@ class GearProcedureUnitCode(str):
 
     def __init__(self, o=""):
         if len(o) > 35:
-            raise ValueError("GearProcedureUnitCode must be between 0 and 35 "
-            "characters.")
+            raise ValueError(
+                "GearProcedureUnitCode must be between 0 and 35 " "characters."
+            )
 
 
 class GroupSummaryCount(str):
@@ -831,12 +835,12 @@ class LatitudeMeasure(Decimal):
     The measure of the angular distance on a meridian north or south of the equator.
     """
 
-    def __new__(self, o):
+    def __new__(cls, o):
         s = str(o).split(".")
         totalDigits = 12
         fractionDigits = 10
         s[1] = s[1][0 : min(len(s[1]), fractionDigits, max(totalDigits - len(s[0]), 0))]
-        return super().__new__(self, ".".join(s))
+        return super().__new__(cls, ".".join(s))
 
 
 class LocalityName(str):
@@ -875,12 +879,12 @@ class LongitudeMeasure(float):
     The measure of the angular distance on a meridian east or west of the prime meridian.
     """
 
-    def __new__(self, o):
+    def __new__(cls, o):
         s = str(o).split(".")
         totalDigits = 14
         fractionDigits = 11
         s[1] = s[1][0 : min(len(s[1]), fractionDigits, max(totalDigits - len(s[0]), 0))]
-        return super().__new__(self, ".".join(s))
+        return super().__new__(cls, ".".join(s))
 
 
 class LowerConfidenceLimitValue(str):
@@ -2019,14 +2023,14 @@ class TribalLandIndicator(str):
     An indicator denoting whether the location is on a tribal land.
     """
 
-    def __new__(self, o: Union[str, bool]):
+    def __new__(cls, o: Union[str, bool]):
         if isinstance(o, str):
             if o.lower() in ["true", "t", "yes", "y", "1"]:
-                return super().__new__(self, "true")
+                return super().__new__(cls, "true")
             else:
-                return super().__new__(self, "false")
+                return super().__new__(cls, "false")
         else:
-            return super().__new__(self, "true" if bool(o) else "false")
+            return super().__new__(cls, "true" if bool(o) else "false")
 
     def __bool__(self):
         if self == "true":

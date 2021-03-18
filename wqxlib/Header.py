@@ -162,14 +162,16 @@ class Header:
             for x in val:
                 if not isinstance(x, str):
                     raise WQXException(
-                        "Attribute 'notification' must be a list of valid URIs or a single URI, if provided."
+                        "Attribute 'notification' must be a list of valid URIs or a "
+                        "single URI, if provided."
                     )
                 r.append(x)
             self.__notification = r
         else:
             if not isinstance(val, str):
                 raise WQXException(
-                    "Attribute 'notification' must be a list of valid URIs or a single URI, if provided."
+                    "Attribute 'notification' must be a list of valid URIs or a single "
+                    "URI, if provided."
                 )
             self.__notification = [val]
 
@@ -195,7 +197,7 @@ class Header:
             )
         self.__property = {} if val is None else val
 
-    def generateXML(self, name: str = "Header") -> str:
+    def generateXML(self, name: str = "Header") -> str:  # noqa: C901
         doc = Doc()
         tag = doc.tag
         line = doc.line

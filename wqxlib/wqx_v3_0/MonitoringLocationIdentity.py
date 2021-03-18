@@ -231,7 +231,7 @@ class MonitoringLocationIdentity:
             None if val is None else MeasureCompact(val)
         )
 
-    def generateXML(self, name: str = "MonitoringLocationIdentity") -> str:
+    def generateXML(self, name: str = "MonitoringLocationIdentity") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
         line = doc.line

@@ -45,10 +45,10 @@ class MonitoringLocationGeospatial:
         horizontalAccuracyMeasure: MeasureCompact = None,
         verticalAccuracyMeasure: MeasureCompact = None,
         horizontalCollectionMethodName: HorizontalCollectionMethodName = None,
-        horizontalCoordinateReferenceSystemDatumName: HorizontalCoordinateReferenceSystemDatumName = None,
+        horizontalCoordinateReferenceSystemDatumName: HorizontalCoordinateReferenceSystemDatumName = None,  # noqa: B950
         verticalMeasure: MeasureCompact = None,
         verticalCollectionMethodName: VerticalCollectionMethodName = None,
-        verticalCoordinateReferenceSystemDatumName: VerticalCoordinateReferenceSystemDatumName = None,
+        verticalCoordinateReferenceSystemDatumName: VerticalCoordinateReferenceSystemDatumName = None,  # noqa: B950
         countryCode: CountryCode = None,
         stateCode: StateCode = None,
         countyCode: CountyCode = None
@@ -253,7 +253,9 @@ class MonitoringLocationGeospatial:
     def countyCode(self, val: CountyCode) -> None:
         self.__countyCode = None if val is None else CountyCode(val)
 
-    def generateXML(self, name: str = "MonitoringLocationGeospatial") -> str:
+    def generateXML(  # noqa: C901
+        self, name: str = "MonitoringLocationGeospatial"
+    ) -> str:
         doc = Doc()
         asis = doc.asis
         line = doc.line

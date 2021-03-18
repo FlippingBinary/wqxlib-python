@@ -1,7 +1,3 @@
-from io import BytesIO
-from typing import List
-from zipfile import ZipFile
-
 from .wqx_v3_0 import (
     ActivityDescription,
     ElectronicAddress,

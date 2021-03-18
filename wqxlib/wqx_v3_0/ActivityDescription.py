@@ -393,7 +393,7 @@ class ActivityDescription:
         """
         self.__activityCommentText = None if val is None else CommentText(val)
 
-    def generateXML(self, name: str = "ActivityDescription") -> str:
+    def generateXML(self, name: str = "ActivityDescription") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
         line = doc.line

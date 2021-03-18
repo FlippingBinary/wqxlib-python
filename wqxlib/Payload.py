@@ -1,6 +1,6 @@
 from enum import Enum
 
-from yattag import Doc, indent
+from yattag import Doc
 
 from .exceptions import WQXException
 from .wqx_v3_0.WQX import WQX
@@ -14,7 +14,9 @@ class OperationType(Enum):
 
 
 class Payload:
-    """The Payload section of the document contains the WQX data."""
+    """
+    The Payload section of the document contains the WQX data.
+    """
 
     __operation: OperationType
     __wqx: WQX
@@ -78,7 +80,8 @@ class Payload:
     def wqxUpdateIdentifiers(self, val: WQXUpdateIdentifiers) -> None:
         if val is not None and not isinstance(val, WQXUpdateIdentifiers):
             raise WQXException(
-                "Attribute 'wqxUpdateIdentifiers' must be a WQXUpdateIdentifiers object, if provided."
+                "Attribute 'wqxUpdateIdentifiers' must be a WQXUpdateIdentifiers object, "
+                "if provided."
             )
         self.__wqxUpdateIdentifiers = None if val is None else WQXUpdateIdentifiers(val)
 
@@ -94,7 +97,7 @@ class Payload:
             )
         self.__wqxDelete = None if val is None else WQXDelete(val)
 
-    def generateXML(self, name: str = "Payload") -> str:
+    def generateXML(self, name: str = "Payload") -> str:  # noqa: C901
         doc = Doc()
         asis = doc.asis
 
@@ -104,19 +107,23 @@ class Payload:
             if self.__operation == OperationType.UPDATE_INSERT:
                 if self.__wqxDelete is not None:
                     raise WQXException(
-                        "Attribute 'wqxDelete' must be set to None for 'Update-Insert' operation."
+                        "Attribute 'wqxDelete' must be set to None for 'Update-Insert' "
+                        "operation."
                     )
                 if self.__wqx is None and self.__wqxUpdateIdentifiers is None:
                     raise WQXException(
-                        "One of attributes 'wqx' or 'wqxUpdateIdentifiers' are required for 'Update-Insert' operation."
+                        "One of attributes 'wqx' or 'wqxUpdateIdentifiers' are required "
+                        "for 'Update-Insert' operation."
                     )
                 elif self.__wqx is not None and self.__wqxUpdateIdentifiers is not None:
                     raise WQXException(
-                        "One of attributes 'wqx' or 'wqxUpdateIdentifiers' must be set to None for 'Update-Insert' operation."
+                        "One of attributes 'wqx' or 'wqxUpdateIdentifiers' must be set "
+                        "to None for 'Update-Insert' operation."
                     )
                 elif self.__wqx is None and self.__wqxUpdateIdentifiers is None:
                     raise WQXException(
-                        "One of attributes 'wqx' or 'wqxUpdateIdentifiers' must be set for 'Update-Insert' operation."
+                        "One of attributes 'wqx' or 'wqxUpdateIdentifiers' must be set "
+                        "for 'Update-Insert' operation."
                     )
                 elif self.__wqx is not None and self.__wqxUpdateIdentifiers is None:
                     asis(self.__wqx.generateXML("WQX"))
@@ -129,7 +136,8 @@ class Payload:
                     )
                 if self.__wqxUpdateIdentifiers is not None:
                     raise WQXException(
-                        "Attribute 'wqxUpdateIdentifiers' must be set to None for 'Delete' operation."
+                        "Attribute 'wqxUpdateIdentifiers' must be set to None for "
+                        "'Delete' operation."
                     )
                 if self.__wqxDelete is None:
                     raise WQXException(
