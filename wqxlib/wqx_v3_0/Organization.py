@@ -29,7 +29,7 @@ class Organization:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         organizationDescription: OrganizationDescription = None,
         electronicAddress: List[ElectronicAddress] = None,

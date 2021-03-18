@@ -14,7 +14,7 @@ class IdentifierUpdate:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         oldIdentifier: OldIdentifier = None,
         newIdentifier: NewIdentifier = None
@@ -76,7 +76,7 @@ class UpdateIdentifiers:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         organizationIdentifier: OrganizationIdentifier = None,
         projectIdentifierUpdate: List[IdentifierUpdate] = [],

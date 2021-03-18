@@ -3,9 +3,14 @@ from typing import List, Union
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (ActivityGroupIdentifier, ActivityIdentifier,
-                            IndexIdentifier, MonitoringLocationIdentifier,
-                            OrganizationIdentifier, ProjectIdentifier)
+from .SimpleContent import (
+    ActivityGroupIdentifier,
+    ActivityIdentifier,
+    IndexIdentifier,
+    MonitoringLocationIdentifier,
+    OrganizationIdentifier,
+    ProjectIdentifier,
+)
 
 
 class OrganizationDelete:
@@ -20,7 +25,7 @@ class OrganizationDelete:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         organizationIdentifier: OrganizationIdentifier = None,
         projectIdentifier: List[ProjectIdentifier] = None,
@@ -142,9 +147,7 @@ class OrganizationDelete:
         return self.__indexIdentifier
 
     @indexIdentifier.setter
-    def indexIdentifier(
-        self, val: Union[IndexIdentifier, List[IndexIdentifier]]
-    ) -> None:
+    def indexIdentifier(self, val: Union[IndexIdentifier, List[IndexIdentifier]]) -> None:
         if val is None:
             self.__indexIdentifier = []
         elif isinstance(val, list):

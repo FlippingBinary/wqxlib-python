@@ -1,9 +1,12 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (OrganizationDescriptionText,
-                            OrganizationFormalName, OrganizationIdentifier,
-                            TribalCode)
+from .SimpleContent import (
+    OrganizationDescriptionText,
+    OrganizationFormalName,
+    OrganizationIdentifier,
+    TribalCode,
+)
 
 
 class OrganizationDescription:
@@ -16,7 +19,7 @@ class OrganizationDescription:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         organizationIdentifier: OrganizationIdentifier = None,
         organizationFormalName: OrganizationFormalName = None,

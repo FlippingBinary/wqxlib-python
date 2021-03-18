@@ -3,11 +3,16 @@ from yattag import Doc
 from ..exceptions import WQXException
 from .BibliographicReference import BibliographicReference
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (CommentText, LocationCategoryName,
-                            LocationStatusName, MonitoringLocationIdentifier,
-                            ReferenceLocationEndDate,
-                            ReferenceLocationStartDate,
-                            ReferenceLocationTypeCode, StatisticalStratumText)
+from .SimpleContent import (
+    CommentText,
+    LocationCategoryName,
+    LocationStatusName,
+    MonitoringLocationIdentifier,
+    ReferenceLocationEndDate,
+    ReferenceLocationStartDate,
+    ReferenceLocationTypeCode,
+    StatisticalStratumText,
+)
 
 
 class ProjectMonitoringLocationWeighting:
@@ -26,7 +31,7 @@ class ProjectMonitoringLocationWeighting:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         monitoringLocationIdentifier: MonitoringLocationIdentifier = None,
         locationWeightingFactorMeasure: MeasureCompact = None,
@@ -54,9 +59,7 @@ class ProjectMonitoringLocationWeighting:
         elif isinstance(o, dict):
             # Assign attributes from dictionary with typechecking
             self.monitoringLocationIdentifier = o.get("monitoringLocationIdentifier")
-            self.locationWeightingFactorMeasure = o.get(
-                "locationWeightingFactorMeasure"
-            )
+            self.locationWeightingFactorMeasure = o.get("locationWeightingFactorMeasure")
             self.statisticalStratumText = o.get("statisticalStratumText")
             self.locationCategoryName = o.get("locationCategoryName")
             self.locationStatusName = o.get("locationStatusName")

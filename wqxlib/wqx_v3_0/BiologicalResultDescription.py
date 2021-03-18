@@ -5,12 +5,16 @@ from yattag import Doc
 from ..exceptions import WQXException
 from .FrequencyClassInformation import FrequencyClassInformation
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (BiologicalIndividualIdentifier,
-                            BiologicalIntentName, GroupSummaryCount,
-                            SampleTissueAnatomyName, SubjectTaxonomicName,
-                            SubjectTaxonomicNameUserSupplied,
-                            SubjectTaxonomicNameUserSuppliedReferenceText,
-                            UnidentifiedSpeciesIdentifier)
+from .SimpleContent import (
+    BiologicalIndividualIdentifier,
+    BiologicalIntentName,
+    GroupSummaryCount,
+    SampleTissueAnatomyName,
+    SubjectTaxonomicName,
+    SubjectTaxonomicNameUserSupplied,
+    SubjectTaxonomicNameUserSuppliedReferenceText,
+    UnidentifiedSpeciesIdentifier,
+)
 from .TaxonomicDetails import TaxonomicDetails
 
 
@@ -31,7 +35,7 @@ class BiologicalResultDescription:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         biologicalIntentName: BiologicalIntentName = None,
         biologicalIndividualIdentifier: BiologicalIndividualIdentifier = None,
@@ -63,9 +67,7 @@ class BiologicalResultDescription:
         elif isinstance(o, dict):
             # Assign attributes from dictionary with typechecking
             self.biologicalIntentName = o.get("biologicalIntentName")
-            self.biologicalIndividualIdentifier = o.get(
-                "biologicalIndividualIdentifier"
-            )
+            self.biologicalIndividualIdentifier = o.get("biologicalIndividualIdentifier")
             self.subjectTaxonomicName = o.get("subjectTaxonomicName")
             self.subjectTaxonomicNameUserSupplied = o.get(
                 "subjectTaxonomicNameUserSupplied"
@@ -108,9 +110,7 @@ class BiologicalResultDescription:
         return self.__biologicalIndividualIdentifier
 
     @biologicalIndividualIdentifier.setter
-    def biologicalIndividualIdentifier(
-        self, val: BiologicalIndividualIdentifier
-    ) -> None:
+    def biologicalIndividualIdentifier(self, val: BiologicalIndividualIdentifier) -> None:
         self.__biologicalIndividualIdentifier = (
             None if val is None else BiologicalIndividualIdentifier(val)
         )
@@ -243,8 +243,7 @@ class BiologicalResultDescription:
                 )
             if self.__unidentifiedSpeciesIdentifier is not None:
                 line(
-                    "UnidentifiedSpeciesIdentifier",
-                    self.__unidentifiedSpeciesIdentifier,
+                    "UnidentifiedSpeciesIdentifier", self.__unidentifiedSpeciesIdentifier,
                 )
             if self.__sampleTissueAnatomyName is not None:
                 line("SampleTissueAnatomyName", self.__sampleTissueAnatomyName)

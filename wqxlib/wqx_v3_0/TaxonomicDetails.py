@@ -4,11 +4,16 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .BibliographicReference import BibliographicReference
-from .SimpleContent import (CellFormName, CellShapeName,
-                            FunctionalFeedingGroupName, HabitName,
-                            TaxonomicPollutionTolerance,
-                            TaxonomicPollutionToleranceScaleText,
-                            TrophicLevelName, VoltinismName)
+from .SimpleContent import (
+    CellFormName,
+    CellShapeName,
+    FunctionalFeedingGroupName,
+    HabitName,
+    TaxonomicPollutionTolerance,
+    TaxonomicPollutionToleranceScaleText,
+    TrophicLevelName,
+    VoltinismName,
+)
 
 
 class TaxonomicDetails:
@@ -26,7 +31,7 @@ class TaxonomicDetails:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         cellFormName: CellFormName = None,
         cellShapeName: CellShapeName = None,

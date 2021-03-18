@@ -1,8 +1,12 @@
 from yattag import Doc
 
-from .SimpleContent import (BiasValue, ConfidenceIntervalValue,
-                            LowerConfidenceLimitValue, PrecisionValue,
-                            UpperConfidenceLimitValue)
+from .SimpleContent import (
+    BiasValue,
+    ConfidenceIntervalValue,
+    LowerConfidenceLimitValue,
+    PrecisionValue,
+    UpperConfidenceLimitValue,
+)
 
 
 class DataQuality:
@@ -16,7 +20,7 @@ class DataQuality:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         precisionValue: PrecisionValue = None,
         biasValue: BiasValue = None,

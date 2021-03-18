@@ -16,7 +16,7 @@ class NetInformation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         netTypeName: NetTypeName = None,
         netSurfaceAreaMeasure: MeasureCompact = None,

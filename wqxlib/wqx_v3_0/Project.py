@@ -4,11 +4,15 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .AttachedBinaryObject import AttachedBinaryObject
-from .ProjectMonitoringLocationWeighting import \
-    ProjectMonitoringLocationWeighting
-from .SimpleContent import (ProjectDescriptionText, ProjectIdentifier,
-                            ProjectName, QAPPApprovalAgencyName,
-                            QAPPApprovedIndicator, SamplingDesignTypeCode)
+from .ProjectMonitoringLocationWeighting import ProjectMonitoringLocationWeighting
+from .SimpleContent import (
+    ProjectDescriptionText,
+    ProjectIdentifier,
+    ProjectName,
+    QAPPApprovalAgencyName,
+    QAPPApprovedIndicator,
+    SamplingDesignTypeCode,
+)
 
 
 class Project:
@@ -25,7 +29,7 @@ class Project:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         projectIdentifier: ProjectIdentifier = None,
         projectName: ProjectName = None,
@@ -115,9 +119,7 @@ class Project:
 
     @qAPPApprovedIndicator.setter
     def qAPPApprovedIndicator(self, val: QAPPApprovedIndicator) -> None:
-        self.__qAPPApprovedIndicator = (
-            None if val is None else QAPPApprovedIndicator(val)
-        )
+        self.__qAPPApprovedIndicator = None if val is None else QAPPApprovedIndicator(val)
 
     @property
     def qAPPApprovalAgencyName(self) -> QAPPApprovalAgencyName:

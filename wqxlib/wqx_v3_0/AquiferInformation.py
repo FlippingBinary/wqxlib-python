@@ -1,8 +1,12 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (LocalAquiferCode, LocalAquiferCodeContext,
-                            LocalAquiferDescriptionText, LocalAquiferName)
+from .SimpleContent import (
+    LocalAquiferCode,
+    LocalAquiferCodeContext,
+    LocalAquiferDescriptionText,
+    LocalAquiferName,
+)
 
 
 class AquiferInformation:
@@ -15,7 +19,7 @@ class AquiferInformation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         localAquiferCode: LocalAquiferCode = None,
         localAquiferCodeContext: LocalAquiferCodeContext = None,

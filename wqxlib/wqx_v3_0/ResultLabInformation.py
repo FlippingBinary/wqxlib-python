@@ -3,13 +3,17 @@ from typing import List, Union
 from yattag import Doc
 
 from .DetectionQuantitationLimit import DetectionQuantitationLimit
-from .SimpleContent import (AnalysisEndDate, AnalysisStartDate,
-                            LaboratoryAccreditationAuthorityName,
-                            LaboratoryAccreditationIndicator,
-                            LaboratoryCommentText, LaboratoryName,
-                            LaboratorySampleSplitRatio,
-                            TaxonomistAccreditationAuthorityName,
-                            TaxonomistAccreditationIndicator)
+from .SimpleContent import (
+    AnalysisEndDate,
+    AnalysisStartDate,
+    LaboratoryAccreditationAuthorityName,
+    LaboratoryAccreditationIndicator,
+    LaboratoryCommentText,
+    LaboratoryName,
+    LaboratorySampleSplitRatio,
+    TaxonomistAccreditationAuthorityName,
+    TaxonomistAccreditationIndicator,
+)
 from .WQXTime import WQXTime
 
 
@@ -31,7 +35,7 @@ class ResultLabInformation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         laboratoryName: LaboratoryName = None,
         analysisStartDate: AnalysisStartDate = None,
@@ -157,9 +161,7 @@ class ResultLabInformation:
 
     @laboratoryCommentText.setter
     def laboratoryCommentText(self, val: LaboratoryCommentText) -> None:
-        self.__laboratoryCommentText = (
-            None if val is None else LaboratoryCommentText(val)
-        )
+        self.__laboratoryCommentText = None if val is None else LaboratoryCommentText(val)
 
     @property
     def resultDetectionQuantitationLimit(self) -> List[DetectionQuantitationLimit]:

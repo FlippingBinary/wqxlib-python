@@ -12,7 +12,7 @@ class AttachedBinaryObject:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         binaryObjectFileName: BinaryObjectFileName = None,
         binaryObjectFileTypeCode: BinaryObjectFileTypeCode = None

@@ -3,8 +3,7 @@ from typing import List, Union
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (MeasureQualifierCode, MeasureUnitCode,
-                            ResultMeasureValue)
+from .SimpleContent import MeasureQualifierCode, MeasureUnitCode, ResultMeasureValue
 
 
 class Measure:
@@ -16,7 +15,7 @@ class Measure:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         resultMeasureValue: ResultMeasureValue = None,
         measureUnitCode: MeasureUnitCode = None,

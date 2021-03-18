@@ -1,7 +1,10 @@
 from yattag import Doc
 
-from .SimpleContent import (TelephoneExtensionNumberText, TelephoneNumberText,
-                            TelephoneNumberTypeName)
+from .SimpleContent import (
+    TelephoneExtensionNumberText,
+    TelephoneNumberText,
+    TelephoneNumberTypeName,
+)
 
 
 class Telephonic:
@@ -13,7 +16,7 @@ class Telephonic:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         telephoneNumberText: TelephoneNumberText = None,
         telephoneNumberTypeName: TelephoneNumberTypeName = None,
@@ -74,8 +77,6 @@ class Telephonic:
             if self.__telephoneNumberTypeName is not None:
                 line("TelephoneNumberTypeName", self.__telephoneNumberTypeName)
             if self.__telephoneExtensionNumberText is not None:
-                line(
-                    "TelephoneExtensionNumberText", self.__telephoneExtensionNumberText
-                )
+                line("TelephoneExtensionNumberText", self.__telephoneExtensionNumberText)
 
         return doc.getvalue()

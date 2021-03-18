@@ -2,8 +2,10 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (DetectionQuantitationLimitCommentText,
-                            DetectionQuantitationLimitTypeName)
+from .SimpleContent import (
+    DetectionQuantitationLimitCommentText,
+    DetectionQuantitationLimitTypeName,
+)
 
 
 class DetectionQuantitationLimit:
@@ -15,7 +17,7 @@ class DetectionQuantitationLimit:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         detectionQuantitationLimitTypeName: DetectionQuantitationLimitTypeName = None,
         detectionQuantitationLimitMeasure: MeasureCompact = None,
@@ -26,9 +28,7 @@ class DetectionQuantitationLimit:
             self.__detectionQuantitationLimitTypeName = (
                 o.detectionQuantitationLimitTypeName
             )
-            self.__detectionQuantitationLimitMeasure = (
-                o.detectionQuantitationLimitMeasure
-            )
+            self.__detectionQuantitationLimitMeasure = o.detectionQuantitationLimitMeasure
             self.__detectionQuantitationLimitCommentText = (
                 o.detectionQuantitationLimitCommentText
             )

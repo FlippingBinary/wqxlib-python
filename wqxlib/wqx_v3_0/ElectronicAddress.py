@@ -11,7 +11,7 @@ class ElectronicAddress:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         electronicAddressText: ElectronicAddressText = None,
         electronicAddressTypeName: ElectronicAddressTypeName = None
@@ -35,9 +35,7 @@ class ElectronicAddress:
 
     @electronicAddressText.setter
     def electronicAddressText(self, val: ElectronicAddressText) -> None:
-        self.__electronicAddressText = (
-            None if val is None else ElectronicAddressText(val)
-        )
+        self.__electronicAddressText = None if val is None else ElectronicAddressText(val)
 
     @property
     def electronicAddressTypeName(self) -> ElectronicAddressTypeName:

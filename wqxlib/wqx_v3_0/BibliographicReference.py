@@ -1,9 +1,14 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (ResourceCreatorName, ResourceDate,
-                            ResourceIdentifier, ResourcePublisherName,
-                            ResourceSubjectText, ResourceTitleName)
+from .SimpleContent import (
+    ResourceCreatorName,
+    ResourceDate,
+    ResourceIdentifier,
+    ResourcePublisherName,
+    ResourceSubjectText,
+    ResourceTitleName,
+)
 
 
 class BibliographicReference:
@@ -18,7 +23,7 @@ class BibliographicReference:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         resourceTitleName: ResourceTitleName = None,
         resourceCreatorName: ResourceCreatorName = None,
@@ -82,9 +87,7 @@ class BibliographicReference:
 
     @ResourcePublisherName.setter
     def ResourcePublisherName(self, val: ResourcePublisherName) -> None:
-        self.__ResourcePublisherName = (
-            None if val is None else ResourcePublisherName(val)
-        )
+        self.__ResourcePublisherName = None if val is None else ResourcePublisherName(val)
 
     @property
     def ResourceDate(self) -> ResourceDate:

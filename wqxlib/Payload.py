@@ -26,7 +26,7 @@ class Payload:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         operation=None,
         wqx=None,
@@ -121,9 +121,7 @@ class Payload:
                 elif self.__wqx is not None and self.__wqxUpdateIdentifiers is None:
                     asis(self.__wqx.generateXML("WQX"))
                 elif self.__wqxUpdateIdentifiers is not None and self.__wqx is None:
-                    asis(
-                        self.__wqxUpdateIdentifiers.generateXML("WQXUpdateIdentifiers")
-                    )
+                    asis(self.__wqxUpdateIdentifiers.generateXML("WQXUpdateIdentifiers"))
             elif self.__operation == OperationType.DELETE:
                 if self.__wqx is not None:
                     raise WQXException(

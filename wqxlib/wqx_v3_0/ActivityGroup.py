@@ -1,8 +1,12 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (ActivityGroupIdentifier, ActivityGroupName,
-                            ActivityGroupTypeCode, ActivityIdentifier)
+from .SimpleContent import (
+    ActivityGroupIdentifier,
+    ActivityGroupName,
+    ActivityGroupTypeCode,
+    ActivityIdentifier,
+)
 
 
 class ActivityGroup:
@@ -16,7 +20,7 @@ class ActivityGroup:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         activityGroupIdentifier: ActivityGroupIdentifier = None,
         activityGroupName: ActivityGroupName = None,
@@ -70,9 +74,7 @@ class ActivityGroup:
 
     @activityGroupTypeCode.setter
     def activityGroupTypeCode(self, val: ActivityGroupTypeCode) -> None:
-        self.__activityGroupTypeCode = (
-            None if val is None else ActivityGroupTypeCode(val)
-        )
+        self.__activityGroupTypeCode = None if val is None else ActivityGroupTypeCode(val)
 
     @property
     def activityIdentifier(self) -> ActivityIdentifier:

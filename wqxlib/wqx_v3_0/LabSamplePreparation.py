@@ -1,8 +1,11 @@
 from yattag import Doc
 
 from .ReferenceMethod import ReferenceMethod
-from .SimpleContent import (PreparationEndDate, PreparationStartDate,
-                            SubstanceDilutionFactor)
+from .SimpleContent import (
+    PreparationEndDate,
+    PreparationStartDate,
+    SubstanceDilutionFactor,
+)
 from .WQXTime import WQXTime
 
 
@@ -18,7 +21,7 @@ class LabSamplePreparation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         labSamplePreparationMethod: ReferenceMethod = None,
         preparationStartDate: PreparationStartDate = None,
@@ -60,9 +63,7 @@ class LabSamplePreparation:
     @labSamplePreparationMethod.setter
     def labSamplePreparationMethod(self, val: ReferenceMethod) -> None:
         """Identifying information about the method followed to prepare a sample for analysis."""
-        self.__labSamplePreparationMethod = (
-            None if val is None else ReferenceMethod(val)
-        )
+        self.__labSamplePreparationMethod = None if val is None else ReferenceMethod(val)
 
     @property
     def preparationStartDate(self) -> PreparationStartDate:

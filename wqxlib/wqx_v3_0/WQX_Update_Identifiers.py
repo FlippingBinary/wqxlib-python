@@ -11,7 +11,9 @@ class WQXUpdateIdentifiers:
 
     __updateIdentifiers: List[UpdateIdentifiers]
 
-    def __init__(self, o:dict=None, *, updateIdentifiers: List[UpdateIdentifiers] = None):
+    def __init__(
+        self, o: dict = None, *, updateIdentifiers: List[UpdateIdentifiers] = None
+    ):
         if isinstance(o, WQXUpdateIdentifiers):
             # Assign attributes from object without typechecking
             self.__updateIdentifiers = o.updateIdentifiers

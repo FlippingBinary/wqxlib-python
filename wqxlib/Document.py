@@ -30,7 +30,7 @@ class Document:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         id: ID = None,
         header: Header = None,
@@ -139,9 +139,7 @@ class Document:
                 and (payload.wqx.organization is not None)
                 and (payload.wqx.organization.organizationAddress is not None)
             ):
-                for (
-                    organization_address
-                ) in payload.wqx.organization.organizationAddress:
+                for organization_address in payload.wqx.organization.organizationAddress:
                     if (
                         organization_address.addressText is not None
                         and organization_address.addressTypeName is None
@@ -175,10 +173,7 @@ class Document:
                         monitoring_location
                     ) in payload.wqx.organization.monitoringLocation:
                         if (
-                            (
-                                monitoring_location.monitoringLocationGeospatial
-                                is not None
-                            )
+                            (monitoring_location.monitoringLocationGeospatial is not None)
                             and (
                                 monitoring_location.monitoringLocationGeospatial.sourceMapScale
                                 is None
@@ -327,8 +322,7 @@ class Document:
                             (activity.activityDescription is not None)
                             and (activity.activityDescription.activityMediaName)
                             and (
-                                "Tissue"
-                                != activity.activityDescription.activityMediaName
+                                "Tissue" != activity.activityDescription.activityMediaName
                             )
                             and (result.biologicalResultDescription is not None)
                             and (
@@ -343,8 +337,7 @@ class Document:
                             (activity.activityDescription is not None)
                             and (activity.activityDescription.activityMediaName)
                             and (
-                                "Tissue"
-                                == activity.activityDescription.activityMediaName
+                                "Tissue" == activity.activityDescription.activityMediaName
                             )
                             and (result.biologicalResultDescription is not None)
                             and (
@@ -371,12 +364,10 @@ class Document:
                         if (
                             (activity.activityDescription is not None)
                             and (
-                                activity.activityDescription.activityMediaName
-                                is not None
+                                activity.activityDescription.activityMediaName is not None
                             )
                             and (
-                                "Tissue"
-                                == activity.activityDescription.activityMediaName
+                                "Tissue" == activity.activityDescription.activityMediaName
                             )
                             and (result.biologicalResultDescription is not None)
                             and (
@@ -407,8 +398,7 @@ class Document:
                         (activity.activityDescription is not None)
                         and (activity.activityDescription.activityMediaName is not None)
                         and (
-                            "Biological"
-                            == activity.activityDescription.activityMediaName
+                            "Biological" == activity.activityDescription.activityMediaName
                         )
                         and (
                             (activity.biologicalActivityDescription is None)
@@ -786,10 +776,7 @@ class Document:
                         monitoring_location
                     ) in payload.wqx.organization.monitoringLocation:
                         if (
-                            (
-                                monitoring_location.monitoringLocationGeospatial
-                                is not None
-                            )
+                            (monitoring_location.monitoringLocationGeospatial is not None)
                             and (
                                 monitoring_location.monitoringLocationGeospatial.countyCode
                                 is not None
@@ -941,8 +928,7 @@ class Document:
                                     == result.biologicalResultDescription.biologicalIntentName
                                 )
                                 and (
-                                    "Count"
-                                    != result.resultDescription.characteristicName
+                                    "Count" != result.resultDescription.characteristicName
                                 )
                             ):
                                 violations.append(data_rule_28.strip())
@@ -1161,8 +1147,7 @@ class Document:
                                 if (
                                     (result.resultDescription is not None)
                                     and (
-                                        result.resultDescription.resultMeasure
-                                        is not None
+                                        result.resultDescription.resultMeasure is not None
                                     )
                                     and (
                                         result.resultDescription.resultMeasure.resultMeasureValue
@@ -2122,8 +2107,7 @@ class Document:
                                     is not None
                                 )
                                 and (
-                                    result.resultDescription.statisticalNValueNumeric
-                                    < 0
+                                    result.resultDescription.statisticalNValueNumeric < 0
                                 )
                             ):
                                 violations.append(data_rule_41.strip())

@@ -42,9 +42,7 @@ class ActivityGroupTypeCode(str):
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 50:
-            raise ValueError(
-                "ActivityGroupTypeCode must be between 1 and 50 characters."
-            )
+            raise ValueError("ActivityGroupTypeCode must be between 1 and 50 characters.")
 
 
 class ActivityIdentifier(str):
@@ -194,9 +192,7 @@ class AssemblageSampledName(str):
 
     def __init__(self, o=""):
         if len(o) > 50:
-            raise ValueError(
-                "AssemblageSampledName must be between 0 and 50 characters."
-            )
+            raise ValueError("AssemblageSampledName must be between 0 and 50 characters.")
 
 
 class BiasValue(str):
@@ -212,9 +208,7 @@ class BiologicalIntentName(str):
 
     def __init__(self, o=""):
         if len(o) > 35:
-            raise ValueError(
-                "BiologicalIntentName must be between 0 and 35 characters."
-            )
+            raise ValueError("BiologicalIntentName must be between 0 and 35 characters.")
 
 
 class BiologicalIndividualIdentifier(str):
@@ -232,9 +226,7 @@ class BinaryObjectFileName(str):
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 255:
-            raise ValueError(
-                "BinaryObjectFileName must be between 1 and 255 characters."
-            )
+            raise ValueError("BinaryObjectFileName must be between 1 and 255 characters.")
 
 
 class BinaryObjectFileTypeCode(str):
@@ -462,9 +454,7 @@ class GearProcedureUnitCode(str):
 
     def __init__(self, o=""):
         if len(o) > 35:
-            raise ValueError(
-                "GearProcedureUnitCode must be between 0 and 35 characters."
-            )
+            raise ValueError("GearProcedureUnitCode must be between 0 and 35 characters.")
 
 
 class GroupSummaryCount(str):
@@ -676,9 +666,7 @@ class LocationCategoryName(str):
 
     def __init__(self, o=""):
         if len(o) > 50:
-            raise ValueError(
-                "LocationCategoryName must be between 0 and 50 characters."
-            )
+            raise ValueError("LocationCategoryName must be between 0 and 50 characters.")
 
 
 class LocationStatusName(str):
@@ -715,9 +703,7 @@ class LowerClassBoundValue(str):
 
     def __init__(self, o=""):
         if len(o) > 60:
-            raise ValueError(
-                "LowerClassBoundValue must be between 0 and 60 characters."
-            )
+            raise ValueError("LowerClassBoundValue must be between 0 and 60 characters.")
 
 
 class MeasureQualifierCode(str):
@@ -725,9 +711,7 @@ class MeasureQualifierCode(str):
 
     def __init__(self, o=""):
         if len(o) > 35:
-            raise ValueError(
-                "MeasureQualifierCode must be between 0 and 35 characters."
-            )
+            raise ValueError("MeasureQualifierCode must be between 0 and 35 characters.")
 
 
 class MeasureUnitCode(str):
@@ -751,9 +735,7 @@ class MeasureValueTargeted(str):
 
     def __init__(self, o=""):
         if len(o) > 60:
-            raise ValueError(
-                "MeasureValueTargeted must be between 0 and 60 characters."
-            )
+            raise ValueError("MeasureValueTargeted must be between 0 and 60 characters.")
 
 
 class MeasureUnitCodeTargeted(str):
@@ -827,9 +809,7 @@ class MethodSpeciationName(str):
 
     def __init__(self, o=""):
         if len(o) > 20:
-            raise ValueError(
-                "MethodSpeciationName must be between 0 and 20 characters."
-            )
+            raise ValueError("MethodSpeciationName must be between 0 and 20 characters.")
 
 
 class MetricTypeIdentifier(str):
@@ -837,9 +817,7 @@ class MetricTypeIdentifier(str):
 
     def __init__(self, o=""):
         if len(o) > 50:
-            raise ValueError(
-                "MetricTypeIdentifier must be between 0 and 50 characters."
-            )
+            raise ValueError("MetricTypeIdentifier must be between 0 and 50 characters.")
 
 
 class MetricTypeIdentifierContext(str):
@@ -941,9 +919,7 @@ class NationalAquiferCode(str):
 
     def __init__(self, o=""):
         if len(o) > 120:
-            raise ValueError(
-                "NationalAquiferCode must be between 0 and 120 characters."
-            )
+            raise ValueError("NationalAquiferCode must be between 0 and 120 characters.")
 
 
 class NetTypeName(str):
@@ -1122,9 +1098,7 @@ class ResourceCreatorName(str):
 
     def __init__(self, o=""):
         if len(o) > 120:
-            raise ValueError(
-                "ResourceCreatorName must be between 0 and 120 characters."
-            )
+            raise ValueError("ResourceCreatorName must be between 0 and 120 characters.")
 
 
 class ResourceDate(date):
@@ -1146,9 +1120,7 @@ class ResourcePublisherName(str):
 
     def __init__(self, o=""):
         if len(o) > 60:
-            raise ValueError(
-                "ResourcePublisherName must be between 0 and 60 characters."
-            )
+            raise ValueError("ResourcePublisherName must be between 0 and 60 characters.")
 
 
 class ResourceSubjectText(str):
@@ -1156,9 +1128,7 @@ class ResourceSubjectText(str):
 
     def __init__(self, o=""):
         if len(o) > 4000:
-            raise ValueError(
-                "ResourceSubjectText must be between 0 and 4000 characters."
-            )
+            raise ValueError("ResourceSubjectText must be between 0 and 4000 characters.")
 
 
 class ResourceTitleName(str):
@@ -1298,9 +1268,7 @@ class ResultWeightBasisText(str):
 
     def __init__(self, o=""):
         if len(o) > 60:
-            raise ValueError(
-                "ResultWeightBasisText must be between 0 and 60 characters."
-            )
+            raise ValueError("ResultWeightBasisText must be between 0 and 60 characters.")
 
 
 class SampleCollectionEquipmentCommentText(str):
@@ -1440,9 +1408,7 @@ class SubjectTaxonomicName(str):
 
     def __init__(self, o=""):
         if len(o) > 255:
-            raise ValueError(
-                "SubjectTaxonomicName must be between 0 and 255 characters."
-            )
+            raise ValueError("SubjectTaxonomicName must be between 0 and 255 characters.")
 
 
 class SubjectTaxonomicNameUserSupplied(str):
@@ -1666,9 +1632,7 @@ class UpperClassBoundValue(str):
 
     def __init__(self, o=""):
         if len(o) > 60:
-            raise ValueError(
-                "UpperClassBoundValue must be between 0 and 60 characters."
-            )
+            raise ValueError("UpperClassBoundValue must be between 0 and 60 characters.")
 
 
 class VerticalCollectionMethodName(str):

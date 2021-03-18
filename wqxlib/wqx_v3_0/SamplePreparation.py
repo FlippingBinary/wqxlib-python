@@ -2,9 +2,13 @@ from yattag import Doc
 
 from .ReferenceMethod import ReferenceMethod
 from .SimpleContent import (
-    ChemicalPreservativeUsedName, SampleContainerColorName,
-    SampleContainerLabelName, SampleContainerTypeName,
-    SampleTransportStorageDescription, ThermalPreservativeUsedName)
+    ChemicalPreservativeUsedName,
+    SampleContainerColorName,
+    SampleContainerLabelName,
+    SampleContainerTypeName,
+    SampleTransportStorageDescription,
+    ThermalPreservativeUsedName,
+)
 
 
 class SamplePreparation:
@@ -20,7 +24,7 @@ class SamplePreparation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         samplePreparationMethod: ReferenceMethod = None,
         sampleContainerLabelName: SampleContainerLabelName = None,
@@ -38,9 +42,7 @@ class SamplePreparation:
             self.__sampleContainerColorName = o.sampleContainerColorName
             self.__chemicalPreservativeUsedName = o.chemicalPreservativeUsedName
             self.__thermalPreservativeUsedName = o.thermalPreservativeUsedName
-            self.__sampleTransportStorageDescription = (
-                o.sampleTransportStorageDescription
-            )
+            self.__sampleTransportStorageDescription = o.sampleTransportStorageDescription
         elif isinstance(o, dict):
             # Assign attributes from dictionary with typechecking
             self.samplePreparationMethod = o.get("samplePreparationMethod")
@@ -143,9 +145,7 @@ class SamplePreparation:
         with tag(name):
             if self.__samplePreparationMethod is not None:
                 asis(
-                    self.__samplePreparationMethod.generateXML(
-                        "SamplePreparationMethod"
-                    )
+                    self.__samplePreparationMethod.generateXML("SamplePreparationMethod")
                 )
             if self.__sampleContainerLabelName is not None:
                 line("SampleContainerLabelName", self.__sampleContainerLabelName)
@@ -154,9 +154,7 @@ class SamplePreparation:
             if self.__sampleContainerColorName is not None:
                 line("SampleContainerColorName", self.__sampleContainerColorName)
             if self.__chemicalPreservativeUsedName is not None:
-                line(
-                    "ChemicalPreservativeUsedName", self.__chemicalPreservativeUsedName
-                )
+                line("ChemicalPreservativeUsedName", self.__chemicalPreservativeUsedName)
             if self.__thermalPreservativeUsedName is not None:
                 line("ThermalPreservativeUsedName", self.__thermalPreservativeUsedName)
             if self.__sampleTransportStorageDescription is not None:

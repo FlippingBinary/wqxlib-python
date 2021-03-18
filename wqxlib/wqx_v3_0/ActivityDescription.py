@@ -4,15 +4,22 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (ActivityConductingOrganizationText,
-                            ActivityEndDate, ActivityIdentifier,
-                            ActivityIdentifierUserSupplied, ActivityMediaName,
-                            ActivityMediaSubdivisionName,
-                            ActivityRelativeDepthName, ActivityStartDate,
-                            ActivityTypeCode, CommentText,
-                            DepthAltitudeReferencePointText,
-                            MonitoringLocationIdentifier, ProjectIdentifier,
-                            SamplingComponentName)
+from .SimpleContent import (
+    ActivityConductingOrganizationText,
+    ActivityEndDate,
+    ActivityIdentifier,
+    ActivityIdentifierUserSupplied,
+    ActivityMediaName,
+    ActivityMediaSubdivisionName,
+    ActivityRelativeDepthName,
+    ActivityStartDate,
+    ActivityTypeCode,
+    CommentText,
+    DepthAltitudeReferencePointText,
+    MonitoringLocationIdentifier,
+    ProjectIdentifier,
+    SamplingComponentName,
+)
 from .WQXTime import WQXTime
 
 
@@ -41,7 +48,7 @@ class ActivityDescription:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         activityIdentifier: ActivityIdentifier = None,
         activityIdentifierUserSupplied: ActivityIdentifierUserSupplied = None,
@@ -93,9 +100,7 @@ class ActivityDescription:
         elif isinstance(o, dict):
             # Assign attributes from other ActivityDescription with typechecking
             self.activityIdentifier = o.get("activityIdentifier")
-            self.activityIdentifierUserSupplied = o.get(
-                "activityIdentifierUserSupplied"
-            )
+            self.activityIdentifierUserSupplied = o.get("activityIdentifierUserSupplied")
             self.activityTypeCode = o.get("activityTypeCode")
             self.activityMediaName = o.get("activityMediaName")
             self.activityMediaSubdivisionName = o.get("activityMediaSubdivisionName")
@@ -156,9 +161,7 @@ class ActivityDescription:
         return self.__activityIdentifierUserSupplied
 
     @activityIdentifierUserSupplied.setter
-    def activityIdentifierUserSupplied(
-        self, val: ActivityIdentifierUserSupplied
-    ) -> None:
+    def activityIdentifierUserSupplied(self, val: ActivityIdentifierUserSupplied) -> None:
         self.__activityIdentifierUserSupplied = (
             None if val is None else ActivityIdentifierUserSupplied(val)
         )
@@ -278,9 +281,7 @@ class ActivityDescription:
         )
 
     @property
-    def activityDepthAltitudeReferencePointText(
-        self,
-    ) -> DepthAltitudeReferencePointText:
+    def activityDepthAltitudeReferencePointText(self,) -> DepthAltitudeReferencePointText:
         """The reference used to indicate the datum or reference used to establish the depth/altitude of an activity."""
         return self.__activityDepthAltitudeReferencePointText
 
@@ -342,9 +343,7 @@ class ActivityDescription:
 
     @samplingComponentName.setter
     def samplingComponentName(self, val: SamplingComponentName) -> None:
-        self.__samplingComponentName = (
-            None if val is None else SamplingComponentName(val)
-        )
+        self.__samplingComponentName = None if val is None else SamplingComponentName(val)
 
     @property
     def activityCommentText(self) -> CommentText:
@@ -378,9 +377,7 @@ class ActivityDescription:
                 raise WQXException("Attribute 'activityMediaName' is required.")
             line("ActivityMediaName", self.__activityMediaName)
             if self.__activityMediaSubdivisionName is not None:
-                line(
-                    "ActivityMediaSubdivisionName", self.__activityMediaSubdivisionName
-                )
+                line("ActivityMediaSubdivisionName", self.__activityMediaSubdivisionName)
             if self.__activityStartDate is None:
                 raise WQXException("Attribute 'activityStartDate' is required.")
             line("ActivityStartDate", str(self.__activityStartDate))
@@ -423,9 +420,7 @@ class ActivityDescription:
             for x in self.__activityConductingOrganizationText:
                 line("ActivityConductingOrganizationText", x)
             if self.__monitoringLocationIdentifier is not None:
-                line(
-                    "MonitoringLocationIdentifier", self.__monitoringLocationIdentifier
-                )
+                line("MonitoringLocationIdentifier", self.__monitoringLocationIdentifier)
             if self.__samplingComponentName is not None:
                 line("SamplingComponentName", self.__samplingComponentName)
             if self.__activityCommentText is not None:

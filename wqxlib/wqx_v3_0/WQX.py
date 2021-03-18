@@ -9,7 +9,7 @@ class WQX:
 
     __organization: Organization
 
-    def __init__(self, o:dict=None, *, organization: Organization = None):
+    def __init__(self, o: dict = None, *, organization: Organization = None):
         if isinstance(o, WQX):
             # Assign attributes from object without typechecking
             self.__organization = o.organization
@@ -27,9 +27,7 @@ class WQX:
     @organization.setter
     def organization(self, val: Organization) -> None:
         if val is not None and not isinstance(val, Organization):
-            raise WQXException(
-                "Attribute 'organization' must be an Organization object."
-            )
+            raise WQXException("Attribute 'organization' must be an Organization object.")
         self.__organization = None if val is None else Organization(val)
 
     def generateXML(self, name="WQX"):

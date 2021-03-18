@@ -3,9 +3,13 @@ from yattag import Doc
 from ..exceptions import WQXException
 from .AquiferInformation import AquiferInformation
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (AquiferTypeName, ConstructionDate,
-                            FormationTypeText, NationalAquiferCode,
-                            WellTypeText)
+from .SimpleContent import (
+    AquiferTypeName,
+    ConstructionDate,
+    FormationTypeText,
+    NationalAquiferCode,
+    WellTypeText,
+)
 
 
 class WellInformation:
@@ -22,7 +26,7 @@ class WellInformation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         wellTypeText: WellTypeText = None,
         aquiferTypeName: AquiferTypeName = None,

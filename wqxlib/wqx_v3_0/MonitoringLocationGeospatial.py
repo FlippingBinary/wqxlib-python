@@ -2,12 +2,18 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (CountryCode, CountyCode,
-                            HorizontalCollectionMethodName,
-                            HorizontalCoordinateReferenceSystemDatumName,
-                            LatitudeMeasure, LongitudeMeasure, SourceMapScale,
-                            StateCode, VerticalCollectionMethodName,
-                            VerticalCoordinateReferenceSystemDatumName)
+from .SimpleContent import (
+    CountryCode,
+    CountyCode,
+    HorizontalCollectionMethodName,
+    HorizontalCoordinateReferenceSystemDatumName,
+    LatitudeMeasure,
+    LongitudeMeasure,
+    SourceMapScale,
+    StateCode,
+    VerticalCollectionMethodName,
+    VerticalCoordinateReferenceSystemDatumName,
+)
 
 
 class MonitoringLocationGeospatial:
@@ -29,7 +35,7 @@ class MonitoringLocationGeospatial:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         latitudeMeasure: LatitudeMeasure = None,
         longitudeMeasure: LongitudeMeasure = None,
@@ -71,9 +77,7 @@ class MonitoringLocationGeospatial:
             self.sourceMapScale = o.get("sourceMapScale")
             self.horizontalAccuracyMeasure = o.get("horizontalAccuracyMeasure")
             self.verticalAccuracyMeasure = o.get("verticalAccuracyMeasure")
-            self.horizontalCollectionMethodName = o.get(
-                "horizontalCollectionMethodName"
-            )
+            self.horizontalCollectionMethodName = o.get("horizontalCollectionMethodName")
             self.horizontalCoordinateReferenceSystemDatumName = o.get(
                 "horizontalCoordinateReferenceSystemDatumName"
             )
@@ -154,9 +158,7 @@ class MonitoringLocationGeospatial:
         return self.__horizontalCollectionMethodName
 
     @horizontalCollectionMethodName.setter
-    def horizontalCollectionMethodName(
-        self, val: HorizontalCollectionMethodName
-    ) -> None:
+    def horizontalCollectionMethodName(self, val: HorizontalCollectionMethodName) -> None:
         self.__horizontalCollectionMethodName = (
             None if val is None else HorizontalCollectionMethodName(val)
         )
@@ -256,17 +258,13 @@ class MonitoringLocationGeospatial:
                 )
             if self.__verticalAccuracyMeasure is not None:
                 asis(
-                    self.__verticalAccuracyMeasure.generateXML(
-                        "VerticalAccuracyMeasure"
-                    )
+                    self.__verticalAccuracyMeasure.generateXML("VerticalAccuracyMeasure")
                 )
             if self.__horizontalCollectionMethodName is None:
                 raise WQXException(
                     "Attribute 'HorizontalCollectionMethodName' is required."
                 )
-            line(
-                "HorizontalCollectionMethodName", self.__horizontalCollectionMethodName
-            )
+            line("HorizontalCollectionMethodName", self.__horizontalCollectionMethodName)
             if self.__horizontalCoordinateReferenceSystemDatumName is None:
                 raise WQXException(
                     "Attribute 'HorizontalCoordinateReferenceSystemDatumName' is required."
@@ -278,9 +276,7 @@ class MonitoringLocationGeospatial:
             if self.__verticalMeasure is not None:
                 asis(self.__verticalMeasure.generateXML("VerticalMeasure"))
             if self.__verticalCollectionMethodName is not None:
-                line(
-                    "VerticalCollectionMethodName", self.__verticalCollectionMethodName
-                )
+                line("VerticalCollectionMethodName", self.__verticalCollectionMethodName)
             if self.__verticalCoordinateReferenceSystemDatumName is not None:
                 line(
                     "VerticalCoordinateReferenceSystemDatumName",

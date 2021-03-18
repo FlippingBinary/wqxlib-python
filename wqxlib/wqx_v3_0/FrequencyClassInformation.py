@@ -1,9 +1,12 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (FrequencyClassDescriptorCode,
-                            FrequencyClassDescriptorUnitCode,
-                            LowerClassBoundValue, UpperClassBoundValue)
+from .SimpleContent import (
+    FrequencyClassDescriptorCode,
+    FrequencyClassDescriptorUnitCode,
+    LowerClassBoundValue,
+    UpperClassBoundValue,
+)
 
 
 class FrequencyClassInformation:
@@ -16,7 +19,7 @@ class FrequencyClassInformation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         frequencyClassDescriptorCode: FrequencyClassDescriptorCode = None,
         frequencyClassDescriptorUnitCode: FrequencyClassDescriptorUnitCode = None,

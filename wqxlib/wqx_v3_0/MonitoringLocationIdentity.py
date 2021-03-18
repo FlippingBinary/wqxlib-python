@@ -3,13 +3,18 @@ from typing import List, Union
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .AlternateMonitoringLocationIdentity import \
-    AlternateMonitoringLocationIdentity
+from .AlternateMonitoringLocationIdentity import AlternateMonitoringLocationIdentity
 from .MeasureCompact import MeasureCompact
 from .SimpleContent import (
-    HUCEightDigitCode, HUCTwelveDigitCode, MonitoringLocationDescriptionText,
-    MonitoringLocationIdentifier, MonitoringLocationName,
-    MonitoringLocationTypeName, TribalLandIndicator, TribalLandName)
+    HUCEightDigitCode,
+    HUCTwelveDigitCode,
+    MonitoringLocationDescriptionText,
+    MonitoringLocationIdentifier,
+    MonitoringLocationName,
+    MonitoringLocationTypeName,
+    TribalLandIndicator,
+    TribalLandName,
+)
 
 
 class MonitoringLocationIdentity:
@@ -29,7 +34,7 @@ class MonitoringLocationIdentity:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         monitoringLocationIdentifier: MonitoringLocationIdentifier = None,
         monitoringLocationName: MonitoringLocationName = None,
@@ -50,9 +55,7 @@ class MonitoringLocationIdentity:
             self.__monitoringLocationIdentifier = o.monitoringLocationIdentifier
             self.__monitoringLocationName = o.monitoringLocationName
             self.__monitoringLocationTypeName = o.monitoringLocationTypeName
-            self.__monitoringLocationDescriptionText = (
-                o.monitoringLocationDescriptionText
-            )
+            self.__monitoringLocationDescriptionText = o.monitoringLocationDescriptionText
             self.__hucEightDigitCode = o.hucEightDigitCode
             self.__hucTwelveDigitCode = o.hucTwelveDigitCode
             self.__tribalLandIndicator = o.tribalLandIndicator
@@ -91,9 +94,7 @@ class MonitoringLocationIdentity:
             self.hucTwelveDigitCode = hucTwelveDigitCode
             self.tribalLandIndicator = tribalLandIndicator
             self.tribalLandName = tribalLandName
-            self.alternateMonitoringLocationIdentity = (
-                alternateMonitoringLocationIdentity
-            )
+            self.alternateMonitoringLocationIdentity = alternateMonitoringLocationIdentity
             self.drainageAreaMeasure = drainageAreaMeasure
             self.contributingDrainageAreaMeasure = contributingDrainageAreaMeasure
 
@@ -235,9 +236,7 @@ class MonitoringLocationIdentity:
                 raise WQXException("Attribute 'MonitoringLocationName' is required.")
             line("MonitoringLocationName", self.__monitoringLocationName)
             if self.__monitoringLocationTypeName is None:
-                raise WQXException(
-                    "Attribute 'MonitoringLocationTypeName' is required."
-                )
+                raise WQXException("Attribute 'MonitoringLocationTypeName' is required.")
             line("MonitoringLocationTypeName", self.__monitoringLocationTypeName)
             if self.__monitoringLocationDescriptionText is not None:
                 line(

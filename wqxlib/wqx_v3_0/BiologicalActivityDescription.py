@@ -1,9 +1,7 @@
 from yattag import Doc
 
-from .BiologicalHabitatCollectionInformation import \
-    BiologicalHabitatCollectionInformation
-from .SimpleContent import (AssemblageSampledName, HabitatSelectionMethod,
-                            ToxicityTestType)
+from .BiologicalHabitatCollectionInformation import BiologicalHabitatCollectionInformation
+from .SimpleContent import AssemblageSampledName, HabitatSelectionMethod, ToxicityTestType
 
 
 class BiologicalActivityDescription:
@@ -16,7 +14,7 @@ class BiologicalActivityDescription:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         assemblageSampledName: AssemblageSampledName = None,
         biologicalHabitatCollectionInformation: BiologicalHabitatCollectionInformation = None,
@@ -54,9 +52,7 @@ class BiologicalActivityDescription:
 
     @assemblageSampledName.setter
     def assemblageSampledName(self, val: AssemblageSampledName) -> None:
-        self.__assemblageSampledName = (
-            None if val is None else AssemblageSampledName(val)
-        )
+        self.__assemblageSampledName = None if val is None else AssemblageSampledName(val)
 
     @property
     def biologicalHabitatCollectionInformation(

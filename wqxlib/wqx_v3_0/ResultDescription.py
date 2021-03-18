@@ -4,16 +4,30 @@ from .DataQualityIndicator import DataQuality
 from .Measure import Measure
 from .MeasureCompact import MeasureCompact
 from .SimpleContent import (
-    CharacteristicName, CharacteristicNameUserSupplied, CommentText,
-    DataLoggerLineName, DepthAltitudeReferencePointText, MethodSpeciationName,
-    ProportionSampleProcessedNumeric, RecordIdentifierUserSupplied,
-    ResultDetectionConditionText, ResultParticleSizeBasisText,
-    ResultSampleFractionText, ResultSamplingPointCommentText,
-    ResultSamplingPointName, ResultSamplingPointPlaceInSeries,
-    ResultSamplingPointType, ResultStatusIdentifier,
-    ResultTemperatureBasisText, ResultTimeBasisText, ResultValueTypeName,
-    ResultWeightBasisText, StatisticalBaseCode, StatisticalNValueNumeric,
-    TargetCount)
+    CharacteristicName,
+    CharacteristicNameUserSupplied,
+    CommentText,
+    DataLoggerLineName,
+    DepthAltitudeReferencePointText,
+    MethodSpeciationName,
+    ProportionSampleProcessedNumeric,
+    RecordIdentifierUserSupplied,
+    ResultDetectionConditionText,
+    ResultParticleSizeBasisText,
+    ResultSampleFractionText,
+    ResultSamplingPointCommentText,
+    ResultSamplingPointName,
+    ResultSamplingPointPlaceInSeries,
+    ResultSamplingPointType,
+    ResultStatusIdentifier,
+    ResultTemperatureBasisText,
+    ResultTimeBasisText,
+    ResultValueTypeName,
+    ResultWeightBasisText,
+    StatisticalBaseCode,
+    StatisticalNValueNumeric,
+    TargetCount,
+)
 
 
 class ResultDescription:
@@ -48,7 +62,7 @@ class ResultDescription:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         dataLoggerLineName: DataLoggerLineName = None,
         resultDetectionConditionText: ResultDetectionConditionText = None,
@@ -112,9 +126,7 @@ class ResultDescription:
             self.dataLoggerLineName = o.get("dataLoggerLineName")
             self.resultDetectionConditionText = o.get("resultDetectionConditionText")
             self.characteristicName = o.get("characteristicName")
-            self.characteristicNameUserSupplied = o.get(
-                "characteristicNameUserSupplied"
-            )
+            self.characteristicNameUserSupplied = o.get("characteristicNameUserSupplied")
             self.methodSpeciationName = o.get("methodSpeciationName")
             self.resultSampleFractionText = o.get("resultSampleFractionText")
             self.resultMeasure = o.get("resultMeasure")
@@ -141,9 +153,7 @@ class ResultDescription:
             self.resultSamplingPointPlaceInSeries = o.get(
                 "resultSamplingPointPlaceInSeries"
             )
-            self.resultSamplingPointCommentText = o.get(
-                "resultSamplingPointCommentText"
-            )
+            self.resultSamplingPointCommentText = o.get("resultSamplingPointCommentText")
             self.recordIdentifierUserSupplied = o.get("recordIdentifierUserSupplied")
         else:
             # Assign attributes from named keywords with typechecking
@@ -207,9 +217,7 @@ class ResultDescription:
         return self.__characteristicNameUserSupplied
 
     @characteristicNameUserSupplied.setter
-    def characteristicNameUserSupplied(
-        self, val: CharacteristicNameUserSupplied
-    ) -> None:
+    def characteristicNameUserSupplied(self, val: CharacteristicNameUserSupplied) -> None:
         self.__characteristicNameUserSupplied = (
             None if val is None else CharacteristicNameUserSupplied(val)
         )
@@ -304,9 +312,7 @@ class ResultDescription:
 
     @resultWeightBasisText.setter
     def resultWeightBasisText(self, val: ResultWeightBasisText) -> None:
-        self.__resultWeightBasisText = (
-            None if val is None else ResultWeightBasisText(val)
-        )
+        self.__resultWeightBasisText = None if val is None else ResultWeightBasisText(val)
 
     @property
     def resultTimeBasisText(self) -> ResultTimeBasisText:
@@ -415,9 +421,7 @@ class ResultDescription:
         return self.__resultSamplingPointCommentText
 
     @resultSamplingPointCommentText.setter
-    def resultSamplingPointCommentText(
-        self, val: ResultSamplingPointCommentText
-    ) -> None:
+    def resultSamplingPointCommentText(self, val: ResultSamplingPointCommentText) -> None:
         self.__resultSamplingPointCommentText = (
             None if val is None else ResultSamplingPointCommentText(val)
         )
@@ -442,9 +446,7 @@ class ResultDescription:
             if self.__dataLoggerLineName is not None:
                 line("DataLoggerLineName", self.__dataLoggerLineName)
             if self.__resultDetectionConditionText is not None:
-                line(
-                    "ResultDetectionConditionText", self.__resultDetectionConditionText
-                )
+                line("ResultDetectionConditionText", self.__resultDetectionConditionText)
             if self.__characteristicName is not None:
                 line("CharacteristicName", self.__characteristicName)
             if self.__characteristicNameUserSupplied is not None:
@@ -511,8 +513,6 @@ class ResultDescription:
                     self.__resultSamplingPointCommentText,
                 )
             if self.__recordIdentifierUserSupplied is not None:
-                line(
-                    "RecordIdentifierUserSupplied", self.__recordIdentifierUserSupplied
-                )
+                line("RecordIdentifierUserSupplied", self.__recordIdentifierUserSupplied)
 
         return doc.getvalue()

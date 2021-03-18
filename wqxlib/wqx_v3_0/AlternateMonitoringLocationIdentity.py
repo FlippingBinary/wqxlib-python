@@ -1,8 +1,10 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (MonitoringLocationIdentifier,
-                            MonitoringLocationIdentifierContext)
+from .SimpleContent import (
+    MonitoringLocationIdentifier,
+    MonitoringLocationIdentifierContext,
+)
 
 
 class AlternateMonitoringLocationIdentity:
@@ -13,7 +15,7 @@ class AlternateMonitoringLocationIdentity:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         monitoringLocationIdentifier: MonitoringLocationIdentifier = None,
         monitoringLocationIdentifierContext: MonitoringLocationIdentifierContext = None
@@ -33,9 +35,7 @@ class AlternateMonitoringLocationIdentity:
         else:
             # Assign attributes from named keywords with typechecking
             self.monitoringLocationIdentifier = monitoringLocationIdentifier
-            self.monitoringLocationIdentifierContext = (
-                monitoringLocationIdentifierContext
-            )
+            self.monitoringLocationIdentifierContext = monitoringLocationIdentifierContext
 
     @property
     def monitoringLocationIdentifier(self) -> MonitoringLocationIdentifier:
@@ -46,17 +46,15 @@ class AlternateMonitoringLocationIdentity:
         self.__monitoringLocationIdentifier = MonitoringLocationIdentifier(val)
 
     @property
-    def monitoringLocationIdentifierContext(
-        self,
-    ) -> MonitoringLocationIdentifierContext:
+    def monitoringLocationIdentifierContext(self,) -> MonitoringLocationIdentifierContext:
         return self.__monitoringLocationIdentifierContext
 
     @monitoringLocationIdentifierContext.setter
     def monitoringLocationIdentifierContext(
         self, val: MonitoringLocationIdentifierContext
     ) -> None:
-        self.__monitoringLocationIdentifierContext = (
-            MonitoringLocationIdentifierContext(val)
+        self.__monitoringLocationIdentifierContext = MonitoringLocationIdentifierContext(
+            val
         )
 
     def generateXML(self, name: str = "AlternateMonitoringLocationIdentity") -> str:

@@ -19,7 +19,7 @@ class MonitoringLocation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         monitoringLocationIdentity: MonitoringLocationIdentity = None,
         monitoringLocationGeospatial: MonitoringLocationGeospatial = None,
@@ -98,9 +98,7 @@ class MonitoringLocation:
 
         with tag(name):
             if self.__monitoringLocationIdentity is None:
-                raise WQXException(
-                    "Attribute 'MonitoringLocationIdentity' is required."
-                )
+                raise WQXException("Attribute 'MonitoringLocationIdentity' is required.")
             asis(
                 self.__monitoringLocationIdentity.generateXML(
                     "MonitoringLocationIdentity"

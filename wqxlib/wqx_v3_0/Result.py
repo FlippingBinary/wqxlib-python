@@ -25,7 +25,7 @@ class Result:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         resultDescription: ResultDescription = None,
         biologicalResultDescription: BiologicalResultDescription = None,
@@ -163,9 +163,7 @@ class Result:
             for x in self.__attachedBinaryObject:
                 asis(x.generateXML("AttachedBinaryObject"))
             if self.__resultAnalyticalMethod is not None:
-                asis(
-                    self.__resultAnalyticalMethod.generateXML("ResultAnalyticalMethod")
-                )
+                asis(self.__resultAnalyticalMethod.generateXML("ResultAnalyticalMethod"))
             if self.__comparableAnalyticalMethod is not None:
                 asis(
                     self.__comparableAnalyticalMethod.generateXML(

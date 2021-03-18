@@ -5,8 +5,12 @@ from yattag import Doc
 from ..exceptions import WQXException
 from .ActivityMetricType import ActivityMetricType
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (CommentText, IndexIdentifier,
-                            MetricSamplingPointPlaceInSeries, MetricScore)
+from .SimpleContent import (
+    CommentText,
+    IndexIdentifier,
+    MetricSamplingPointPlaceInSeries,
+    MetricScore,
+)
 
 
 class ActivityMetric:
@@ -21,7 +25,7 @@ class ActivityMetric:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         activityMetricType: ActivityMetricType = None,
         metricValueMeasure: MeasureCompact = None,
@@ -108,9 +112,7 @@ class ActivityMetric:
         return self.__indexIdentifier
 
     @indexIdentifier.setter
-    def indexIdentifier(
-        self, val: Union[IndexIdentifier, List[IndexIdentifier]]
-    ) -> None:
+    def indexIdentifier(self, val: Union[IndexIdentifier, List[IndexIdentifier]]) -> None:
         if val is None:
             self.__indexIdentifier = []
         elif isinstance(val, list):

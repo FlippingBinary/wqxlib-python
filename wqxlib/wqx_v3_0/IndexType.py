@@ -2,8 +2,12 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .BibliographicReference import BibliographicReference
-from .SimpleContent import (IndexTypeIdentifier, IndexTypeIdentifierContext,
-                            IndexTypeName, IndexTypeScaleText)
+from .SimpleContent import (
+    IndexTypeIdentifier,
+    IndexTypeIdentifierContext,
+    IndexTypeName,
+    IndexTypeScaleText,
+)
 
 
 class IndexType:
@@ -17,7 +21,7 @@ class IndexType:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         indexTypeIdentifier: IndexTypeIdentifier = None,
         indexTypeIdentifierContext: IndexTypeIdentifierContext = None,
@@ -100,9 +104,7 @@ class IndexType:
                 raise WQXException("Attribute 'indexTypeIdentifier' is required.")
             line("IndexTypeIdentifier", self.__indexTypeIdentifier)
             if self.__indexTypeIdentifierContext is None:
-                raise WQXException(
-                    "Attribute 'indexTypeIdentifierContext' is required."
-                )
+                raise WQXException("Attribute 'indexTypeIdentifierContext' is required.")
             line("IndexTypeIdentifierContext", self.__indexTypeIdentifierContext)
             if self.__indexTypeName is None:
                 raise WQXException("Attribute 'indexTypeName' is required.")

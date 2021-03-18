@@ -2,9 +2,13 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .BibliographicReference import BibliographicReference
-from .SimpleContent import (FormulaDescriptionText, MetricTypeIdentifier,
-                            MetricTypeIdentifierContext, MetricTypeName,
-                            MetricTypeScaleText)
+from .SimpleContent import (
+    FormulaDescriptionText,
+    MetricTypeIdentifier,
+    MetricTypeIdentifierContext,
+    MetricTypeName,
+    MetricTypeScaleText,
+)
 
 
 class ActivityMetricType:
@@ -19,7 +23,7 @@ class ActivityMetricType:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         metricTypeIdentifier: MetricTypeIdentifier = None,
         metricTypeIdentifierContext: MetricTypeIdentifierContext = None,
@@ -116,9 +120,7 @@ class ActivityMetricType:
                 raise WQXException("Attribute 'metricTypeIdentifier' is required.")
             line("MetricTypeIdentifier", self.__metricTypeIdentifier)
             if self.__metricTypeIdentifierContext is None:
-                raise WQXException(
-                    "Attribute 'metricTypeIdentifierContext' is required."
-                )
+                raise WQXException("Attribute 'metricTypeIdentifierContext' is required.")
             line("MetricTypeIdentifierContext", self.__metricTypeIdentifierContext)
             if self.__metricTypeName is not None:
                 line("MetricTypeName", self.__metricTypeName)

@@ -25,7 +25,7 @@ class Activity:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         activityDescription: ActivityDescription = None,
         activityLocation: ActivityLocation = None,

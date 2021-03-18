@@ -1,8 +1,15 @@
 from yattag import Doc
 
-from .SimpleContent import (AddressText, AddressTypeName, CountryCode,
-                            CountyCode, LocalityName, PostalCode, StateCode,
-                            SupplementalAddressText)
+from .SimpleContent import (
+    AddressText,
+    AddressTypeName,
+    CountryCode,
+    CountyCode,
+    LocalityName,
+    PostalCode,
+    StateCode,
+    SupplementalAddressText,
+)
 
 
 class OrganizationAddress:
@@ -19,7 +26,7 @@ class OrganizationAddress:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         addressTypeName: AddressTypeName = None,
         addressText: AddressText = None,

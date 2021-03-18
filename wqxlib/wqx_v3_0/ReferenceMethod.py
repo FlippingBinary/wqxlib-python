@@ -1,9 +1,13 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (MethodDescriptionText, MethodIdentifier,
-                            MethodIdentifierContext, MethodName,
-                            MethodQualifierTypeName)
+from .SimpleContent import (
+    MethodDescriptionText,
+    MethodIdentifier,
+    MethodIdentifierContext,
+    MethodName,
+    MethodQualifierTypeName,
+)
 
 
 class ReferenceMethod:
@@ -17,7 +21,7 @@ class ReferenceMethod:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         methodIdentifier: MethodIdentifier = None,
         methodIdentifierContext: MethodIdentifierContext = None,
@@ -87,9 +91,7 @@ class ReferenceMethod:
 
     @methodDescriptionText.setter
     def methodDescriptionText(self, val: MethodDescriptionText) -> None:
-        self.__methodDescriptionText = (
-            None if val is None else MethodDescriptionText(val)
-        )
+        self.__methodDescriptionText = None if val is None else MethodDescriptionText(val)
 
     def generateXML(self, name: str = "ReferenceMethod") -> str:
         doc = Doc()

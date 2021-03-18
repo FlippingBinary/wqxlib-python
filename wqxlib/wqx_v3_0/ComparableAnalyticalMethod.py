@@ -1,8 +1,11 @@
 from yattag import Doc
 
 from ..exceptions import WQXException
-from .SimpleContent import (MethodIdentifier, MethodIdentifierContext,
-                            MethodModificationText)
+from .SimpleContent import (
+    MethodIdentifier,
+    MethodIdentifierContext,
+    MethodModificationText,
+)
 
 
 class ComparableAnalyticalMethod:
@@ -14,7 +17,7 @@ class ComparableAnalyticalMethod:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         methodIdentifier: MethodIdentifier = None,
         methodIdentifierContext: MethodIdentifierContext = None,

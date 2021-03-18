@@ -2,9 +2,14 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .IndexType import IndexType
-from .SimpleContent import (CommentText, IndexCalculatedDate, IndexIdentifier,
-                            IndexQualifierCode, IndexScore,
-                            MonitoringLocationIdentifier)
+from .SimpleContent import (
+    CommentText,
+    IndexCalculatedDate,
+    IndexIdentifier,
+    IndexQualifierCode,
+    IndexScore,
+    MonitoringLocationIdentifier,
+)
 
 
 class BiologicalHabitatIndex:
@@ -20,7 +25,7 @@ class BiologicalHabitatIndex:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         indexIdentifier: IndexIdentifier = None,
         indexType: IndexType = None,

@@ -3,9 +3,12 @@ from yattag import Doc
 from ..exceptions import WQXException
 from .ReferenceMethod import ReferenceMethod
 from .SamplePreparation import SamplePreparation
-from .SimpleContent import (HydrologicCondition, HydrologicEvent,
-                            SampleCollectionEquipmentCommentText,
-                            SampleCollectionEquipmentName)
+from .SimpleContent import (
+    HydrologicCondition,
+    HydrologicEvent,
+    SampleCollectionEquipmentCommentText,
+    SampleCollectionEquipmentName,
+)
 
 
 class SampleDescription:
@@ -20,7 +23,7 @@ class SampleDescription:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         sampleCollectionMethod: ReferenceMethod = None,
         sampleCollectionEquipmentName: SampleCollectionEquipmentName = None,
@@ -124,9 +127,7 @@ class SampleDescription:
 
         with tag(name):
             if self.__sampleCollectionMethod is not None:
-                asis(
-                    self.__sampleCollectionMethod.generateXML("SampleCollectionMethod")
-                )
+                asis(self.__sampleCollectionMethod.generateXML("SampleCollectionMethod"))
             if self.__sampleCollectionEquipmentName is None:
                 raise WQXException(
                     "Attribute 'sampleCollectionEquipmentName' is required."

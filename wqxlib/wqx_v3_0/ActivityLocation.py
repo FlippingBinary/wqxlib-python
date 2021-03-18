@@ -2,10 +2,14 @@ from yattag import Doc
 
 from ..exceptions import WQXException
 from .MeasureCompact import MeasureCompact
-from .SimpleContent import (ActivityLocationDescriptionText,
-                            HorizontalCollectionMethodName,
-                            HorizontalCoordinateReferenceSystemDatumName,
-                            LatitudeMeasure, LongitudeMeasure, SourceMapScale)
+from .SimpleContent import (
+    ActivityLocationDescriptionText,
+    HorizontalCollectionMethodName,
+    HorizontalCoordinateReferenceSystemDatumName,
+    LatitudeMeasure,
+    LongitudeMeasure,
+    SourceMapScale,
+)
 
 
 class ActivityLocation:
@@ -21,7 +25,7 @@ class ActivityLocation:
 
     def __init__(
         self,
-        o:dict=None,
+        o: dict = None,
         *,
         latitudeMeasure: LatitudeMeasure = None,
         longitudeMeasure: LongitudeMeasure = None,
@@ -48,9 +52,7 @@ class ActivityLocation:
             self.longitudeMeasure = o.get("longitudeMeasure")
             self.sourceMapScale = o.get("sourceMapScale")
             self.horizontalAccuracyMeasure = o.get("horizontalAccuracyMeasure")
-            self.horizontalCollectionMethodName = o.get(
-                "horizontalCollectionMethodName"
-            )
+            self.horizontalCollectionMethodName = o.get("horizontalCollectionMethodName")
             self.horizontalCoordinateReferenceSystemDatumName = o.get(
                 "horizontalCoordinateReferenceSystemDatumName"
             )
@@ -106,9 +108,7 @@ class ActivityLocation:
         return self.__horizontalCollectionMethodName
 
     @horizontalCollectionMethodName.setter
-    def horizontalCollectionMethodName(
-        self, val: HorizontalCollectionMethodName
-    ) -> None:
+    def horizontalCollectionMethodName(self, val: HorizontalCollectionMethodName) -> None:
         self.__horizontalCollectionMethodName = HorizontalCollectionMethodName(val)
 
     @property
@@ -121,8 +121,8 @@ class ActivityLocation:
     def horizontalCoordinateReferenceSystemDatumName(
         self, val: HorizontalCoordinateReferenceSystemDatumName
     ) -> None:
-        self.__horizontalCoordinateReferenceSystemDatumName = (
-            HorizontalCoordinateReferenceSystemDatumName(val)
+        self.__horizontalCoordinateReferenceSystemDatumName = HorizontalCoordinateReferenceSystemDatumName(
+            val
         )
 
     @property
@@ -162,9 +162,7 @@ class ActivityLocation:
                 raise WQXException(
                     "Attribute 'horizontalCollectionMethodName' is required."
                 )
-            line(
-                "HorizontalCollectionMethodName", self.__horizontalCollectionMethodName
-            )
+            line("HorizontalCollectionMethodName", self.__horizontalCollectionMethodName)
             if self.__horizontalCoordinateReferenceSystemDatumName is None:
                 raise WQXException(
                     "Attribute 'horizontalCoordinateReferenceSystemDatumName' is required."
