@@ -13,7 +13,9 @@ from .SimpleContent import (
 
 
 class OrganizationAddress:
-    """The physical address of an organization."""
+    """
+    The physical address of an organization.
+    """
 
     __addressTypeName: AddressTypeName
     __addressText: AddressText

@@ -12,7 +12,10 @@ from .SimpleContent import (
 
 
 class SamplePreparation:
-    """Describes a sample preparation procedure which may be conducted on an initial Sample or on subsequent subsamples."""
+    """
+    Describes a sample preparation procedure which may be conducted on an initial Sample
+    or on subsequent subsamples.
+    """
 
     __samplePreparationMethod: ReferenceMethod
     __sampleContainerLabelName: SampleContainerLabelName
@@ -66,12 +69,18 @@ class SamplePreparation:
 
     @property
     def samplePreparationMethod(self) -> ReferenceMethod:
-        """Identifying information about the method(s) followed to prepare a sample for analysis."""
+        """
+        Identifying information about the method(s) followed to prepare a sample for
+        analysis.
+        """
         return self.__samplePreparationMethod
 
     @samplePreparationMethod.setter
     def samplePreparationMethod(self, val: ReferenceMethod) -> None:
-        """Identifying information about the method(s) followed to prepare a sample for analysis."""
+        """
+        Identifying information about the method(s) followed to prepare a sample for
+        analysis.
+        """
         self.__samplePreparationMethod = None if val is None else ReferenceMethod(val)
 
     @property

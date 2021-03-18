@@ -17,7 +17,9 @@ from .SimpleContent import (
 
 
 class MonitoringLocationGeospatial:
-    """Monitoring location geographic location."""
+    """
+    Monitoring location geographic location.
+    """
 
     __latitudeMeasure: LatitudeMeasure
     __longitudeMeasure: LongitudeMeasure
@@ -135,22 +137,34 @@ class MonitoringLocationGeospatial:
 
     @property
     def horizontalAccuracyMeasure(self) -> MeasureCompact:
-        """The horizontal measure of the relative accuracy of the latitude and longitude coordinates."""
+        """
+        The horizontal measure of the relative accuracy of the latitude and longitude
+        coordinates.
+        """
         return self.__horizontalAccuracyMeasure
 
     @horizontalAccuracyMeasure.setter
     def horizontalAccuracyMeasure(self, val: MeasureCompact) -> None:
-        """The horizontal measure of the relative accuracy of the latitude and longitude coordinates."""
+        """
+        The horizontal measure of the relative accuracy of the latitude and longitude
+        coordinates.
+        """
         self.__horizontalAccuracyMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def verticalAccuracyMeasure(self) -> MeasureCompact:
-        """Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling."""
+        """
+        Depth below land surface datum (LSD) to the bottom of the hole on completion of
+        drilling.
+        """
         return self.__verticalAccuracyMeasure
 
     @verticalAccuracyMeasure.setter
     def verticalAccuracyMeasure(self, val: MeasureCompact) -> None:
-        """Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling."""
+        """
+        Depth below land surface datum (LSD) to the bottom of the hole on completion of
+        drilling.
+        """
         self.__verticalAccuracyMeasure = None if val is None else MeasureCompact(val)
 
     @property
@@ -179,12 +193,16 @@ class MonitoringLocationGeospatial:
 
     @property
     def verticalMeasure(self) -> MeasureCompact:
-        """The measure of elevation (i.e., the altitude), above or below a reference datum."""
+        """
+        The measure of elevation (i.e., the altitude), above or below a reference datum.
+        """
         return self.__verticalMeasure
 
     @verticalMeasure.setter
     def verticalMeasure(self, val: MeasureCompact) -> None:
-        """The measure of elevation (i.e., the altitude), above or below a reference datum."""
+        """
+        The measure of elevation (i.e., the altitude), above or below a reference datum.
+        """
         self.__verticalMeasure = None if val is None else MeasureCompact(val)
 
     @property

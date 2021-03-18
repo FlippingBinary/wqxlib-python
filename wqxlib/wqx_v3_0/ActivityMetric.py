@@ -14,7 +14,10 @@ from .SimpleContent import (
 
 
 class ActivityMetric:
-    """This section allows for the reporting of metrics to support habitat or biotic integrity indices."""
+    """
+    This section allows for the reporting of metrics to support habitat or biotic
+    integrity indices.
+    """
 
     __activityMetricType: ActivityMetricType
     __metricValueMeasure: MeasureCompact
@@ -71,12 +74,18 @@ class ActivityMetric:
 
     @property
     def metricValueMeasure(self) -> MeasureCompact:
-        """A non-scaled value calculated from raw results that may be scaled into a metric score."""
+        """
+        A non-scaled value calculated from raw results that may be scaled into a metric
+        score.
+        """
         return self.__metricValueMeasure
 
     @metricValueMeasure.setter
     def metricValueMeasure(self, val: MeasureCompact) -> None:
-        """A non-scaled value calculated from raw results that may be scaled into a metric score."""
+        """
+        A non-scaled value calculated from raw results that may be scaled into a metric
+        score.
+        """
         self.__metricValueMeasure = None if val is None else MeasureCompact(val)
 
     @property
@@ -99,12 +108,16 @@ class ActivityMetric:
 
     @property
     def metricCommentText(self) -> CommentText:
-        """Free text with general comments concerning the metric."""
+        """
+        Free text with general comments concerning the metric.
+        """
         return self.__metricCommentText
 
     @metricCommentText.setter
     def metricCommentText(self, val: CommentText) -> None:
-        """Free text with general comments concerning the metric."""
+        """
+        Free text with general comments concerning the metric.
+        """
         self.__metricCommentText = None if val is None else CommentText(val)
 
     @property

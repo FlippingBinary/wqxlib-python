@@ -4,23 +4,30 @@ from typing import Union
 
 
 class ActivityConductingOrganizationText(str):
-    """A name of the Organization conducting an activity."""
+    """
+    A name of the Organization conducting an activity.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
             raise ValueError(
-                "ActivityConductingOrganizationText must be between 0 and 120 characters."
+                "ActivityConductingOrganizationText must be between 0 and 120 "
+                "characters."
             )
 
 
 class ActivityEndDate(date):
-    """The calendar date when the field activity was completed."""
+    """
+    The calendar date when the field activity was completed.
+    """
 
     pass
 
 
 class ActivityGroupIdentifier(str):
-    """Designator that uniquely identifies a grouping of activities within an organization."""
+    """
+    Designator that uniquely identifies a grouping of activities within an organization.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 55:
@@ -30,7 +37,9 @@ class ActivityGroupIdentifier(str):
 
 
 class ActivityGroupName(str):
-    """A name of an activity group."""
+    """
+    A name of an activity group.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -38,15 +47,20 @@ class ActivityGroupName(str):
 
 
 class ActivityGroupTypeCode(str):
-    """Identifies the type of grouping of a set of activities."""
+    """
+    Identifies the type of grouping of a set of activities.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 50:
-            raise ValueError("ActivityGroupTypeCode must be between 1 and 50 characters.")
+            raise ValueError("ActivityGroupTypeCode must be between 1 and 50 "
+            "characters.")
 
 
 class ActivityIdentifier(str):
-    """Designator that uniquely identifies an activity within an organization."""
+    """
+    Designator that uniquely identifies an activity within an organization.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 55:
@@ -54,7 +68,9 @@ class ActivityIdentifier(str):
 
 
 class ActivityIdentifierUserSupplied(str):
-    """User Supplied Sample ID that uniquely identifies an activity within an organization."""
+    """
+    User Supplied Sample ID that uniquely identifies an activity within an organization.
+    """
 
     def __init__(self, o=""):
         if len(o) > 55:
@@ -64,7 +80,9 @@ class ActivityIdentifierUserSupplied(str):
 
 
 class ActivityLocationDescriptionText(str):
-    """Text description of the activity location."""
+    """
+    Text description of the activity location.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -74,7 +92,9 @@ class ActivityLocationDescriptionText(str):
 
 
 class ActivityMediaName(str):
-    """Name or code indicating the environmental medium where the sample was taken."""
+    """
+    Name or code indicating the environmental medium where the sample was taken.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 20:
@@ -82,7 +102,10 @@ class ActivityMediaName(str):
 
 
 class ActivityMediaSubdivisionName(str):
-    """Name or code indicating the environmental matrix as a subdivision of the sample media."""
+    """
+    Name or code indicating the environmental matrix as a subdivision of the sample
+    media.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -92,7 +115,10 @@ class ActivityMediaSubdivisionName(str):
 
 
 class ActivityRelativeDepthName(str):
-    """The name that indicates the approximate location within the water column at which the activity occurred."""
+    """
+    The name that indicates the approximate location within the water column at which
+    the activity occurred.
+    """
 
     def __init__(self, o=""):
         if len(o) > 30:
@@ -102,13 +128,17 @@ class ActivityRelativeDepthName(str):
 
 
 class ActivityStartDate(date):
-    """The calendar date on which the field activity was started."""
+    """
+    The calendar date on which the field activity was started.
+    """
 
     pass
 
 
 class ActivityTypeCode(str):
-    """The text describing the type of activity."""
+    """
+    The text describing the type of activity.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 70:
@@ -116,7 +146,10 @@ class ActivityTypeCode(str):
 
 
 class AddressText(str):
-    """The address that describes the physical (geographic), shipping, or mailing location of an organization."""
+    """
+    The address that describes the physical (geographic), shipping, or mailing location
+    of an organization.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -124,7 +157,9 @@ class AddressText(str):
 
 
 class AddressTypeName(str):
-    """Categorizes an address as either location, shipping, or mailing address."""
+    """
+    Categorizes an address as either location, shipping, or mailing address.
+    """
 
     def __init__(self, o=""):
         if len(o) > 8:
@@ -132,19 +167,25 @@ class AddressTypeName(str):
 
 
 class AnalysisEndDate(date):
-    """The calendar date on which the analysis was finished."""
+    """
+    The calendar date on which the analysis was finished.
+    """
 
     pass
 
 
 class AnalysisStartDate(date):
-    """The calendar date on which the analysis began."""
+    """
+    The calendar date on which the analysis began.
+    """
 
     pass
 
 
 class LocalAquiferCode(str):
-    """The identification number or code assigned by the aquifer publisher."""
+    """
+    The identification number or code assigned by the aquifer publisher.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -152,7 +193,10 @@ class LocalAquiferCode(str):
 
 
 class LocalAquiferCodeContext(str):
-    """The code that Identifies the source or data system that created or defined the identifier."""
+    """
+    The code that Identifies the source or data system that created or defined the
+    identifier.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -162,7 +206,9 @@ class LocalAquiferCodeContext(str):
 
 
 class LocalAquiferDescriptionText(str):
-    """Information that further describes an aquifer."""
+    """
+    Information that further describes an aquifer.
+    """
 
     def __init__(self, o=""):
         if len(o) > 512:
@@ -172,7 +218,9 @@ class LocalAquiferDescriptionText(str):
 
 
 class LocalAquiferName(str):
-    """The name associated with the aquifer from the aquifer publisher."""
+    """
+    The name associated with the aquifer from the aquifer publisher.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
@@ -180,7 +228,9 @@ class LocalAquiferName(str):
 
 
 class AquiferTypeName(str):
-    """The type of aquifer, such as confined or unconfined."""
+    """
+    The type of aquifer, such as confined or unconfined.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
@@ -188,15 +238,21 @@ class AquiferTypeName(str):
 
 
 class AssemblageSampledName(str):
-    """An association of interacting populations of organisms in a given waterbody."""
+    """
+    An association of interacting populations of organisms in a given waterbody.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
-            raise ValueError("AssemblageSampledName must be between 0 and 50 characters.")
+            raise ValueError("AssemblageSampledName must be between 0 and 50 "
+            "characters.")
 
 
 class BiasValue(str):
-    """The systematic or persistent distortion of a measurement process which causes error in one direction."""
+    """
+    The systematic or persistent distortion of a measurement process which causes error
+    in one direction.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -204,7 +260,9 @@ class BiasValue(str):
 
 
 class BiologicalIntentName(str):
-    """The primary reason the biological monitoring has occurred."""
+    """
+    The primary reason the biological monitoring has occurred.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -212,7 +270,10 @@ class BiologicalIntentName(str):
 
 
 class BiologicalIndividualIdentifier(str):
-    """A number uniquely identifying the individual in accordance with the total number of individuals reported by the user."""
+    """
+    A number uniquely identifying the individual in accordance with the total number of
+    individuals reported by the user.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -222,15 +283,21 @@ class BiologicalIndividualIdentifier(str):
 
 
 class BinaryObjectFileName(str):
-    """The text describing the descriptive name used to represent the file, including file extension."""
+    """
+    The text describing the descriptive name used to represent the file, including file
+    extension.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 255:
-            raise ValueError("BinaryObjectFileName must be between 1 and 255 characters.")
+            raise ValueError("BinaryObjectFileName must be between 1 and 255 "
+            "characters.")
 
 
 class BinaryObjectFileTypeCode(str):
-    """The text or acronym describing the binary content type of a file."""
+    """
+    The text or acronym describing the binary content type of a file.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 6:
@@ -240,7 +307,10 @@ class BinaryObjectFileTypeCode(str):
 
 
 class CellFormName(str):
-    """The name of the cell form for phytoplankton organisms expressed as a result. A single phytoplankton species may have a result value for any or all of these cell forms."""
+    """
+    The name of the cell form for phytoplankton organisms expressed as a result. A single
+    phytoplankton species may have a result value for any or all of these cell forms.
+    """
 
     def __init__(self, o=""):
         if len(o) > 11:
@@ -248,7 +318,9 @@ class CellFormName(str):
 
 
 class CellShapeName(str):
-    """The cell shape of the phytoplankton organism."""
+    """
+    The cell shape of the phytoplankton organism.
+    """
 
     def __init__(self, o=""):
         if len(o) > 18:
@@ -256,7 +328,11 @@ class CellShapeName(str):
 
 
 class CharacteristicName(str):
-    """The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field."""
+    """
+    The object, property, or substance which is evaluated or enumerated by either a
+    direct field measurement, a direct field observation, or by laboratory analysis of
+    material collected in the field.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
@@ -264,7 +340,11 @@ class CharacteristicName(str):
 
 
 class CharacteristicNameUserSupplied(str):
-    """The object, property, or substance which is evaluated or enumerated by either a direct field measurement, a direct field observation, or by laboratory analysis of material collected in the field."""
+    """
+    The object, property, or substance which is evaluated or enumerated by either a
+    direct field measurement, a direct field observation, or by laboratory analysis of
+    material collected in the field.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
@@ -274,7 +354,9 @@ class CharacteristicNameUserSupplied(str):
 
 
 class ChemicalPreservativeUsedName(str):
-    """Information describing the chemical means to preserve the sample."""
+    """
+    Information describing the chemical means to preserve the sample.
+    """
 
     def __init__(self, o=""):
         if len(o) > 250:
@@ -284,7 +366,9 @@ class ChemicalPreservativeUsedName(str):
 
 
 class CollectionDescriptionText(str):
-    """Remark / Text description of the reach length."""
+    """
+    Remark / Text description of the reach length.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -294,7 +378,9 @@ class CollectionDescriptionText(str):
 
 
 class CommentText(str):
-    """Free text with general comments."""
+    """
+    Free text with general comments.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -302,7 +388,10 @@ class CommentText(str):
 
 
 class ConfidenceIntervalValue(str):
-    """A range of values constructed so that this range has a specified probability of including the true population mean."""
+    """
+    A range of values constructed so that this range has a specified probability of
+    including the true population mean.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -312,13 +401,17 @@ class ConfidenceIntervalValue(str):
 
 
 class ConstructionDate(date):
-    """Date of construction when well was completed."""
+    """
+    Date of construction when well was completed.
+    """
 
     pass
 
 
 class CountryCode(str):
-    """A code designator used to identify a primary geopolitical unit of the world."""
+    """
+    A code designator used to identify a primary geopolitical unit of the world.
+    """
 
     def __init__(self, o=""):
         if len(o) > 2:
@@ -326,7 +419,9 @@ class CountryCode(str):
 
 
 class CountyCode(str):
-    """A code designator used to identify a U.S. county or county equivalent."""
+    """
+    A code designator used to identify a U.S. county or county equivalent.
+    """
 
     def __init__(self, o=""):
         if len(o) > 3:
@@ -334,7 +429,11 @@ class CountyCode(str):
 
 
 class DataLoggerLineName(str):
-    """The unique line identifier from a data logger result text file, normally a date/time format but could be any user defined name, e.g. "surface", "midwinter", and or "bottom".)"""
+    """
+    The unique line identifier from a data logger result text file, normally a date/time
+    format but could be any user defined name, e.g. "surface", "midwinter", and or
+    "bottom".
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -342,7 +441,10 @@ class DataLoggerLineName(str):
 
 
 class DepthAltitudeReferencePointText(str):
-    """The reference used to indicate the datum or reference used to establish a depth/altitude measurement."""
+    """
+    The reference used to indicate the datum or reference used to establish a
+    depth/altitude measurement.
+    """
 
     def __init__(self, o=""):
         if len(o) > 125:
@@ -352,7 +454,10 @@ class DepthAltitudeReferencePointText(str):
 
 
 class DetectionQuantitationLimitTypeName(str):
-    """Text describing the type of detection or quantitation level used in the analysis of a characteristic."""
+    """
+    Text describing the type of detection or quantitation level used in the analysis of
+    a characteristic.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -362,17 +467,24 @@ class DetectionQuantitationLimitTypeName(str):
 
 
 class DetectionQuantitationLimitCommentText(str):
-    """Text providing further description and comment on the detection and/or quantitation limits."""
+    """
+    Text providing further description and comment on the detection and/or quantitation
+    limits.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
             raise ValueError(
-                "DetectionQuantitationLimitCommentText must be between 0 and 4000 characters."
+                "DetectionQuantitationLimitCommentText must be between 0 and 4000 "
+                "characters."
             )
 
 
 class ElectronicAddressText(str):
-    """A resource address, usually consisting of the access protocol, the domain name, and optionally, the path to a file or location."""
+    """
+    A resource address, usually consisting of the access protocol, the domain name, and
+    optionally, the path to a file or location.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -382,7 +494,9 @@ class ElectronicAddressText(str):
 
 
 class ElectronicAddressTypeName(str):
-    """The name that describes the electronic address type."""
+    """
+    The name that describes the electronic address type.
+    """
 
     def __init__(self, o=""):
         if len(o) > 8:
@@ -392,7 +506,9 @@ class ElectronicAddressTypeName(str):
 
 
 class RecordIdentifierUserSupplied(str):
-    """The user supplied record identifier associated with data entered."""
+    """
+    The user supplied record identifier associated with data entered.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -402,7 +518,9 @@ class RecordIdentifierUserSupplied(str):
 
 
 class FormulaDescriptionText(str):
-    """Provides a description of the formula used to calculate the activity metric score."""
+    """
+    Provides a description of the formula used to calculate the activity metric score.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -412,7 +530,9 @@ class FormulaDescriptionText(str):
 
 
 class FormationTypeText(str):
-    """Name of the primary formation or soils unit, in which the well is completed."""
+    """
+    Name of the primary formation or soils unit, in which the well is completed.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -420,7 +540,11 @@ class FormationTypeText(str):
 
 
 class FrequencyClassDescriptorCode(str):
-    """A code that describes the frequency class, either as a life stage, abnormality, gender, or measurable characteristic (i.e. length, weight) used to categorize a biological population count."""
+    """
+    A code that describes the frequency class, either as a life stage, abnormality,
+    gender, or measurable characteristic (i.e. length, weight) used to categorize a
+    biological population count.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -430,7 +554,9 @@ class FrequencyClassDescriptorCode(str):
 
 
 class FrequencyClassDescriptorUnitCode(str):
-    """The code that represents the unit for measuring the item."""
+    """
+    The code that represents the unit for measuring the item.
+    """
 
     def __init__(self, o=""):
         if len(o) > 12:
@@ -440,7 +566,10 @@ class FrequencyClassDescriptorUnitCode(str):
 
 
 class FunctionalFeedingGroupName(str):
-    """For entries representing taxa, a code representing the functional feeding group with which the reported taxon is typically associated."""
+    """
+    For entries representing taxa, a code representing the functional feeding group with
+    which the reported taxon is typically associated.
+    """
 
     def __init__(self, o=""):
         if len(o) > 30:
@@ -450,15 +579,20 @@ class FunctionalFeedingGroupName(str):
 
 
 class GearProcedureUnitCode(str):
-    """The procedural code or equipment that represents the unit for measuring the effort."""
+    """
+    The procedural code or equipment that represents the unit for measuring the effort.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
-            raise ValueError("GearProcedureUnitCode must be between 0 and 35 characters.")
+            raise ValueError("GearProcedureUnitCode must be between 0 and 35 "
+            "characters.")
 
 
 class GroupSummaryCount(str):
-    """Captures the total count for a Group Summary."""
+    """
+    Captures the total count for a Group Summary.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -466,7 +600,9 @@ class GroupSummaryCount(str):
 
 
 class HabitName(str):
-    """The position that the characteristic occupies in a food chain."""
+    """
+    The position that the characteristic occupies in a food chain.
+    """
 
     def __init__(self, o=""):
         if len(o) > 15:
@@ -474,7 +610,9 @@ class HabitName(str):
 
 
 class HabitatSelectionMethod(str):
-    """The monitoring approach by which each habitat was chosen to sample. (e.g. random)."""
+    """
+    The monitoring approach by which each habitat was chosen to sample. (e.g. random).
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -484,7 +622,10 @@ class HabitatSelectionMethod(str):
 
 
 class HorizontalCollectionMethodName(str):
-    """The name that identifies the method used to determine the latitude and longitude coordinates for a point on the earth."""
+    """
+    The name that identifies the method used to determine the latitude and longitude
+    coordinates for a point on the earth.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 150:
@@ -494,17 +635,24 @@ class HorizontalCollectionMethodName(str):
 
 
 class HorizontalCoordinateReferenceSystemDatumName(str):
-    """The name that describes the reference datum used in determining latitude and longitude coordinates."""
+    """
+    The name that describes the reference datum used in determining latitude and
+    longitude coordinates.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 6:
             raise ValueError(
-                "HorizontalCoordinateReferenceSystemDatumName must be between 1 and 6 characters."
+                "HorizontalCoordinateReferenceSystemDatumName must be between 1 and 6 "
+                "characters."
             )
 
 
 class HUCEightDigitCode(str):
-    """The 8 digit federal code used to identify the hydrologic unit of the monitoring location to the cataloging unit level of precision."""
+    """
+    The 8 digit federal code used to identify the hydrologic unit of the monitoring
+    location to the cataloging unit level of precision.
+    """
 
     def __init__(self, o=""):
         if len(o) > 8:
@@ -512,7 +660,10 @@ class HUCEightDigitCode(str):
 
 
 class HUCTwelveDigitCode(str):
-    """The 12 digit federal code used to identify the hydrologic unit of the monitoring location to the subwatershed level of precision."""
+    """
+    The 12 digit federal code used to identify the hydrologic unit of the monitoring
+    location to the subwatershed level of precision.
+    """
 
     def __init__(self, o=""):
         if len(o) > 12:
@@ -520,7 +671,10 @@ class HUCTwelveDigitCode(str):
 
 
 class HydrologicCondition(str):
-    """Hydrologic condition is the hydrologic condition that is represented by the sample collected (i.e. ? normal, falling, rising, peak stage)."""
+    """
+    Hydrologic condition is the hydrologic condition that is represented by the sample
+    collected (i.e. ? normal, falling, rising, peak stage).
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -528,7 +682,10 @@ class HydrologicCondition(str):
 
 
 class HydrologicEvent(str):
-    """A hydrologic event that is represented by the sample collected (i.e. - storm, drought, snowmelt)."""
+    """
+    A hydrologic event that is represented by the sample collected (i.e. - storm,
+    drought, snowmelt).
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -536,13 +693,18 @@ class HydrologicEvent(str):
 
 
 class IndexCalculatedDate(date):
-    """Date on which the index was calcualted."""
+    """
+    Date on which the index was calcualted.
+    """
 
     pass
 
 
 class IndexIdentifier(str):
-    """A unique designator used to identify a unique index record that the activity metric is associated with."""
+    """
+    A unique designator used to identify a unique index record that the activity metric
+    is associated with.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 55:
@@ -550,7 +712,9 @@ class IndexIdentifier(str):
 
 
 class IndexQualifierCode(str):
-    """A code used to identify any qualifying issues that affect the index."""
+    """
+    A code used to identify any qualifying issues that affect the index.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -558,7 +722,9 @@ class IndexQualifierCode(str):
 
 
 class IndexScore(str):
-    """Provides the score for the index."""
+    """
+    Provides the score for the index.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -566,7 +732,10 @@ class IndexScore(str):
 
 
 class IndexTypeIdentifier(str):
-    """A designator used to describe the unique name, number, or code assigned to identify the index (Organization specific)."""
+    """
+    A designator used to describe the unique name, number, or code assigned to identify
+    the index (Organization specific).
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 50:
@@ -574,7 +743,9 @@ class IndexTypeIdentifier(str):
 
 
 class IndexTypeIdentifierContext(str):
-    """Identifies the source or data system that created or defined the index."""
+    """
+    Identifies the source or data system that created or defined the index.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -584,7 +755,9 @@ class IndexTypeIdentifierContext(str):
 
 
 class IndexTypeName(str):
-    """Name of the habitat or biotic integrity index."""
+    """
+    Name of the habitat or biotic integrity index.
+    """
 
     def __init__(self, o=""):
         if len(o) > 100:
@@ -592,7 +765,9 @@ class IndexTypeName(str):
 
 
 class IndexTypeScaleText(str):
-    """Provides a description of the scale used for the index."""
+    """
+    Provides a description of the scale used for the index.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -600,7 +775,9 @@ class IndexTypeScaleText(str):
 
 
 class LaboratoryAccreditationIndicator(object):
-    """Indicates whether the laboratory is accredited."""
+    """
+    Indicates whether the laboratory is accredited.
+    """
 
     __o: bool
 
@@ -615,17 +792,22 @@ class LaboratoryAccreditationIndicator(object):
 
 
 class LaboratoryAccreditationAuthorityName(str):
-    """An outside accreditation authority identifier."""
+    """
+    An outside accreditation authority identifier.
+    """
 
     def __init__(self, o=""):
         if len(o) > 20:
             raise ValueError(
-                "LaboratoryAccreditationAuthorityName must be between 0 and 20 characters."
+                "LaboratoryAccreditationAuthorityName must be between 0 and 20 "
+                "characters."
             )
 
 
 class LaboratoryName(str):
-    """The name of Lab responsible for the result."""
+    """
+    The name of Lab responsible for the result.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -633,7 +815,9 @@ class LaboratoryName(str):
 
 
 class LaboratorySampleSplitRatio(str):
-    """The proportion of all of the material collected that was sent to lab for analysis."""
+    """
+    The proportion of all of the material collected that was sent to lab for analysis.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -643,7 +827,9 @@ class LaboratorySampleSplitRatio(str):
 
 
 class LatitudeMeasure(Decimal):
-    """The measure of the angular distance on a meridian north or south of the equator."""
+    """
+    The measure of the angular distance on a meridian north or south of the equator.
+    """
 
     def __new__(self, o):
         s = str(o).split(".")
@@ -654,7 +840,9 @@ class LatitudeMeasure(Decimal):
 
 
 class LocalityName(str):
-    """The name of a city, town, village or other locality."""
+    """
+    The name of a city, town, village or other locality.
+    """
 
     def __init__(self, o=""):
         if len(o) > 30:
@@ -662,7 +850,10 @@ class LocalityName(str):
 
 
 class LocationCategoryName(str):
-    """Free text describing a category of naturally similar site types, such as high-gradient."""
+    """
+    Free text describing a category of naturally similar site types, such as
+    high-gradient.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -670,7 +861,9 @@ class LocationCategoryName(str):
 
 
 class LocationStatusName(str):
-    """Indicates whether this site is active and available for sampling."""
+    """
+    Indicates whether this site is active and available for sampling.
+    """
 
     def __init__(self, o=""):
         if len(o) > 15:
@@ -678,7 +871,9 @@ class LocationStatusName(str):
 
 
 class LongitudeMeasure(float):
-    """The measure of the angular distance on a meridian east or west of the prime meridian."""
+    """
+    The measure of the angular distance on a meridian east or west of the prime meridian.
+    """
 
     def __new__(self, o):
         s = str(o).split(".")
@@ -689,7 +884,9 @@ class LongitudeMeasure(float):
 
 
 class LowerConfidenceLimitValue(str):
-    """Value of the lower end of the confidence interval."""
+    """
+    Value of the lower end of the confidence interval.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -699,7 +896,9 @@ class LowerConfidenceLimitValue(str):
 
 
 class LowerClassBoundValue(str):
-    """This described the lower bound for a frequency class descriptor."""
+    """
+    This described the lower bound for a frequency class descriptor.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -707,7 +906,9 @@ class LowerClassBoundValue(str):
 
 
 class MeasureQualifierCode(str):
-    """A code used to identify any qualifying issues that affect the results."""
+    """
+    A code used to identify any qualifying issues that affect the results.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -715,7 +916,9 @@ class MeasureQualifierCode(str):
 
 
 class MeasureUnitCode(str):
-    """The code that represents the unit for measuring the item."""
+    """
+    The code that represents the unit for measuring the item.
+    """
 
     def __init__(self, o=""):
         if len(o) > 12:
@@ -723,7 +926,10 @@ class MeasureUnitCode(str):
 
 
 class MeasureValue(str):
-    """The recorded dimension, capacity, quality, or amount of something ascertained by measuring or observing."""
+    """
+    The recorded dimension, capacity, quality, or amount of something ascertained by
+    measuring or observing.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -731,7 +937,10 @@ class MeasureValue(str):
 
 
 class MeasureValueTargeted(str):
-    """The targeted value of the recorded dimension, capacity, quality, or amount of something ascertained by measuring or observing."""
+    """
+    The targeted value of the recorded dimension, capacity, quality, or amount of
+    something ascertained by measuring or observing.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -739,7 +948,9 @@ class MeasureValueTargeted(str):
 
 
 class MeasureUnitCodeTargeted(str):
-    """The code that represents the unit for measuring the item."""
+    """
+    The code that represents the unit for measuring the item.
+    """
 
     def __init__(self, o=""):
         if len(o) > 12:
@@ -749,7 +960,9 @@ class MeasureUnitCodeTargeted(str):
 
 
 class MethodDescriptionText(str):
-    """A brief summary that provides general information about the method."""
+    """
+    A brief summary that provides general information about the method.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -759,7 +972,9 @@ class MethodDescriptionText(str):
 
 
 class MethodIdentifier(str):
-    """The identification number or code assigned by the method publisher."""
+    """
+    The identification number or code assigned by the method publisher.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 35:
@@ -767,7 +982,9 @@ class MethodIdentifier(str):
 
 
 class MethodIdentifierContext(str):
-    """Identifies the source or data system that created or defined the identifier."""
+    """
+    Identifies the source or data system that created or defined the identifier.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 120:
@@ -777,7 +994,10 @@ class MethodIdentifierContext(str):
 
 
 class MethodModificationText(str):
-    """A brief summary that provides general information about the modification of the method."""
+    """
+    A brief summary that provides general information about the modification of the
+    method.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -787,7 +1007,9 @@ class MethodModificationText(str):
 
 
 class MethodName(str):
-    """The title that appears on the method from the method publisher."""
+    """
+    The title that appears on the method from the method publisher.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 250:
@@ -795,7 +1017,9 @@ class MethodName(str):
 
 
 class MethodQualifierTypeName(str):
-    """Identifier of type of method that identifies it as reference, equivalent, or other."""
+    """
+    Identifier of type of method that identifies it as reference, equivalent, or other.
+    """
 
     def __init__(self, o=""):
         if len(o) > 25:
@@ -805,7 +1029,9 @@ class MethodQualifierTypeName(str):
 
 
 class MethodSpeciationName(str):
-    """Identifies the chemical speciation in which the measured result is expressed."""
+    """
+    Identifies the chemical speciation in which the measured result is expressed.
+    """
 
     def __init__(self, o=""):
         if len(o) > 20:
@@ -813,7 +1039,10 @@ class MethodSpeciationName(str):
 
 
 class MetricTypeIdentifier(str):
-    """A designator used to describe the unique name, number, or code assigned to identify the metric (Organization specific)."""
+    """
+    A designator used to describe the unique name, number, or code assigned to identify
+    the metric (Organization specific).
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -821,7 +1050,9 @@ class MetricTypeIdentifier(str):
 
 
 class MetricTypeIdentifierContext(str):
-    """Identifies the source or data system that created or defined the metric."""
+    """
+    Identifies the source or data system that created or defined the metric.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -831,7 +1062,9 @@ class MetricTypeIdentifierContext(str):
 
 
 class MetricTypeName(str):
-    """Name of the activity metric."""
+    """
+    Name of the activity metric.
+    """
 
     def __init__(self, o=""):
         if len(o) > 100:
@@ -839,7 +1072,10 @@ class MetricTypeName(str):
 
 
 class MetricSamplingPointPlaceInSeries(str):
-    """The order in which a single point within a sampling frame was visited in relation to other components."""
+    """
+    The order in which a single point within a sampling frame was visited in relation to
+    other components.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -849,7 +1085,9 @@ class MetricSamplingPointPlaceInSeries(str):
 
 
 class MetricScore(str):
-    """Provides the scaled or calculated score for the activity metric."""
+    """
+    Provides the scaled or calculated score for the activity metric.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -857,7 +1095,9 @@ class MetricScore(str):
 
 
 class MetricTypeScaleText(str):
-    """Provides a description of the scale used for the activity metric."""
+    """
+    Provides a description of the scale used for the activity metric.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -865,7 +1105,9 @@ class MetricTypeScaleText(str):
 
 
 class MonitoringLocationDescriptionText(str):
-    """Text description of the monitoring location."""
+    """
+    Text description of the monitoring location.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -875,7 +1117,10 @@ class MonitoringLocationDescriptionText(str):
 
 
 class MonitoringLocationIdentifier(str):
-    """A designator used to describe the unique name, number, or code assigned to identify the monitoring location."""
+    """
+    A designator used to describe the unique name, number, or code assigned to identify
+    the monitoring location.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 55:
@@ -885,17 +1130,24 @@ class MonitoringLocationIdentifier(str):
 
 
 class MonitoringLocationIdentifierContext(str):
-    """Identifies the source or data system that created or defined the monitoring location identifier."""
+    """
+    Identifies the source or data system that created or defined the monitoring location
+    identifier.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 120:
             raise ValueError(
-                "MonitoringLocationIdentifierContext must be between 1 and 120 characters."
+                "MonitoringLocationIdentifierContext must be between 1 and 120 "
+                "characters."
             )
 
 
 class MonitoringLocationName(str):
-    """The designator specified by the sampling organization for the site at which sampling or other activities are conducted."""
+    """
+    The designator specified by the sampling organization for the site at which sampling
+    or other activities are conducted.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 255:
@@ -905,7 +1157,9 @@ class MonitoringLocationName(str):
 
 
 class MonitoringLocationTypeName(str):
-    """The descriptive name for a type of monitoring location."""
+    """
+    The descriptive name for a type of monitoring location.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 45:
@@ -915,7 +1169,9 @@ class MonitoringLocationTypeName(str):
 
 
 class NationalAquiferCode(str):
-    """Code of the aquifer in which the well is completed."""
+    """
+    Code of the aquifer in which the well is completed.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -923,7 +1179,9 @@ class NationalAquiferCode(str):
 
 
 class NetTypeName(str):
-    """The text describing the type of net."""
+    """
+    The text describing the type of net.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 60:
@@ -931,7 +1189,9 @@ class NetTypeName(str):
 
 
 class NewIdentifier(str):
-    """The new identifier which replaces an older one."""
+    """
+    The new identifier which replaces an older one.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 55:
@@ -939,7 +1199,9 @@ class NewIdentifier(str):
 
 
 class OldIdentifier(str):
-    """The old identifier which will be replaced."""
+    """
+    The old identifier which will be replaced.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 55:
@@ -947,7 +1209,9 @@ class OldIdentifier(str):
 
 
 class OrganizationDescriptionText(str):
-    """Information that further describes an organization."""
+    """
+    Information that further describes an organization.
+    """
 
     def __init__(self, o=""):
         if len(o) > 500:
@@ -957,7 +1221,9 @@ class OrganizationDescriptionText(str):
 
 
 class OrganizationFormalName(str):
-    """The legal designator (i.e. formal name) of an organization."""
+    """
+    The legal designator (i.e. formal name) of an organization.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 255:
@@ -967,7 +1233,10 @@ class OrganizationFormalName(str):
 
 
 class OrganizationIdentifier(str):
-    """A designator used to uniquely identify a unique business establishment within a context."""
+    """
+    A designator used to uniquely identify a unique business establishment within a
+    context.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 35:
@@ -979,7 +1248,9 @@ class OrganizationIdentifier(str):
 
 
 class PassCount(str):
-    """The number of passes through the water from which the sample was collected."""
+    """
+    The number of passes through the water from which the sample was collected.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -987,13 +1258,22 @@ class PassCount(str):
 
 
 class ProportionSampleProcessedNumeric(float):
-    """This field captures the proportion of the sample processed. Proportion is stored as a number between 0 and 1. Large/rare count would be documented as 1 (100%)."""
+    """
+    This field captures the proportion of the sample processed. Proportion is stored as a
+    number between 0 and 1. Large/rare count would be documented as 1 (100%).
+    """
 
     pass
 
 
 class PostalCode(str):
-    """The combination of the 5-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIP Code, assigned by the U.S. Postal Service to a geographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered."""
+    """
+    The combination of the 5-digit Zone Improvement Plan (ZIP) code and the four-digit
+    extension code (if available) that represents the geographic segment that is a
+    subunit of the ZIP Code, assigned by the U.S. Postal Service to a geographic location
+    to facilitate mail delivery; or the postal zone specific to the country, other than
+    the U.S., where the mail is delivered.
+    """
 
     def __init__(self, o=""):
         if len(o) > 10:
@@ -1001,7 +1281,10 @@ class PostalCode(str):
 
 
 class PrecisionValue(str):
-    """A measure of mutual agreement among individual measurements of the same property usually under prescribed similar conditions."""
+    """
+    A measure of mutual agreement among individual measurements of the same property
+    usually under prescribed similar conditions.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1009,19 +1292,27 @@ class PrecisionValue(str):
 
 
 class PreparationEndDate(date):
-    """The calendar date when the preparation/extraction of the sample for analysis was finished."""
+    """
+    The calendar date when the preparation/extraction of the sample for analysis was
+    finished.
+    """
 
     pass
 
 
 class PreparationStartDate(date):
-    """The calendar date when the preparation/extraction of the sample for analysis began."""
+    """
+    The calendar date when the preparation/extraction of the sample for analysis began.
+    """
 
     pass
 
 
 class ProjectDescriptionText(str):
-    """Project description, which may include a description of the project purpose, summary of the objectives, or brief summary of the results of the project."""
+    """
+    Project description, which may include a description of the project purpose, summary
+    of the objectives, or brief summary of the results of the project.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -1031,7 +1322,10 @@ class ProjectDescriptionText(str):
 
 
 class ProjectIdentifier(str):
-    """A designator used to uniquely identify a data collection project within a context of an organization."""
+    """
+    A designator used to uniquely identify a data collection project within a context of
+    an organization.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 55:
@@ -1039,7 +1333,10 @@ class ProjectIdentifier(str):
 
 
 class ProjectName(str):
-    """The name assigned by the Organization (project leader or principal investigator) to the project."""
+    """
+    The name assigned by the Organization (project leader or principal investigator) to
+    the project.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 512:
@@ -1047,7 +1344,10 @@ class ProjectName(str):
 
 
 class QAPPApprovedIndicator(object):
-    """Indicates whether a Quality Assurance Project Plan (QAPP) has been approved for the submitted project."""
+    """
+    Indicates whether a Quality Assurance Project Plan (QAPP) has been approved for the
+    submitted project.
+    """
 
     __o: bool
 
@@ -1062,7 +1362,10 @@ class QAPPApprovedIndicator(object):
 
 
 class QAPPApprovalAgencyName(str):
-    """An outside approval authority identifier for the QAPP (e.g. EPA or State Organization)."""
+    """
+    An outside approval authority identifier for the QAPP (e.g. EPA or State
+    Organization).
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -1072,19 +1375,28 @@ class QAPPApprovalAgencyName(str):
 
 
 class ReferenceLocationEndDate(date):
-    """The calendar date on which the monitoring location stopped being used as a reference site."""
+    """
+    The calendar date on which the monitoring location stopped being used as a reference
+    site.
+    """
 
     pass
 
 
 class ReferenceLocationStartDate(date):
-    """The calendar date on which the monitoring location started being used as a reference site."""
+    """
+    The calendar date on which the monitoring location started being used as a reference
+    site.
+    """
 
     pass
 
 
 class ReferenceLocationTypeCode(str):
-    """Identifies whether this site is a reference or control site by specifying the reference location type."""
+    """
+    Identifies whether this site is a reference or control site by specifying the
+    reference location type.
+    """
 
     def __init__(self, o=""):
         if len(o) > 20:
@@ -1094,7 +1406,9 @@ class ReferenceLocationTypeCode(str):
 
 
 class ResourceCreatorName(str):
-    """An entity primarily responible for making the content of the resource."""
+    """
+    An entity primarily responible for making the content of the resource.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -1102,13 +1416,17 @@ class ResourceCreatorName(str):
 
 
 class ResourceDate(date):
-    """A date of an event in the lifecycle of the resource."""
+    """
+    A date of an event in the lifecycle of the resource.
+    """
 
     pass
 
 
 class ResourceIdentifier(str):
-    """An unambiguous reference to the resource within a given context."""
+    """
+    An unambiguous reference to the resource within a given context.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 255:
@@ -1116,7 +1434,9 @@ class ResourceIdentifier(str):
 
 
 class ResourcePublisherName(str):
-    """An entity responsible for making the resource available."""
+    """
+    An entity responsible for making the resource available.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1124,7 +1444,9 @@ class ResourcePublisherName(str):
 
 
 class ResourceSubjectText(str):
-    """A topic of the content of the resource."""
+    """
+    A topic of the content of the resource.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -1132,7 +1454,9 @@ class ResourceSubjectText(str):
 
 
 class ResourceTitleName(str):
-    """A name given to the resource."""
+    """
+    A name given to the resource.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 120:
@@ -1140,7 +1464,9 @@ class ResourceTitleName(str):
 
 
 class ResultDetectionConditionText(str):
-    """The textual descriptor of a result."""
+    """
+    The textual descriptor of a result.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -1150,7 +1476,9 @@ class ResultDetectionConditionText(str):
 
 
 class LaboratoryCommentText(str):
-    """Remarks which further describe the laboratory procedures which produced the result."""
+    """
+    Remarks which further describe the laboratory procedures which produced the result.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -1160,7 +1488,10 @@ class LaboratoryCommentText(str):
 
 
 class ResultMeasureValue(str):
-    """The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed."""
+    """
+    The reportable measure of the result for the chemical, microbiological or other
+    characteristic being analyzed.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1168,7 +1499,10 @@ class ResultMeasureValue(str):
 
 
 class ResultParticleSizeBasisText(str):
-    """User defined free text describing the particle size class for which the associated result is defined."""
+    """
+    User defined free text describing the particle size class for which the associated
+    result is defined.
+    """
 
     def __init__(self, o=""):
         if len(o) > 40:
@@ -1178,7 +1512,10 @@ class ResultParticleSizeBasisText(str):
 
 
 class ResultSampleFractionText(str):
-    """The text name of the portion of the sample associated with results obtained from a physically-partitioned sample."""
+    """
+    The text name of the portion of the sample associated with results obtained from a
+    physically-partitioned sample.
+    """
 
     def __init__(self, o=""):
         if len(o) > 25:
@@ -1188,7 +1525,10 @@ class ResultSampleFractionText(str):
 
 
 class ResultSamplingPointName(str):
-    """Single point name within a sampling frame or protocol that is associated with the reported result."""
+    """
+    Single point name within a sampling frame or protocol that is associated with the
+    reported result.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -1198,7 +1538,9 @@ class ResultSamplingPointName(str):
 
 
 class ResultSamplingPointCommentText(str):
-    """Text description of a single point within a sampling frame for the result."""
+    """
+    Text description of a single point within a sampling frame for the result.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
@@ -1208,7 +1550,10 @@ class ResultSamplingPointCommentText(str):
 
 
 class ResultSamplingPointType(str):
-    """Location of a Single point within a sampling frame or position that is associated with the reported result."""
+    """
+    Location of a Single point within a sampling frame or position that is associated
+    with the reported result.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1218,7 +1563,10 @@ class ResultSamplingPointType(str):
 
 
 class ResultSamplingPointPlaceInSeries(str):
-    """The order in which a single point within a sampling frame was visited in relation to other components."""
+    """
+    The order in which a single point within a sampling frame was visited in relation to
+    other components.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1228,7 +1576,9 @@ class ResultSamplingPointPlaceInSeries(str):
 
 
 class ResultStatusIdentifier(str):
-    """Indicates the acceptability of the result with respect to QA/QC criteria."""
+    """
+    Indicates the acceptability of the result with respect to QA/QC criteria.
+    """
 
     def __init__(self, o=""):
         if len(o) > 12:
@@ -1238,7 +1588,10 @@ class ResultStatusIdentifier(str):
 
 
 class ResultTemperatureBasisText(str):
-    """The name that represents the controlled temperature at which the sample was maintained during analysis, e.g. 25 deg BOD analysis."""
+    """
+    The name that represents the controlled temperature at which the sample was
+    maintained during analysis, e.g. 25 deg BOD analysis.
+    """
 
     def __init__(self, o=""):
         if len(o) > 12:
@@ -1248,7 +1601,10 @@ class ResultTemperatureBasisText(str):
 
 
 class ResultTimeBasisText(str):
-    """The period of time (in days) over which a measurement was made. For example, BOD can be measured as 5 day or 20 day BOD."""
+    """
+    The period of time (in days) over which a measurement was made. For example, BOD can
+    be measured as 5 day or 20 day BOD.
+    """
 
     def __init__(self, o=""):
         if len(o) > 12:
@@ -1256,7 +1612,10 @@ class ResultTimeBasisText(str):
 
 
 class ResultValueTypeName(str):
-    """A name that qualifies the process which was used in the determination of the result value (e.g., actual, estimated, calculated)."""
+    """
+    A name that qualifies the process which was used in the determination of the result
+    value (e.g., actual, estimated, calculated).
+    """
 
     def __init__(self, o=""):
         if len(o) > 20:
@@ -1264,7 +1623,10 @@ class ResultValueTypeName(str):
 
 
 class ResultWeightBasisText(str):
-    """The name that represents the form of the sample or portion of the sample which is associated with the result value (e.g., wet weight, dry weight, ash-free dry weight)."""
+    """
+    The name that represents the form of the sample or portion of the sample which is
+    associated with the result value (e.g., wet weight, dry weight, ash-free dry weight).
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1272,17 +1634,22 @@ class ResultWeightBasisText(str):
 
 
 class SampleCollectionEquipmentCommentText(str):
-    """Free text with general comments further describing the sample collection equipment."""
+    """
+    Free text with general comments further describing the sample collection equipment.
+    """
 
     def __init__(self, o=""):
         if len(o) > 4000:
             raise ValueError(
-                "SampleCollectionEquipmentCommentText must be between 0 and 4000 characters."
+                "SampleCollectionEquipmentCommentText must be between 0 and 4000 "
+                "characters."
             )
 
 
 class SampleCollectionEquipmentName(str):
-    """The name for the equipment used in collecting the sample."""
+    """
+    The name for the equipment used in collecting the sample.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 60:
@@ -1292,7 +1659,9 @@ class SampleCollectionEquipmentName(str):
 
 
 class SampleContainerColorName(str):
-    """The text describing the sample container color."""
+    """
+    The text describing the sample container color.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1302,7 +1671,10 @@ class SampleContainerColorName(str):
 
 
 class SampleContainerLabelName(str):
-    """The identification number or code assigned by the LAB or data collector. Sample Identification Codes and Labeling."""
+    """
+    The identification number or code assigned by the LAB or data collector. Sample
+    Identification Codes and Labeling.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1312,7 +1684,9 @@ class SampleContainerLabelName(str):
 
 
 class SampleContainerTypeName(str):
-    """The text describing the sample container type."""
+    """
+    The text describing the sample container type.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1322,7 +1696,9 @@ class SampleContainerTypeName(str):
 
 
 class SampleTissueAnatomyName(str):
-    """The name of the anatomy from which a tissue sample was taken."""
+    """
+    The name of the anatomy from which a tissue sample was taken.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -1332,17 +1708,23 @@ class SampleTissueAnatomyName(str):
 
 
 class SampleTransportStorageDescription(str):
-    """The text describing sample handling and transport procedures used."""
+    """
+    The text describing sample handling and transport procedures used.
+    """
 
     def __init__(self, o=""):
         if len(o) > 1999:
             raise ValueError(
-                "SampleTransportStorageDescription must be between 0 and 1999 characters."
+                "SampleTransportStorageDescription must be between 0 and 1999 "
+                "characters."
             )
 
 
 class SamplingComponentName(str):
-    """Single entity within a sampling frame at which a collection procedure or protocol was performed (e.g. transect, plot point)."""
+    """
+    Single entity within a sampling frame at which a collection procedure or protocol
+    was performed (e.g. transect, plot point).
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -1352,7 +1734,10 @@ class SamplingComponentName(str):
 
 
 class SamplingDesignTypeCode(str):
-    """A code used to identify the type of sampling design employed for this project to ensure that sampling activities can support project objectives."""
+    """
+    A code used to identify the type of sampling design employed for this project to
+    ensure that sampling activities can support project objectives.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 20:
@@ -1362,7 +1747,10 @@ class SamplingDesignTypeCode(str):
 
 
 class SourceMapScale(str):
-    """The number that represents the proportional distance on the ground for one unit of measure on the map or photo."""
+    """
+    The number that represents the proportional distance on the ground for one unit of
+    measure on the map or photo.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1370,7 +1758,10 @@ class SourceMapScale(str):
 
 
 class StateCode(str):
-    """A code designator used to identify a principal administrative subdivision of the United States, Canada, or Mexico."""
+    """
+    A code designator used to identify a principal administrative subdivision of the
+    United States, Canada, or Mexico.
+    """
 
     def __init__(self, o=""):
         if len(o) > 2:
@@ -1378,7 +1769,9 @@ class StateCode(str):
 
 
 class StatisticalBaseCode(str):
-    """The code for the method used to calculate derived results."""
+    """
+    The code for the method used to calculate derived results.
+    """
 
     def __init__(self, o=""):
         if len(o) > 25:
@@ -1386,7 +1779,10 @@ class StatisticalBaseCode(str):
 
 
 class StatisticalNValueNumeric(int):
-    """The number of repeated measurements taken to calculate the result value as an average."""
+    """
+    The number of repeated measurements taken to calculate the result value as an
+    average.
+    """
 
     def __init__(self, o=0):
         if o < 0:
@@ -1394,7 +1790,9 @@ class StatisticalNValueNumeric(int):
 
 
 class StatisticalStratumText(str):
-    """Identifies the statistical stratum applied to this site."""
+    """
+    Identifies the statistical stratum applied to this site.
+    """
 
     def __init__(self, o=""):
         if len(o) > 15:
@@ -1404,7 +1802,9 @@ class StatisticalStratumText(str):
 
 
 class SubjectTaxonomicName(str):
-    """The name of the organism sampled as part of a biological sample."""
+    """
+    The name of the organism sampled as part of a biological sample.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
@@ -1412,7 +1812,9 @@ class SubjectTaxonomicName(str):
 
 
 class SubjectTaxonomicNameUserSupplied(str):
-    """The user supplied name of the organism sampled as part of a biological sample."""
+    """
+    The user supplied name of the organism sampled as part of a biological sample.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
@@ -1422,17 +1824,22 @@ class SubjectTaxonomicNameUserSupplied(str):
 
 
 class SubjectTaxonomicNameUserSuppliedReferenceText(str):
-    """Identifies the source or data system that created or defined the identifier."""
+    """
+    Identifies the source or data system that created or defined the identifier.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
             raise ValueError(
-                "SubjectTaxonomicNameUserSuppliedReferenceText must be between 0 and 255 characters."
+                "SubjectTaxonomicNameUserSuppliedReferenceText must be between 0 and 255"
+                "characters."
             )
 
 
 class SubstanceDilutionFactor(str):
-    """The overall dilution of the substance subjected to this analysis."""
+    """
+    The overall dilution of the substance subjected to this analysis.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1442,7 +1849,11 @@ class SubstanceDilutionFactor(str):
 
 
 class SupplementalAddressText(str):
-    """The text that provides additional information about an address, including a building name with its secondary unit and number, an industrial park name, an installation name or descriptive text where no formal address is available."""
+    """
+    The text that provides additional information about an address, including a building
+    name with its secondary unit and number, an industrial park name, an installation
+    name or descriptive text where no formal address is available.
+    """
 
     def __init__(self, o=""):
         if len(o) > 120:
@@ -1452,7 +1863,9 @@ class SupplementalAddressText(str):
 
 
 class TargetCount(str):
-    """A code used to identify the intended count that the sorter was aiming for."""
+    """
+    A code used to identify the intended count that the sorter was aiming for.
+    """
 
     def __init__(self, o=""):
         if len(o) > 35:
@@ -1460,7 +1873,10 @@ class TargetCount(str):
 
 
 class TaxonomicPollutionTolerance(str):
-    """For entries representing taxa, a code representing the ability of the reported taxon to tolerate pollution."""
+    """
+    For entries representing taxa, a code representing the ability of the reported taxon
+    to tolerate pollution.
+    """
 
     def __init__(self, o=""):
         if len(o) > 30:
@@ -1470,7 +1886,9 @@ class TaxonomicPollutionTolerance(str):
 
 
 class TaxonomistAccreditationIndicator(object):
-    """Indicates whether the taxonomist is accredited."""
+    """
+    Indicates whether the taxonomist is accredited.
+    """
 
     __o: bool
 
@@ -1485,27 +1903,36 @@ class TaxonomistAccreditationIndicator(object):
 
 
 class TaxonomistAccreditationAuthorityName(str):
-    """An outside accreditation authority identifier for the taxonomist."""
+    """
+    An outside accreditation authority identifier for the taxonomist.
+    """
 
     def __init__(self, o=""):
         if len(o) > 20:
             raise ValueError(
-                "TaxonomistAccreditationAuthorityName must be between 0 and 20 characters."
+                "TaxonomistAccreditationAuthorityName must be between 0 and 20 "
+                "characters."
             )
 
 
 class TaxonomicPollutionToleranceScaleText(str):
-    """Provides a description of the scale used for the taxonomic pollution tolerance value."""
+    """
+    Provides a description of the scale used for the taxonomic pollution tolerance value.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
             raise ValueError(
-                "TaxonomicPollutionToleranceScaleText must be between 0 and 50 characters."
+                "TaxonomicPollutionToleranceScaleText must be between 0 and 50 "
+                "characters."
             )
 
 
 class TelephoneExtensionNumberText(str):
-    """The number assigned within an organization to an individual telephone that extends the external telephone number."""
+    """
+    The number assigned within an organization to an individual telephone that extends
+    the external telephone number.
+    """
 
     def __init__(self, o=""):
         if len(o) > 6:
@@ -1515,7 +1942,9 @@ class TelephoneExtensionNumberText(str):
 
 
 class TelephoneNumberText(str):
-    """The number that identifies a particular telephone connection."""
+    """
+    The number that identifies a particular telephone connection.
+    """
 
     def __init__(self, o=""):
         if len(o) > 15:
@@ -1523,7 +1952,9 @@ class TelephoneNumberText(str):
 
 
 class TelephoneNumberTypeName(str):
-    """The name that describes a telephone number type."""
+    """
+    The name that describes a telephone number type.
+    """
 
     def __init__(self, o=""):
         if len(o) > 6:
@@ -1533,7 +1964,9 @@ class TelephoneNumberTypeName(str):
 
 
 class ThermalPreservativeUsedName(str):
-    """Information describing the temperature means used to preserve the sample."""
+    """
+    Information describing the temperature means used to preserve the sample.
+    """
 
     def __init__(self, o=""):
         if len(o) > 250:
@@ -1543,13 +1976,18 @@ class ThermalPreservativeUsedName(str):
 
 
 class Time(time):
-    """The time of day that is reported."""
+    """
+    The time of day that is reported.
+    """
 
     pass
 
 
 class TimeZoneCode(str):
-    """The time zone for which the time of day is reported. Any of the longitudinal divisions of the earth's surface in which a standard time is kept."""
+    """
+    The time zone for which the time of day is reported. Any of the longitudinal
+    divisions of the earth's surface in which a standard time is kept.
+    """
 
     def __init__(self, o=None):
         if not isinstance(o, str) or len(o) < 1 or len(o) > 4:
@@ -1557,7 +1995,9 @@ class TimeZoneCode(str):
 
 
 class ToxicityTestType(str):
-    """Identifies the type of toxicity as either Acute or Chronic."""
+    """
+    Identifies the type of toxicity as either Acute or Chronic.
+    """
 
     def __init__(self, o=""):
         if len(o) > 30:
@@ -1565,7 +2005,9 @@ class ToxicityTestType(str):
 
 
 class TribalCode(str):
-    """The code that represents the American Indian tribe or Alaskan Native entity."""
+    """
+    The code that represents the American Indian tribe or Alaskan Native entity.
+    """
 
     def __init__(self, o=""):
         if len(o) > 3:
@@ -1573,7 +2015,9 @@ class TribalCode(str):
 
 
 class TribalLandIndicator(str):
-    """An indicator denoting whether the location is on a tribal land."""
+    """
+    An indicator denoting whether the location is on a tribal land.
+    """
 
     def __new__(self, o: Union[str, bool]):
         if isinstance(o, str):
@@ -1592,7 +2036,9 @@ class TribalLandIndicator(str):
 
 
 class TribalLandName(str):
-    """The name of an American Indian or Alaskan native area where the location exists."""
+    """
+    The name of an American Indian or Alaskan native area where the location exists.
+    """
 
     def __init__(self, o=""):
         if len(o) > 512:
@@ -1600,7 +2046,10 @@ class TribalLandName(str):
 
 
 class TrophicLevelName(str):
-    """For entries representing taxa, a code representing the trophic level with which the reported taxon is typically assigned."""
+    """
+    For entries representing taxa, a code representing the trophic level with which the
+    reported taxon is typically assigned.
+    """
 
     def __init__(self, o=""):
         if len(o) > 30:
@@ -1608,7 +2057,11 @@ class TrophicLevelName(str):
 
 
 class UnidentifiedSpeciesIdentifier(str):
-    """A number or name assigned as a part of a taxonomic identification. Used with a valid genus name to indicate a unique species has been observed but not taxonomically identified."""
+    """
+    A number or name assigned as a part of a taxonomic identification. Used with a valid
+    genus name to indicate a unique species has been observed but not taxonomically
+    identified.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:
@@ -1618,7 +2071,9 @@ class UnidentifiedSpeciesIdentifier(str):
 
 
 class UpperConfidenceLimitValue(str):
-    """Value of the upper end of the confidence interval."""
+    """
+    Value of the upper end of the confidence interval.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1628,7 +2083,9 @@ class UpperConfidenceLimitValue(str):
 
 
 class UpperClassBoundValue(str):
-    """This described the upper bound for a frequency class descriptor."""
+    """
+    This described the upper bound for a frequency class descriptor.
+    """
 
     def __init__(self, o=""):
         if len(o) > 60:
@@ -1636,7 +2093,10 @@ class UpperClassBoundValue(str):
 
 
 class VerticalCollectionMethodName(str):
-    """The name that identifies the method used to collect the vertical measure (i.e. the altitude) of a reference point."""
+    """
+    The name that identifies the method used to collect the vertical measure (i.e. the
+    altitude) of a reference point.
+    """
 
     def __init__(self, o=""):
         if len(o) > 50:
@@ -1646,17 +2106,23 @@ class VerticalCollectionMethodName(str):
 
 
 class VerticalCoordinateReferenceSystemDatumName(str):
-    """The name of the reference datum used to determine the vertical measure (i.e., the altitude)."""
+    """
+    The name of the reference datum used to determine the vertical measure (i.e., the
+    altitude).
+    """
 
     def __init__(self, o=""):
         if len(o) > 10:
             raise ValueError(
-                "VerticalCoordinateReferenceSystemDatumName must be between 0 and 10 characters."
+                "VerticalCoordinateReferenceSystemDatumName must be between 0 and 10 "
+                "characters."
             )
 
 
 class VoltinismName(str):
-    """The number of broods or generations of the characteristic in a year."""
+    """
+    The number of broods or generations of the characteristic in a year.
+    """
 
     def __init__(self, o=""):
         if len(o) > 25:
@@ -1664,7 +2130,9 @@ class VoltinismName(str):
 
 
 class WellTypeText(str):
-    """Identifies the primary well type."""
+    """
+    Identifies the primary well type.
+    """
 
     def __init__(self, o=""):
         if len(o) > 255:

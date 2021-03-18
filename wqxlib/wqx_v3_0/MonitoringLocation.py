@@ -10,7 +10,10 @@ from .WellInformation import WellInformation
 
 
 class MonitoringLocation:
-    """An identifiable location where an environmental sample, onsite measurement, and/or observation is determined."""
+    """
+    An identifiable location where an environmental sample, onsite measurement, and/or
+    observation is determined.
+    """
 
     __monitoringLocationIdentity: MonitoringLocationIdentity
     __monitoringLocationGeospatial: MonitoringLocationGeospatial

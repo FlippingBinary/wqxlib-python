@@ -5,7 +5,9 @@ from .SimpleContent import GearProcedureUnitCode, MeasureValue
 
 
 class CollectionEffort:
-    """The fields to describe the effort used a collection."""
+    """
+    The fields to describe the effort used a collection.
+    """
 
     __measureValue: MeasureValue
     __gearProcedureUnitCode: GearProcedureUnitCode

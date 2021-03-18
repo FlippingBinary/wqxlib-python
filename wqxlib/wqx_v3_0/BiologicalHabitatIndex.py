@@ -13,7 +13,10 @@ from .SimpleContent import (
 
 
 class BiologicalHabitatIndex:
-    """This section allows for the reporting of habitat and biotic integrity indices as a representation of water quality conditions."""
+    """
+    This section allows for the reporting of habitat and biotic integrity indices as a
+    representation of water quality conditions.
+    """
 
     __indexIdentifier: IndexIdentifier
     __indexType: IndexType
@@ -97,12 +100,16 @@ class BiologicalHabitatIndex:
 
     @property
     def indexCommentText(self) -> CommentText:
-        """Free text with general comments concerning the index."""
+        """
+        Free text with general comments concerning the index.
+        """
         return self.__indexCommentText
 
     @indexCommentText.setter
     def indexCommentText(self, val: CommentText) -> None:
-        """Free text with general comments concerning the index."""
+        """
+        Free text with general comments concerning the index.
+        """
         self.__indexCommentText = None if val is None else CommentText(val)
 
     @property

@@ -8,7 +8,9 @@ from .SimpleContent import (
 
 
 class AlternateMonitoringLocationIdentity:
-    """Alternate identifications of a monitoring location."""
+    """
+    Alternate identifications of a monitoring location.
+    """
 
     __monitoringLocationIdentifier: MonitoringLocationIdentifier
     __monitoringLocationIdentifierContext: MonitoringLocationIdentifierContext

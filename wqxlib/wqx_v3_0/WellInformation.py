@@ -13,7 +13,9 @@ from .SimpleContent import (
 
 
 class WellInformation:
-    """Description of the attributes of a well."""
+    """
+    Description of the attributes of a well.
+    """
 
     __wellTypeText: WellTypeText
     __aquiferTypeName: AquiferTypeName
@@ -110,12 +112,18 @@ class WellInformation:
 
     @property
     def wellHoleDepthMeasure(self) -> MeasureCompact:
-        """Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling."""
+        """
+        Depth below land surface datum (LSD) to the bottom of the hole on completion of
+        drilling.
+        """
         return self.__wellHoleDepthMeasure
 
     @wellHoleDepthMeasure.setter
     def wellHoleDepthMeasure(self, val: MeasureCompact) -> None:
-        """Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling."""
+        """
+        Depth below land surface datum (LSD) to the bottom of the hole on completion of
+        drilling.
+        """
         self.__wellHoleDepthMeasure = None if val is None else MeasureCompact(val)
 
     @property
@@ -128,12 +136,18 @@ class WellInformation:
 
     @property
     def wellDepthMeasure(self) -> MeasureCompact:
-        """Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling. ie. completion depth"""
+        """
+        Depth below land surface datum (LSD) to the bottom of the hole on completion of
+        drilling. ie. completion depth
+        """
         return self.__wellDepthMeasure
 
     @wellDepthMeasure.setter
     def wellDepthMeasure(self, val: MeasureCompact) -> None:
-        """Depth below land surface datum (LSD) to the bottom of the hole on completion of drilling. ie. completion depth"""
+        """
+        Depth below land surface datum (LSD) to the bottom of the hole on completion of
+        drilling. ie. completion depth
+        """
         self.__wellDepthMeasure = None if val is None else MeasureCompact(val)
 
     def generateXML(self, name: str = "WellInformation") -> str:

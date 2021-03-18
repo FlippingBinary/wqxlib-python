@@ -8,7 +8,9 @@ from .SimpleContent import (
 
 
 class Telephonic:
-    """An identification of a telephone connection."""
+    """
+    An identification of a telephone connection.
+    """
 
     __telephoneNumberText: TelephoneNumberText
     __telephoneNumberTypeName: TelephoneNumberTypeName

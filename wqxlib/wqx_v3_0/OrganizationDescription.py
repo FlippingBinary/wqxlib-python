@@ -10,7 +10,10 @@ from .SimpleContent import (
 
 
 class OrganizationDescription:
-    """The particular word(s) regularly connected with a unique framework of authority within which a person or persons act, or are designated to act, towards some purpose."""
+    """
+    The particular word(s) regularly connected with a unique framework of authority
+    within which a person or persons act, or are designated to act, towards some purpose.
+    """
 
     __organizationIdentifier: OrganizationIdentifier
     __organizationFormalName: OrganizationFormalName

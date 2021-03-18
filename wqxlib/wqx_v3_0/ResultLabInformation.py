@@ -18,7 +18,9 @@ from .WQXTime import WQXTime
 
 
 class ResultLabInformation:
-    """Describes information obtained by a laboratory related to a specific laboratory analysis."""
+    """
+    Describes information obtained by a laboratory related to a specific laboratory analysis.
+    """
 
     __laboratoryName: LaboratoryName
     __analysisStartDate: AnalysisStartDate
@@ -129,12 +131,16 @@ class ResultLabInformation:
 
     @property
     def analysisStartTime(self) -> WQXTime:
-        """The local time and relative time zone when the analysis began."""
+        """
+        The local time and relative time zone when the analysis began.
+        """
         return self.__analysisStartTime
 
     @analysisStartTime.setter
     def analysisStartTime(self, val: WQXTime) -> None:
-        """The local time and relative time zone when the analysis began."""
+        """
+        The local time and relative time zone when the analysis began.
+        """
         self.__analysisStartTime = None if val is None else WQXTime(val)
 
     @property
@@ -147,12 +153,16 @@ class ResultLabInformation:
 
     @property
     def analysisEndTime(self) -> WQXTime:
-        """The local time and relative time zone when the analysis was finished."""
+        """
+        The local time and relative time zone when the analysis was finished.
+        """
         return self.__analysisEndTime
 
     @analysisEndTime.setter
     def analysisEndTime(self, val: WQXTime) -> None:
-        """The local time and relative time zone when the analysis was finished."""
+        """
+        The local time and relative time zone when the analysis was finished.
+        """
         self.__analysisEndTime = None if val is None else WQXTime(val)
 
     @property
@@ -165,14 +175,20 @@ class ResultLabInformation:
 
     @property
     def resultDetectionQuantitationLimit(self) -> List[DetectionQuantitationLimit]:
-        """Information that describes one of a variety of detection or quantitation limits determined in a laboratory."""
+        """
+        Information that describes one of a variety of detection or quantitation limits
+        determined in a laboratory.
+        """
         return self.__resultDetectionQuantitationLimit
 
     @resultDetectionQuantitationLimit.setter
     def resultDetectionQuantitationLimit(
         self, val: Union[DetectionQuantitationLimit, List[DetectionQuantitationLimit]]
     ) -> None:
-        """Information that describes one of a variety of detection or quantitation limits determined in a laboratory."""
+        """
+        Information that describes one of a variety of detection or quantitation limits
+        determined in a laboratory.
+        """
         if val is None:
             self.__resultDetectionQuantitationLimit = []
         elif isinstance(val, list):

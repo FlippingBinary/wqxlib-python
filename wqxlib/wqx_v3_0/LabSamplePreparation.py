@@ -10,7 +10,11 @@ from .WQXTime import WQXTime
 
 
 class LabSamplePreparation:
-    """Describes Lab Sample Preparation procedures which may alter the original state of the Sample and produce Lab subsamples.  These Lab Subsamples are analyized and reported by the Lab as Sample results."""
+    """
+    Describes Lab Sample Preparation procedures which may alter the original state of
+    the Sample and produce Lab subsamples.  These Lab Subsamples are analyized and
+    reported by the Lab as Sample results.
+    """
 
     __labSamplePreparationMethod: ReferenceMethod
     __preparationStartDate: PreparationStartDate
@@ -57,12 +61,18 @@ class LabSamplePreparation:
 
     @property
     def labSamplePreparationMethod(self) -> ReferenceMethod:
-        """Identifying information about the method followed to prepare a sample for analysis."""
+        """
+        Identifying information about the method followed to prepare a sample for
+        analysis.
+        """
         return self.__labSamplePreparationMethod
 
     @labSamplePreparationMethod.setter
     def labSamplePreparationMethod(self, val: ReferenceMethod) -> None:
-        """Identifying information about the method followed to prepare a sample for analysis."""
+        """
+        Identifying information about the method followed to prepare a sample for
+        analysis.
+        """
         self.__labSamplePreparationMethod = None if val is None else ReferenceMethod(val)
 
     @property
@@ -75,12 +85,16 @@ class LabSamplePreparation:
 
     @property
     def preparationStartTime(self) -> WQXTime:
-        """The local time when the preparation/extraction of the sample for analysis began."""
+        """
+        The local time when the preparation/extraction of the sample for analysis began.
+        """
         return self.__preparationStartTime
 
     @preparationStartTime.setter
     def preparationStartTime(self, val: WQXTime) -> None:
-        """The local time when the preparation/extraction of the sample for analysis began."""
+        """
+        The local time when the preparation/extraction of the sample for analysis began.
+        """
         self.__preparationStartTime = None if val is None else WQXTime(val)
 
     @property
@@ -93,12 +107,18 @@ class LabSamplePreparation:
 
     @property
     def preparationEndTime(self) -> WQXTime:
-        """The local time when the preparation/extraction of the sample for analysis was finished."""
+        """
+        The local time when the preparation/extraction of the sample for analysis was
+        finished.
+        """
         return self.__preparationEndTime
 
     @preparationEndTime.setter
     def preparationEndTime(self, val: WQXTime) -> None:
-        """The local time when the preparation/extraction of the sample for analysis was finished."""
+        """
+        The local time when the preparation/extraction of the sample for analysis was
+        finished.
+        """
         self.__preparationEndTime = None if val is None else WQXTime(val)
 
     @property

@@ -16,7 +16,10 @@ from .SimpleContent import (
 
 
 class ProjectMonitoringLocationWeighting:
-    """Describes the probability weighting information for a given Project / Monitoring Location Assignment."""
+    """
+    Describes the probability weighting information for a given Project / Monitoring
+    Location Assignment.
+    """
 
     __monitoringLocationIdentifier: MonitoringLocationIdentifier
     __locationWeightingFactorMeasure: MeasureCompact
@@ -91,12 +94,16 @@ class ProjectMonitoringLocationWeighting:
 
     @property
     def locationWeightingFactorMeasure(self) -> MeasureCompact:
-        """A measurement of the monitoring location selection weighting factor."""
+        """
+        A measurement of the monitoring location selection weighting factor.
+        """
         return self.__locationWeightingFactorMeasure
 
     @locationWeightingFactorMeasure.setter
     def locationWeightingFactorMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the monitoring location selection weighting factor."""
+        """
+        A measurement of the monitoring location selection weighting factor.
+        """
         self.__locationWeightingFactorMeasure = MeasureCompact(val)
 
     @property
@@ -157,12 +164,16 @@ class ProjectMonitoringLocationWeighting:
 
     @property
     def referenceLocationCitation(self) -> BibliographicReference:
-        """Identifes the source that created or defined the Reference Location."""
+        """
+        Identifes the source that created or defined the Reference Location.
+        """
         return self.__referenceLocationCitation
 
     @referenceLocationCitation.setter
     def referenceLocationCitation(self, val: BibliographicReference) -> None:
-        """Identifes the source that created or defined the Reference Location."""
+        """
+        Identifes the source that created or defined the Reference Location.
+        """
         self.__referenceLocationCitation = (
             None if val is None else BibliographicReference(val)
         )

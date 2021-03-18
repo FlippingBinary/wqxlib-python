@@ -10,7 +10,9 @@ from .SimpleContent import (
 
 
 class ActivityGroup:
-    """Allows for the grouping of activities."""
+    """
+    Allows for the grouping of activities.
+    """
 
     __activityGroupIdentifier: ActivityGroupIdentifier
     __activityGroupName: ActivityGroupName
@@ -108,7 +110,8 @@ class ActivityGroup:
             line("ActivityGroupTypeCode", self.__activityGroupTypeCode)
             if len(self.__activityIdentifier) < 2:
                 raise WQXException(
-                    "Attribute 'activityIdentifier' must be a list of 2 or more ActivityIdentifier objects."
+                    "Attribute 'activityIdentifier' must be a list of 2 or more "
+                    "ActivityIdentifier objects."
                 )
             for x in self.__activityIdentifier:
                 line("ActivityIdentifier", x)

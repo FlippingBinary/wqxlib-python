@@ -5,7 +5,10 @@ from .SimpleContent import MeasureUnitCode, MeasureValue
 
 
 class MeasureCompact:
-    """Identifies only the value and the associated units of measure for measuring the observation or analytical result value."""
+    """
+    Identifies only the value and the associated units of measure for measuring the
+    observation or analytical result value.
+    """
 
     __measureValue: MeasureValue
     __measureUnitCode: MeasureUnitCode

@@ -10,7 +10,10 @@ from .SimpleContent import (
 
 
 class AquiferInformation:
-    """Identifies the procedures, processes, and references required to determine the methods used to obtain a result."""
+    """
+    Identifies the procedures, processes, and references required to determine the
+    methods used to obtain a result.
+    """
 
     __localAquiferCode: LocalAquiferCode
     __localAquiferCodeContext: LocalAquiferCodeContext

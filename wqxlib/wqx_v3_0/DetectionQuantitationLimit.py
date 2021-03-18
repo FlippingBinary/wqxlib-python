@@ -9,7 +9,10 @@ from .SimpleContent import (
 
 
 class DetectionQuantitationLimit:
-    """Information that describes one of a variety of detection or quantitation limits determined in a laboratory."""
+    """
+    Information that describes one of a variety of detection or quantitation limits
+    determined in a laboratory.
+    """
 
     __detectionQuantitationLimitTypeName: DetectionQuantitationLimitTypeName
     __detectionQuantitationLimitMeasure: MeasureCompact

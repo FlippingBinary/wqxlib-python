@@ -15,7 +15,9 @@ from .Telephonic import Telephonic
 
 
 class Organization:
-    """Schema used to transfer organization information."""
+    """
+    Schema used to transfer organization information.
+    """
 
     __organizationDescription: OrganizationDescription
     __electronicAddress: List[ElectronicAddress]
@@ -83,7 +85,8 @@ class Organization:
     def organizationDescription(self, val: OrganizationDescription) -> None:
         if val is not None and not isinstance(val, OrganizationDescription):
             raise WQXException(
-                "Property 'organizationDescription' must be an OrganizationDescription object."
+                "Property 'organizationDescription' must be an OrganizationDescription "
+                "object."
             )
         self.__organizationDescription = (
             None if val is None else OrganizationDescription(val)
@@ -240,7 +243,8 @@ class Organization:
                 asis(x.generateXML("Telephonic"))
             if len(self.__organizationAddress) > 3:
                 raise WQXException(
-                    "Attribute 'organizationAddress' must contain 0 to 3 OrganizationAddress objects."
+                    "Attribute 'organizationAddress' must contain 0 to 3 "
+                    "OrganizationAddress objects."
                 )
             for x in self.__organizationAddress:
                 asis(x.generateXML("OrganizationAddress"))

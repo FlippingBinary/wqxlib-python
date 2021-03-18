@@ -18,7 +18,10 @@ from .SimpleContent import (
 
 
 class MonitoringLocationIdentity:
-    """Basic identification information for the location/site that is monitored or used for sampling."""
+    """
+    Basic identification information for the location/site that is monitored or used
+    for sampling.
+    """
 
     __monitoringLocationIdentifier: MonitoringLocationIdentifier
     __monitoringLocationName: MonitoringLocationName
@@ -200,22 +203,30 @@ class MonitoringLocationIdentity:
 
     @property
     def drainageAreaMeasure(self) -> MeasureCompact:
-        """The drainage basin of a lake, stream, wetland, or estuary site."""
+        """
+        The drainage basin of a lake, stream, wetland, or estuary site.
+        """
         return self.__drainageAreaMeasure
 
     @drainageAreaMeasure.setter
     def drainageAreaMeasure(self, val: MeasureCompact) -> None:
-        """The drainage basin of a lake, stream, wetland, or estuary site."""
+        """
+        The drainage basin of a lake, stream, wetland, or estuary site.
+        """
         self.__drainageAreaMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def contributingDrainageAreaMeasure(self) -> MeasureCompact:
-        """The contributing drainage area of a lake, stream, wetland, or estuary site."""
+        """
+        The contributing drainage area of a lake, stream, wetland, or estuary site.
+        """
         return self.__contributingDrainageAreaMeasure
 
     @contributingDrainageAreaMeasure.setter
     def contributingDrainageAreaMeasure(self, val: MeasureCompact) -> None:
-        """The contributing drainage area of a lake, stream, wetland, or estuary site."""
+        """
+        The contributing drainage area of a lake, stream, wetland, or estuary site.
+        """
         self.__contributingDrainageAreaMeasure = (
             None if val is None else MeasureCompact(val)
         )

@@ -31,7 +31,9 @@ from .SimpleContent import (
 
 
 class ResultDescription:
-    """Describes the results of a field measurement, observation, or laboratory analysis."""
+    """
+    Describes the results of a field measurement, observation, or laboratory analysis.
+    """
 
     __dataLoggerLineName: DataLoggerLineName
     __resultDetectionConditionText: ResultDetectionConditionText
@@ -242,12 +244,18 @@ class ResultDescription:
 
     @property
     def resultMeasure(self) -> Measure:
-        """The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed."""
+        """
+        The reportable measure of the result for the chemical, microbiological or other
+        characteristic being analyzed.
+        """
         return self.__resultMeasure
 
     @resultMeasure.setter
     def resultMeasure(self, val: Measure) -> None:
-        """The reportable measure of the result for the chemical, microbiological or other characteristic being analyzed."""
+        """
+        The reportable measure of the result for the chemical, microbiological or other
+        characteristic being analyzed.
+        """
         self.__resultMeasure = None if val is None else Measure(val)
 
     @property
@@ -352,34 +360,50 @@ class ResultDescription:
 
     @property
     def resultCommentText(self) -> CommentText:
-        """Free text with general comments concerning the result."""
+        """
+        Free text with general comments concerning the result.
+        """
         return self.__resultCommentText
 
     @resultCommentText.setter
     def resultCommentText(self, val: CommentText) -> None:
-        """Free text with general comments concerning the result."""
+        """
+        Free text with general comments concerning the result.
+        """
         self.__resultCommentText = None if val is None else CommentText(val)
 
     @property
     def resultDepthHeightMeasure(self) -> MeasureCompact:
-        """A measurement of the vertical location (measured from a reference point) at which a result is obtained."""
+        """
+        A measurement of the vertical location (measured from a reference point) at which
+        a result is obtained.
+        """
         return self.__resultDepthHeightMeasure
 
     @resultDepthHeightMeasure.setter
     def resultDepthHeightMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the vertical location (measured from a reference point) at which a result is obtained."""
+        """
+        A measurement of the vertical location (measured from a reference point) at which
+        a result is obtained.
+        """
         self.__resultDepthHeightMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def resultDepthAltitudeReferencePointText(self) -> DepthAltitudeReferencePointText:
-        """The reference used to indicate the datum or reference used to establish the depth/altitude of a result."""
+        """
+        The reference used to indicate the datum or reference used to establish the
+        depth/altitude of a result.
+        """
         return self.__resultDepthAltitudeReferencePointText
 
     @resultDepthAltitudeReferencePointText.setter
     def resultDepthAltitudeReferencePointText(
         self, val: DepthAltitudeReferencePointText
     ) -> None:
-        """The reference used to indicate the datum or reference used to establish the depth/altitude of a result."""
+        """
+        The reference used to indicate the datum or reference used to establish the
+        depth/altitude of a result.
+        """
         self.__resultDepthAltitudeReferencePointText = (
             None if val is None else DepthAltitudeReferencePointText(val)
         )

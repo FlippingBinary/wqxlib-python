@@ -14,7 +14,9 @@ from .SimpleContent import (
 
 
 class OrganizationDelete:
-    """Schema used to delete organization information"""
+    """
+    Schema used to delete organization information
+    """
 
     __organizationIdentifier: OrganizationIdentifier
     __projectIdentifier: List[ProjectIdentifier]

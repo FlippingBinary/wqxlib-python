@@ -10,7 +10,10 @@ from .SimpleContent import (
 
 
 class DataQuality:
-    """The quantitative statistics and qualitative descriptors that are used to interpret the degree of acceptability or utility of data to the user."""
+    """
+    The quantitative statistics and qualitative descriptors that are used to interpret
+    the degree of acceptability or utility of data to the user.
+    """
 
     __precisionValue: PrecisionValue  # optional
     __biasValue: BiasValue  # optional

@@ -24,7 +24,9 @@ from .WQXTime import WQXTime
 
 
 class ActivityDescription:
-    """Basic identification information for an activity conducted within a project."""
+    """
+    Basic identification information for an activity conducted within a project.
+    """
 
     __activityIdentifier: ActivityIdentifier
     __activityIdentifierUserSupplied: ActivityIdentifierUserSupplied
@@ -206,12 +208,16 @@ class ActivityDescription:
 
     @property
     def activityStartTime(self) -> WQXTime:
-        """The measure of clock time when the field activity began."""
+        """
+        The measure of clock time when the field activity began.
+        """
         return self.__activityStartTime
 
     @activityStartTime.setter
     def activityStartTime(self, val: WQXTime) -> None:
-        """The measure of clock time when the field activity began."""
+        """
+        The measure of clock time when the field activity began.
+        """
         self.__activityStartTime = None if val is None else WQXTime(val)
 
     @property
@@ -228,12 +234,16 @@ class ActivityDescription:
 
     @property
     def activityEndTime(self) -> WQXTime:
-        """The measure of clock time when the field activity ended."""
+        """
+        The measure of clock time when the field activity ended.
+        """
         return self.__activityEndTime
 
     @activityEndTime.setter
     def activityEndTime(self, val: WQXTime) -> None:
-        """The measure of clock time when the field activity ended."""
+        """
+        The measure of clock time when the field activity ended.
+        """
         self.__activityEndTime = None if val is None else WQXTime(val)
 
     @property
@@ -248,48 +258,72 @@ class ActivityDescription:
 
     @property
     def activityDepthHeightMeasure(self) -> MeasureCompact:
-        """A measurement of the vertical location (measured from a reference point) at which an activity occurred."""
+        """
+        A measurement of the vertical location (measured from a reference point) at
+        which an activity occurred.
+        """
         return self.__activityDepthHeightMeasure
 
     @activityDepthHeightMeasure.setter
     def activityDepthHeightMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the vertical location (measured from a reference point) at which an activity occurred."""
+        """
+        A measurement of the vertical location (measured from a reference point) at
+        which an activity occurred.
+        """
         self.__activityDepthHeightMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def activityTopDepthHeightMeasure(self) -> MeasureCompact:
-        """A measurement of the upper vertical location of a vertical location range (measured from a reference point) at which an activity occurred."""
+        """
+        A measurement of the upper vertical location of a vertical location range
+        (measured from a reference point) at which an activity occurred.
+        """
         return self.__activityTopDepthHeightMeasure
 
     @activityTopDepthHeightMeasure.setter
     def activityTopDepthHeightMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the upper vertical location of a vertical location range (measured from a reference point) at which an activity occurred."""
+        """
+        A measurement of the upper vertical location of a vertical location range
+        (measured from a reference point) at which an activity occurred.
+        """
         self.__activityTopDepthHeightMeasure = (
             None if val is None else MeasureCompact(val)
         )
 
     @property
     def activityBottomDepthHeightMeasure(self) -> MeasureCompact:
-        """A measurement of the lower vertical location of a vertical location range (measured from a reference point) at which an activity occurred."""
+        """
+        A measurement of the lower vertical location of a vertical location range
+        (measured from a reference point) at which an activity occurred.
+        """
         return self.__activityBottomDepthHeightMeasure
 
     @activityBottomDepthHeightMeasure.setter
     def activityBottomDepthHeightMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the lower vertical location of a vertical location range (measured from a reference point) at which an activity occurred."""
+        """
+        A measurement of the lower vertical location of a vertical location range
+        (measured from a reference point) at which an activity occurred.
+        """
         self.__activityBottomDepthHeightMeasure = (
             None if val is None else MeasureCompact(val)
         )
 
     @property
     def activityDepthAltitudeReferencePointText(self,) -> DepthAltitudeReferencePointText:
-        """The reference used to indicate the datum or reference used to establish the depth/altitude of an activity."""
+        """
+        The reference used to indicate the datum or reference used to establish the
+        depth/altitude of an activity.
+        """
         return self.__activityDepthAltitudeReferencePointText
 
     @activityDepthAltitudeReferencePointText.setter
     def activityDepthAltitudeReferencePointText(
         self, val: DepthAltitudeReferencePointText
     ) -> None:
-        """The reference used to indicate the datum or reference used to establish the depth/altitude of an activity."""
+        """
+        The reference used to indicate the datum or reference used to establish the
+        depth/altitude of an activity.
+        """
         self.__activityDepthAltitudeReferencePointText = (
             None if val is None else DepthAltitudeReferencePointText(val)
         )
@@ -347,12 +381,16 @@ class ActivityDescription:
 
     @property
     def activityCommentText(self) -> CommentText:
-        """General comments concerning the activity."""
+        """
+        General comments concerning the activity.
+        """
         return self.__activityCommentText
 
     @activityCommentText.setter
     def activityCommentText(self, val: CommentText) -> None:
-        """General comments concerning the activity."""
+        """
+        General comments concerning the activity.
+        """
         self.__activityCommentText = None if val is None else CommentText(val)
 
     def generateXML(self, name: str = "ActivityDescription") -> str:
@@ -414,7 +452,8 @@ class ActivityDescription:
                 )
             if self.__projectIdentifier is None or len(self.__projectIdentifier) < 1:
                 raise WQXException(
-                    "Attribute 'projectIdentifier' must be a list of 1 or more ProjectIdentifier objects."
+                    "Attribute 'projectIdentifier' must be a list of 1 or more "
+                    "ProjectIdentifier objects."
                 )
             line("ProjectIdentifier", self.__projectIdentifier)
             for x in self.__activityConductingOrganizationText:

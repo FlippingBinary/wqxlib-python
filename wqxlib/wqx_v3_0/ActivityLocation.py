@@ -13,7 +13,10 @@ from .SimpleContent import (
 
 
 class ActivityLocation:
-    """Geospatial description of monitoring site, if it is different from that described in the station description."""
+    """
+    Geospatial description of monitoring site, if it is different from that described in
+    the station description.
+    """
 
     __latitudeMeasure: LatitudeMeasure
     __longitudeMeasure: LongitudeMeasure

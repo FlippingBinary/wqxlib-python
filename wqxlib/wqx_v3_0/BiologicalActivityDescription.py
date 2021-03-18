@@ -5,7 +5,10 @@ from .SimpleContent import AssemblageSampledName, HabitatSelectionMethod, Toxici
 
 
 class BiologicalActivityDescription:
-    """Allows for the reporting of biological monitoring activities conducted at a Monitoring Location."""
+    """
+    Allows for the reporting of biological monitoring activities conducted at a
+    Monitoring Location.
+    """
 
     __assemblageSampledName: AssemblageSampledName
     __biologicalHabitatCollectionInformation: BiologicalHabitatCollectionInformation

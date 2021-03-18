@@ -9,7 +9,10 @@ from .SimpleContent import (
 
 
 class ComparableAnalyticalMethod:
-    """Identifies the procedures, processes, and references required to determine the analytical methods used to obtain a result."""
+    """
+    Identifies the procedures, processes, and references required to determine the
+    analytical methods used to obtain a result.
+    """
 
     __methodIdentifier: MethodIdentifier
     __methodIdentifierContext: MethodIdentifierContext

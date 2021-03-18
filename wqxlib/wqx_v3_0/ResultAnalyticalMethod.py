@@ -11,7 +11,10 @@ from .SimpleContent import (
 
 
 class ResultAnalyticalMethod:
-    """Identifies the procedures, processes, and references required to determine the analytical methods used to obtain a result."""
+    """
+    Identifies the procedures, processes, and references required to determine the
+    analytical methods used to obtain a result.
+    """
 
     __methodIdentifier: MethodIdentifier
     __methodIdentifierContext: MethodIdentifierContext

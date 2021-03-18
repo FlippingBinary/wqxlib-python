@@ -12,7 +12,9 @@ from .SimpleContent import (
 
 
 class BibliographicReference:
-    """The descriptors used to identify and catalog an object."""
+    """
+    The descriptors used to identify and catalog an object.
+    """
 
     __resourceTitleName: ResourceTitleName
     __resourceCreatorName: ResourceCreatorName

@@ -7,7 +7,9 @@ from .SimpleContent import NewIdentifier, OldIdentifier, OrganizationIdentifier
 
 
 class IdentifierUpdate:
-    """Allows a Project Identifier to be changed."""
+    """
+    Allows a Project Identifier to be changed.
+    """
 
     __oldIdentifier: OldIdentifier
     __newIdentifier: NewIdentifier
@@ -65,7 +67,9 @@ class IdentifierUpdate:
 
 
 class UpdateIdentifiers:
-    """Allows a set of identifiers to be changed."""
+    """
+    Allows a set of identifiers to be changed.
+    """
 
     __organizationIdentifier: OrganizationIdentifier
     __projectIdentifierUpdate: List[IdentifierUpdate]

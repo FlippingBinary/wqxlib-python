@@ -7,7 +7,10 @@ from .Organization_Delete import OrganizationDelete
 
 
 class WQXDelete:
-    """Main Schema used to delete a portion of water monitoring results from EPA Office of Water system."""
+    """
+    Main Schema used to delete a portion of water monitoring results from EPA Office of
+    Water system.
+    """
 
     __organizationDelete: List[OrganizationDelete]
 
@@ -53,7 +56,8 @@ class WQXDelete:
             ("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance"),
             (
                 "xsi:schemaLocation",
-                "http://www.exchangenetwork.net/schema/wqx/3 http://www.exchangenetwork.net/schema/wqx/3/index.xsd",
+                "http://www.exchangenetwork.net/schema/wqx/3 "
+                "http://www.exchangenetwork.net/schema/wqx/3/index.xsd",
             ),
         ):
             if self.__organizationDelete is None:

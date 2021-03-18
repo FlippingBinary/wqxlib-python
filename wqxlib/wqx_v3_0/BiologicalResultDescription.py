@@ -19,7 +19,9 @@ from .TaxonomicDetails import TaxonomicDetails
 
 
 class BiologicalResultDescription:
-    """Allows for the reporting of biological result information."""
+    """
+    Allows for the reporting of biological result information.
+    """
 
     __biologicalIntentName: BiologicalIntentName
     __biologicalIndividualIdentifier: BiologicalIndividualIdentifier
@@ -171,12 +173,16 @@ class BiologicalResultDescription:
 
     @property
     def groupSummaryCount(self) -> GroupSummaryCount:
-        """Captures the total count or total sample weight for a Group Summary."""
+        """
+        Captures the total count or total sample weight for a Group Summary.
+        """
         return self.__groupSummaryCount
 
     @groupSummaryCount.setter
     def groupSummaryCount(self, val: GroupSummaryCount) -> None:
-        """Captures the total count or total sample weight for a Group Summary."""
+        """
+        Captures the total count or total sample weight for a Group Summary.
+        """
         self.__groupSummaryCount = None if val is None else GroupSummaryCount(val)
 
     @property
@@ -259,7 +265,8 @@ class BiologicalResultDescription:
                 asis(self.__taxonomicDetails.generateXML("TaxonomicDetails"))
             if len(self.__frequencyClassInformation) > 3:
                 raise WQXException(
-                    "Attribute frequencyClassInformation must be a list of 0 to 3 FrequencyClassInformation objects."
+                    "Attribute frequencyClassInformation must be a list of 0 to 3 "
+                    "FrequencyClassInformation objects."
                 )
             for x in self.__frequencyClassInformation:
                 asis(x.generateXML("FrequencyClassInformation"))

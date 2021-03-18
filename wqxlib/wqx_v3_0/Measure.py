@@ -7,7 +7,10 @@ from .SimpleContent import MeasureQualifierCode, MeasureUnitCode, ResultMeasureV
 
 
 class Measure:
-    """Identifies the value, associated units of measure, and qualifier for measuring the observation or analytical result value."""
+    """
+    Identifies the value, associated units of measure, and qualifier for measuring the
+    observation or analytical result value.
+    """
 
     __resultMeasureValue: ResultMeasureValue
     __measureUnitCode: MeasureUnitCode
@@ -19,7 +22,7 @@ class Measure:
         *,
         resultMeasureValue: ResultMeasureValue = None,
         measureUnitCode: MeasureUnitCode = None,
-        measureQualifierCode: List[MeasureQualifierCode] = []
+        measureQualifierCode: List[MeasureQualifierCode] = None
     ):
         if isinstance(o, Measure):
             # Assign attributes from object without typechecking
@@ -35,7 +38,7 @@ class Measure:
             # Assign attributes from named keywords with typechecking
             self.__resultMeasureValue = resultMeasureValue
             self.__measureUnitCode = measureUnitCode
-            self.__measureQualifierCode = measureQualifierCode
+            self.__measureQualifierCode = measureQualifierCode if measureQualifierCode is not None else []
 
     @property
     def resultMeasureValue(self) -> ResultMeasureValue:
@@ -83,7 +86,8 @@ class Measure:
                 line("MeasureUnitCode", self.__measureUnitCode)
             if len(self.__measureQualifierCode) > 6:
                 raise WQXException(
-                    "Attribute 'measureQualifierCode' must be a list of 0 to 6 MeasureQualifierCode objects."
+                    "Attribute 'measureQualifierCode' must be a list of 0 to 6 " \
+                    "MeasureQualifierCode objects."
                 )
             for x in self.__measureQualifierCode:
                 line("MeasureQualifierCode", x)

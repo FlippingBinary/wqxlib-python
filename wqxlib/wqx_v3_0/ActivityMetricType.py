@@ -12,7 +12,9 @@ from .SimpleContent import (
 
 
 class ActivityMetricType:
-    """This section identifies the metric type reported as part of an activity metric."""
+    """
+    This section identifies the metric type reported as part of an activity metric.
+    """
 
     __metricTypeIdentifier: MetricTypeIdentifier
     __metricTypeIdentifierContext: MetricTypeIdentifierContext
@@ -83,12 +85,18 @@ class ActivityMetricType:
 
     @property
     def metricTypeCitation(self) -> BibliographicReference:
-        """Provides additional description of the source that created or defined the metric."""
+        """
+        Provides additional description of the source that created or defined the
+        metric.
+        """
         return self.__metricTypeCitation
 
     @metricTypeCitation.setter
     def metricTypeCitation(self, val: BibliographicReference) -> None:
-        """Provides additional description of the source that created or defined the metric."""
+        """
+        Provides additional description of the source that created or defined the
+        metric.
+        """
         self.__metricTypeCitation = None if val is None else BibliographicReference(val)
 
     @property

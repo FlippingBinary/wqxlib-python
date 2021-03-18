@@ -13,7 +13,9 @@ from .ResultLabInformation import ResultLabInformation
 
 
 class Result:
-    """Describes the results of a field measurement, observation, or laboratory analysis."""
+    """
+    Describes the results of a field measurement, observation, or laboratory analysis.
+    """
 
     __resultDescription: ResultDescription
     __biologicalResultDescription: BiologicalResultDescription

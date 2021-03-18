@@ -6,7 +6,9 @@ from .SimpleContent import NetTypeName
 
 
 class NetInformation:
-    """Allows for the reporting of net sample collection information."""
+    """
+    Allows for the reporting of net sample collection information.
+    """
 
     __netTypeName: NetTypeName
     __netSurfaceAreaMeasure: MeasureCompact
@@ -56,42 +58,62 @@ class NetInformation:
 
     @property
     def netSurfaceAreaMeasure(self) -> MeasureCompact:
-        """A measurement of the effective surface area of the net used during biological monitoring sample collection."""
+        """
+        A measurement of the effective surface area of the net used during biological
+        monitoring sample collection.
+        """
         return self.netSurfaceAreaMeasure
 
     @netSurfaceAreaMeasure.setter
     def netSurfaceAreaMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the effective surface area of the net used during biological monitoring sample collection."""
+        """
+        A measurement of the effective surface area of the net used during biological
+        monitoring sample collection.
+        """
         self.__netSurfaceAreaMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def netMeshSizeMeasure(self) -> MeasureCompact:
-        """A measurement of the mesh size of the net used during biological monitoring sample collection."""
+        """
+        A measurement of the mesh size of the net used during biological monitoring
+        sample collection.
+        """
         return self.netMeshSizeMeasure
 
     @netMeshSizeMeasure.setter
     def netMeshSizeMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the mesh size of the net used during biological monitoring sample collection."""
+        """
+        A measurement of the mesh size of the net used during biological monitoring
+        sample collection.
+        """
         self.__netMeshSizeMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def boatSpeedMeasure(self) -> MeasureCompact:
-        """A measurement of the boat speed during biological monitoring sample collection."""
+        """
+        A measurement of the boat speed during biological monitoring sample collection.
+        """
         return self.boatSpeedMeasure
 
     @boatSpeedMeasure.setter
     def boatSpeedMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the boat speed during biological monitoring sample collection."""
+        """
+        A measurement of the boat speed during biological monitoring sample collection.
+        """
         self.__boatSpeedMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def currentSpeedMeasure(self) -> MeasureCompact:
-        """A measurement of the current during biological monitoring sample collection."""
+        """
+        A measurement of the current during biological monitoring sample collection.
+        """
         return self.currentSpeedMeasure
 
     @currentSpeedMeasure.setter
     def currentSpeedMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the current during biological monitoring sample collection."""
+        """
+        A measurement of the current during biological monitoring sample collection.
+        """
         self.__currentSpeedMeasure = None if val is None else MeasureCompact(val)
 
     def generateXML(self, name: str = "NetInformation") -> str:

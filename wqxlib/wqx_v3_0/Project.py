@@ -16,7 +16,10 @@ from .SimpleContent import (
 
 
 class Project:
-    """An environmental data collection effort that has a stated purpose and puts a series of samples and results into a meaningful context."""
+    """
+    An environmental data collection effort that has a stated purpose and puts a series
+    of samples and results into a meaningful context.
+    """
 
     __projectIdentifier: ProjectIdentifier
     __projectName: ProjectName

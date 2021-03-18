@@ -13,7 +13,9 @@ from .SampleDescription import SampleDescription
 
 
 class Activity:
-    """Allows for the reporting of monitoring activities conducted at a Monitoring Location."""
+    """
+    Allows for the reporting of monitoring activities conducted at a Monitoring Location.
+    """
 
     __activityDescription: ActivityDescription
     __activityLocation: ActivityLocation

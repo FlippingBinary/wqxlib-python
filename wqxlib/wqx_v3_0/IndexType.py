@@ -11,7 +11,10 @@ from .SimpleContent import (
 
 
 class IndexType:
-    """This section identifies the index type reported as part of a biological or habitat index."""
+    """
+    This section identifies the index type reported as part of a biological or habitat
+    index.
+    """
 
     __indexTypeIdentifier: IndexTypeIdentifier
     __indexTypeIdentifierContext: IndexTypeIdentifierContext
@@ -77,12 +80,16 @@ class IndexType:
 
     @property
     def indexTypeCitation(self) -> BibliographicReference:
-        """Provides additional description of the source that created or defined the index."""
+        """
+        Provides additional description of the source that created or defined the index.
+        """
         return self.__indexTypeCitation
 
     @indexTypeCitation.setter
     def indexTypeCitation(self, val: BibliographicReference) -> None:
-        """Provides additional description of the source that created or defined the index."""
+        """
+        Provides additional description of the source that created or defined the index.
+        """
         self.__indexTypeCitation = None if val is None else BibliographicReference(val)
 
     @property

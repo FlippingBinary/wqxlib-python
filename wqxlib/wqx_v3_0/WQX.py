@@ -5,7 +5,9 @@ from .Organization import Organization
 
 
 class WQX:
-    """Main Schema used to transfer water monitoring results to EPA Office of Water."""
+    """
+    Main Schema used to transfer water monitoring results to EPA Office of Water.
+    """
 
     __organization: Organization
 
@@ -41,7 +43,8 @@ class WQX:
             ("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance"),
             (
                 "xsi:schemaLocation",
-                "http://www.exchangenetwork.net/schema/wqx/3 http://www.exchangenetwork.net/schema/wqx/3/index.xsd",
+                "http://www.exchangenetwork.net/schema/wqx/3 "
+                "http://www.exchangenetwork.net/schema/wqx/3/index.xsd",
             ),
         ):
             if self.__organization is None:

@@ -7,7 +7,10 @@ from .Entity_Update_Identifiers import UpdateIdentifiers
 
 
 class WQXUpdateIdentifiers:
-    """Main Schema used to update identifiers for major entities (projects, monitoring locations, activity, activity groups, and indexes)."""
+    """
+    Main Schema used to update identifiers for major entities (projects, monitoring
+    locations, activity, activity groups, and indexes).
+    """
 
     __updateIdentifiers: List[UpdateIdentifiers]
 
@@ -53,12 +56,14 @@ class WQXUpdateIdentifiers:
             ("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance"),
             (
                 "xsi:schemaLocation",
-                "http://www.exchangenetwork.net/schema/wqx/3 http://www.exchangenetwork.net/schema/wqx/3/index.xsd",
+                "http://www.exchangenetwork.net/schema/wqx/3 "
+                "http://www.exchangenetwork.net/schema/wqx/3/index.xsd",
             ),
         ):
             if len(self.__updateIdentifiers) < 1:
                 raise WQXException(
-                    "Attribute 'updateIdentifiers' must be a list of 1 or more UpdateIdentifiers objects."
+                    "Attribute 'updateIdentifiers' must be a list of 1 or more "
+                    "UpdateIdentifiers objects."
                 )
             for x in self.__updateIdentifiers:
                 asis(x.generateXML("UpdateIdentifiers"))

@@ -7,7 +7,9 @@ from .SimpleContent import CollectionDescriptionText, PassCount
 
 
 class BiologicalHabitatCollectionInformation:
-    """Allows for the reporting of biological habitat sample collection information."""
+    """
+    Allows for the reporting of biological habitat sample collection information.
+    """
 
     __collectionDuration: MeasureCompact
     __collectionArea: MeasureCompact
@@ -64,22 +66,34 @@ class BiologicalHabitatCollectionInformation:
 
     @property
     def collectionDuration(self) -> MeasureCompact:
-        """The length of time a collection procedure or protocol was performed (e.g. total energized time for electrofishing, or total time kick net used)."""
+        """
+        The length of time a collection procedure or protocol was performed (e.g. total
+        energized time for electrofishing, or total time kick net used).
+        """
         return self.__collectionDuration
 
     @collectionDuration.setter
     def collectionDuration(self, val: MeasureCompact) -> None:
-        """The length of time a collection procedure or protocol was performed (e.g. total energized time for electrofishing, or total time kick net used)."""
+        """
+        The length of time a collection procedure or protocol was performed (e.g. total
+        energized time for electrofishing, or total time kick net used).
+        """
         self.__collectionDuration = None if val is None else MeasureCompact(val)
 
     @property
     def collectionArea(self) -> MeasureCompact:
-        """The area of a collection procedure or protocol was performed (e.g. total area coverage for electrofishing, or total area  kick net used)."""
+        """
+        The area of a collection procedure or protocol was performed (e.g. total area
+        coverage for electrofishing, or total area  kick net used).
+        """
         return self.__collectionArea
 
     @collectionArea.setter
     def collectionArea(self, val: MeasureCompact) -> None:
-        """The area of a collection procedure or protocol was performed (e.g. total area coverage for electrofishing, or total area  kick net used)."""
+        """
+        The area of a collection procedure or protocol was performed (e.g. total area
+        coverage for electrofishing, or total area  kick net used).
+        """
         self.__collectionArea = None if val is None else MeasureCompact(val)
 
     @property
@@ -92,22 +106,32 @@ class BiologicalHabitatCollectionInformation:
 
     @property
     def reachLengthMeasure(self) -> MeasureCompact:
-        """A measurement of the water body length distance in which the procedure or protocol was performed."""
+        """
+        A measurement of the water body length distance in which the procedure or
+        protocol was performed.
+        """
         return self.__reachLengthMeasure
 
     @reachLengthMeasure.setter
     def reachLengthMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the water body length distance in which the procedure or protocol was performed."""
+        """
+        A measurement of the water body length distance in which the procedure or
+        protocol was performed.
+        """
         self.__reachLengthMeasure = None if val is None else MeasureCompact(val)
 
     @property
     def reachWidthMeasure(self) -> MeasureCompact:
-        """A measurement of the reach width during collection procedures."""
+        """
+        A measurement of the reach width during collection procedures.
+        """
         return self.__reachWidthMeasure
 
     @reachWidthMeasure.setter
     def reachWidthMeasure(self, val: MeasureCompact) -> None:
-        """A measurement of the reach width during collection procedures."""
+        """
+        A measurement of the reach width during collection procedures.
+        """
         self.__reachWidthMeasure = None if val is None else MeasureCompact(val)
 
     @property

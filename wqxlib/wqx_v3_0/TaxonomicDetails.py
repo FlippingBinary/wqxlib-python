@@ -17,7 +17,9 @@ from .SimpleContent import (
 
 
 class TaxonomicDetails:
-    """This section allows for the further definition of user-defined details for taxa."""
+    """
+    This section allows for the further definition of user-defined details for taxa.
+    """
 
     __cellFormName: CellFormName
     __cellShapeName: CellShapeName
@@ -213,7 +215,8 @@ class TaxonomicDetails:
                 line("TrophicLevelName", self.__trophicLevelName)
             if len(self.__functionalFeedingGroupName) > 3:
                 raise WQXException(
-                    "Attribute 'functionalFeedingGroupName' must be a list of 0 to 3 FunctionalFeedingGroupName objects."
+                    "Attribute 'functionalFeedingGroupName' must be a list of 0 to 3 "
+                    "FunctionalFeedingGroupName objects."
                 )
             for x in self.__functionalFeedingGroupName:
                 line("FunctionalFeedingGroupName", x)

@@ -12,7 +12,10 @@ from .SimpleContent import (
 
 
 class SampleDescription:
-    """Basic identification information for the sample collected as part of a monitoring activity."""
+    """
+    Basic identification information for the sample collected as part of a monitoring
+    activity.
+    """
 
     __sampleCollectionMethod: ReferenceMethod
     __sampleCollectionEquipmentName: SampleCollectionEquipmentName
@@ -65,12 +68,24 @@ class SampleDescription:
 
     @property
     def sampleCollectionMethod(self) -> ReferenceMethod:
-        """Identifies sample collection or measurement method procedures. Where a documented sample collection method has been employed, this enables the data provider to indicate the documented method that was employed during the field sample collection. Otherwise, the sample collection procedure will best be described in a freeform text."""
+        """
+        Identifies sample collection or measurement method procedures. Where a
+        documented sample collection method has been employed, this enables the data
+        provider to indicate the documented method that was employed during the field
+        sample collection. Otherwise, the sample collection procedure will best be
+        described in a freeform text.
+        """
         return self.__sampleCollectionMethod
 
     @sampleCollectionMethod.setter
     def sampleCollectionMethod(self, val: ReferenceMethod) -> None:
-        """Identifies sample collection or measurement method procedures. Where a documented sample collection method has been employed, this enables the data provider to indicate the documented method that was employed during the field sample collection. Otherwise, the sample collection procedure will best be described in a freeform text."""
+        """
+        Identifies sample collection or measurement method procedures. Where a documented
+        sample collection method has been employed, this enables the data provider to
+        indicate the documented method that was employed during the field sample
+        collection. Otherwise, the sample collection procedure will best be described in
+        a freeform text.
+        """
         self.__sampleCollectionMethod = None if val is None else ReferenceMethod(val)
 
     @property
