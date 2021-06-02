@@ -17,12 +17,12 @@ class SampleDescription:
     activity.
     """
 
-    __sampleCollectionMethod: ReferenceMethod
-    __sampleCollectionEquipmentName: SampleCollectionEquipmentName
-    __sampleCollectionEquipmentCommentText: SampleCollectionEquipmentCommentText
-    __samplePreparation: SamplePreparation
-    __hydrologicCondition: HydrologicCondition
-    __hydrologicEvent: HydrologicEvent
+    __sampleCollectionMethod: ReferenceMethod = None
+    __sampleCollectionEquipmentName: SampleCollectionEquipmentName = None
+    __sampleCollectionEquipmentCommentText: SampleCollectionEquipmentCommentText = None
+    __samplePreparation: SamplePreparation = None
+    __hydrologicCondition: HydrologicCondition = None
+    __hydrologicEvent: HydrologicEvent = None
 
     def __init__(
         self,
@@ -94,7 +94,9 @@ class SampleDescription:
 
     @sampleCollectionEquipmentName.setter
     def sampleCollectionEquipmentName(self, val: SampleCollectionEquipmentName) -> None:
-        self.__sampleCollectionEquipmentName = SampleCollectionEquipmentName(val)
+        self.__sampleCollectionEquipmentName = (
+            None if val is None else SampleCollectionEquipmentName(val)
+        )
 
     @property
     def sampleCollectionEquipmentCommentText(

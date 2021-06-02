@@ -7,16 +7,16 @@ from .exceptions import WQXException
 
 
 class Header:
-    __author: str
-    __organization: str
-    __title: str
-    __creationTime: datetime
-    __comment: str
-    __dataService: str
-    __contactInfo: str
-    __notification: List[str]
-    __sensitivity: str
-    __property: dict
+    __author: str = None
+    __organization: str = None
+    __title: str = None
+    __creationTime: datetime = None
+    __comment: str = None
+    __dataService: str = None
+    __contactInfo: str = None
+    __notification: List[str] = []
+    __sensitivity: str = None
+    __property: dict = {}
 
     def __init__(
         self,
@@ -54,7 +54,11 @@ class Header:
             self.comment = o.get("comment")
             self.dataService = o.get("dataService")
             self.contactInfo = o.get("contactInfo")
-            self.notification = o.get("notification")
+            notification = o.get("notification")
+            if notification is not None and not isinstance(notification, list):
+                raise TypeError(
+                    "Property 'notification' must be a list of 0 or more strings."
+                )
             self.sensitivity = o.get("sensitivity")
             # self.property is tricky because Python confuses it with the decorator
             property = o.get("property")
@@ -95,11 +99,14 @@ class Header:
 
     @organization.setter
     def organization(self, val: str) -> None:
-        if not isinstance(val, str):
-            raise TypeError("Property 'organization' must be a string.")
-        if len(val) < 1:
-            raise ValueError("Property 'organization is required.")
-        self.__organization = None if val is None else str(val)
+        if val is None:
+            self.__organization = None
+        else:
+            if not isinstance(val, str):
+                raise TypeError("Property 'organization' must be a string.")
+            if len(val) < 1:
+                raise ValueError("Property 'organization is required.")
+            self.__organization = str(val)
 
     @property
     def title(self) -> str:

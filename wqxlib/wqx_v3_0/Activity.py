@@ -17,13 +17,13 @@ class Activity:
     Allows for the reporting of monitoring activities conducted at a Monitoring Location.
     """
 
-    __activityDescription: ActivityDescription
-    __activityLocation: ActivityLocation
-    __biologicalActivityDescription: BiologicalActivityDescription
-    __sampleDescription: SampleDescription
-    __activityMetric: List[ActivityMetric]
-    __attachedBinaryObject: List[AttachedBinaryObject]
-    __result: List[Result]
+    __activityDescription: ActivityDescription = None
+    __activityLocation: ActivityLocation = None
+    __biologicalActivityDescription: BiologicalActivityDescription = None
+    __sampleDescription: SampleDescription = None
+    __activityMetric: List[ActivityMetric] = []
+    __attachedBinaryObject: List[AttachedBinaryObject] = []
+    __results: List[Result] = []
 
     def __init__(
         self,
@@ -35,7 +35,7 @@ class Activity:
         sampleDescription: SampleDescription = None,
         activityMetric: List[ActivityMetric] = None,
         attachedBinaryObject: List[AttachedBinaryObject] = None,
-        result: List[Result] = None
+        results: List[Result] = None
     ):
         if isinstance(o, Activity):
             # Assign attributes from object without typechecking
@@ -45,7 +45,7 @@ class Activity:
             self.__sampleDescription = o.sampleDescription
             self.__activityMetric = o.activityMetric
             self.__attachedBinaryObject = o.attachedBinaryObject
-            self.__result = o.result
+            self.__results = o.results
         elif isinstance(o, dict):
             # Assign attributes from dictionary with typechecking
             self.activityDescription = o.get("activityDescription")
@@ -54,7 +54,7 @@ class Activity:
             self.sampleDescription = o.get("sampleDescription")
             self.activityMetric = o.get(activityMetric, [])
             self.attachedBinaryObject = o.get("attachedBinaryObject", [])
-            self.result = o.get("result", [])
+            self.results = o.get("results", [])
         else:
             # Assign attributes from named keywords with typechecking
             self.activityDescription = activityDescription
@@ -63,7 +63,7 @@ class Activity:
             self.sampleDescription = sampleDescription
             self.activityMetric = activityMetric
             self.attachedBinaryObject = attachedBinaryObject
-            self.result = result
+            self.results = results
 
     @property
     def activityDescription(self) -> ActivityDescription:
@@ -134,20 +134,20 @@ class Activity:
             self.__attachedBinaryObject = [AttachedBinaryObject(val)]
 
     @property
-    def result(self) -> List[Result]:
-        return self.__result
+    def results(self) -> List[Result]:
+        return self.__results
 
-    @result.setter
-    def result(self, val: Union[Result, List[Result]]) -> None:
+    @results.setter
+    def results(self, val: Union[Result, List[Result]]) -> None:
         if val is None:
-            self.__result = []
+            self.__results = []
         elif isinstance(val, list):
             r: List[Result] = []
             for x in val:
                 r.append(Result(x))
-            self.__result = r
+            self.__results = r
         else:
-            self.__result = [Result(val)]
+            self.__results = [Result(val)]
 
     def generateXML(self, name: str = "Activity") -> str:
         doc = Doc()
@@ -172,7 +172,7 @@ class Activity:
                 asis(x.generateXML("ActivityMetric"))
             for x in self.__attachedBinaryObject:
                 asis(x.generateXML("AttachedBinaryObject"))
-            for x in self.__result:
+            for x in self.__results:
                 asis(x.generateXML("Result"))
 
         return doc.getvalue()

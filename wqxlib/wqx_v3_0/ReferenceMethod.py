@@ -60,7 +60,7 @@ class ReferenceMethod:
 
     @methodIdentifier.setter
     def methodIdentifier(self, val: MethodIdentifier) -> None:
-        self.__methodIdentifier = MethodIdentifier(val)
+        self.__methodIdentifier = None if val is None else MethodIdentifier(val)
 
     @property
     def methodIdentifierContext(self) -> MethodIdentifierContext:
@@ -68,7 +68,9 @@ class ReferenceMethod:
 
     @methodIdentifierContext.setter
     def methodIdentifierContext(self, val: MethodIdentifierContext) -> None:
-        self.__methodIdentifierContext = MethodIdentifierContext(val)
+        self.__methodIdentifierContext = (
+            None if val is None else MethodIdentifierContext(val)
+        )
 
     @property
     def methodName(self) -> MethodName:
@@ -76,7 +78,7 @@ class ReferenceMethod:
 
     @methodName.setter
     def methodName(self, val: MethodName) -> None:
-        self.__methodName = MethodName(val)
+        self.__methodName = None if val is None else MethodName(val)
 
     @property
     def methodQualifierTypeName(self) -> MethodQualifierTypeName:

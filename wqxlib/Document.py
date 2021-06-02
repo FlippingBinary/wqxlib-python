@@ -31,9 +31,9 @@ class Document:
     The base document type used for submission to WQXWeb.
     """
 
-    __id: ID
-    __header: Header
-    __payload: List[Payload]
+    __id: ID = None
+    __header: Header = None
+    __payload: List[Payload] = []
 
     def __init__(
         self,
@@ -73,7 +73,7 @@ class Document:
 
     @id.setter
     def id(self, val: ID) -> None:
-        self.__id = ID(val)
+        self.__id = None if val is None else ID(val)
 
     @property
     def payload(self) -> List[Payload]:
@@ -322,7 +322,7 @@ class Document:
                         and (activity.activityDescription.activityTypeCode is not None)
                         and ("Logger" in activity.activityDescription.activityTypeCode)
                     ):
-                        for result in activity.result:
+                        for result in activity.results:
                             if result.resultDescription.dataLoggerLineName is None:
                                 violations.append(data_rule_8.strip())
 
@@ -336,7 +336,7 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    for result in activity.result:
+                    for result in activity.results:
                         if (
                             (activity.activityDescription is not None)
                             and (activity.activityDescription.activityMediaName)
@@ -380,7 +380,7 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    for result in activity.result:
+                    for result in activity.results:
                         if (
                             (activity.activityDescription is not None)
                             and (
@@ -448,7 +448,7 @@ class Document:
                 and (payload.wqx.organization.activity)
             ):
                 for activity in payload.wqx.organization.activity:
-                    for result in activity.result:
+                    for result in activity.results:
                         if (
                             (result.resultDescription is not None)
                             and (
@@ -474,7 +474,7 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    for result in activity.result:
+                    for result in activity.results:
                         if (result.resultDescription.characteristicName is None) or (
                             result.resultDescription.resultStatusIdentifier is None
                         ):
@@ -490,8 +490,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (result.resultLabInformation is not None) and (
                                 result.resultLabInformation.resultDetectionQuantitationLimit
                                 is not None
@@ -562,8 +562,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.biologicalResultDescription is not None)
                                 and (
@@ -599,8 +599,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultDescription is not None)
                                 and (
@@ -642,8 +642,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultAnalyticalMethod is not None)
                                 and (
@@ -740,8 +740,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultDescription is not None)
                                 and (
@@ -768,8 +768,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultDescription is not None)
                                 and (result.resultDescription.resultMeasure is not None)
@@ -929,8 +929,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.biologicalResultDescription is not None)
                                 and (
@@ -960,8 +960,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.biologicalResultDescription is not None)
                                 and (
@@ -984,8 +984,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.biologicalResultDescription is not None)
                                 and (
@@ -1018,8 +1018,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (result.biologicalResultDescription is not None) and (
                                 result.biologicalResultDescription.frequencyClassInformation
                                 is not None
@@ -1057,8 +1057,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (result.biologicalResultDescription is not None) and (
                                 result.biologicalResultDescription.frequencyClassInformation
                                 is not None
@@ -1108,7 +1108,7 @@ class Document:
                             in ["Biological", "Tissue"]
                         )
                     ):
-                        for result in activity.result:
+                        for result in activity.results:
                             if (
                                 (result.biologicalResultDescription is None)
                                 or (
@@ -1132,8 +1132,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultDescription is None)
                                 or (result.resultDescription.resultMeasure is None)
@@ -1186,8 +1186,8 @@ class Document:
             if (payload.wqx is not None) and (payload.wqx.organization is not None):
                 if payload.wqx.organization.activity is not None:
                     for activity in payload.wqx.organization.activity:
-                        if activity.result is not None:
-                            for result in activity.result:
+                        if activity.results is not None:
+                            for result in activity.results:
                                 if (
                                     (result.resultDescription is not None)
                                     and (
@@ -1425,8 +1425,8 @@ class Document:
                                     )
                                 ):
                                     violations.append(data_rule_35.strip())
-                        if activity.result is not None:
-                            for result in activity.result:
+                        if activity.results is not None:
+                            for result in activity.results:
                                 if (result.resultLabInformation is not None) and (
                                     result.resultLabInformation.resultDetectionQuantitationLimit
                                     is not None
@@ -1623,8 +1623,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultDescription is not None)
                                 and (result.resultDescription.resultMeasure is not None)
@@ -1860,8 +1860,8 @@ class Document:
                                 )
                             ):
                                 violations.append(data_rule_36.strip())
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (result.resultLabInformation is not None) and (
                                 result.resultLabInformation.resultDetectionQuantitationLimit
                                 is not None
@@ -2066,9 +2066,9 @@ class Document:
                             "Benthic Macroinvertebrates"
                             == activity.biologicalActivityDescription.assemblageSampledName
                         )
-                        and (activity.result is not None)
+                        and (activity.results is not None)
                     ):
-                        for result in activity.result:
+                        for result in activity.results:
                             if (result.resultDescription is None) or (
                                 result.resultDescription.targetCount is None
                             ):
@@ -2090,9 +2090,9 @@ class Document:
                             "Benthic Macroinvertebrates"
                             == activity.biologicalActivityDescription.assemblageSampledName
                         )
-                        and (activity.result is not None)
+                        and (activity.results is not None)
                     ):
-                        for result in activity.result:
+                        for result in activity.results:
                             if (result.resultDescription is None) or (
                                 result.resultDescription.proportionSampleProcessedNumeric
                                 is None
@@ -2108,8 +2108,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultDescription is not None)
                                 and (
@@ -2145,8 +2145,8 @@ class Document:
                 and (payload.wqx.organization.activity is not None)
             ):
                 for activity in payload.wqx.organization.activity:
-                    if activity.result is not None:
-                        for result in activity.result:
+                    if activity.results is not None:
+                        for result in activity.results:
                             if (
                                 (result.resultDescription is not None)
                                 and (
@@ -2183,13 +2183,14 @@ class Document:
         asis = doc.asis
         tag = doc.tag
 
-        violations = self.list_rule_violations()
-
-        if len(violations) > 0:
-            raise WQXException(
-                f"The document contains {len(violations)} data rule violations. Use "
-                "list_rule_violations function for list."
-            )
+        #### Temporarily disabled rule enforcement
+        #        violations = self.list_rule_violations()
+        #
+        #        if len(violations) > 0:
+        #            raise WQXException(
+        #                f"The document contains {len(violations)} data rule violations. Use "
+        #                "list_rule_violations function for list."
+        #            )
 
         if self.__id is None:
             raise WQXException("Attribute 'id' is required.")
@@ -2214,3 +2215,6 @@ class Document:
                 asis(x.generateXML("Payload"))
 
         return indent(doc.getvalue(), indentation=" " * 2)
+
+
+#        return doc.getvalue()

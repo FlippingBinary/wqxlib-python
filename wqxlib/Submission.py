@@ -1,5 +1,5 @@
 from io import BytesIO
-from zipfile import ZipFile
+from zipfile import ZIP_DEFLATED, ZipFile
 
 from .Document import Document
 from .ImportConfiguration import ImportConfiguration
@@ -64,7 +64,7 @@ class Submission:
             raise TypeError("Parameter 'fileName' must be a string.")
 
         mem = BytesIO()
-        zip = ZipFile(mem, mode="w")
+        zip = ZipFile(mem, mode="w", compression=ZIP_DEFLATED)
 
         results = self.__document.generateXML()
         zip.writestr("results.xml", results)

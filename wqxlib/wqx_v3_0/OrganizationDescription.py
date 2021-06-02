@@ -15,10 +15,10 @@ class OrganizationDescription:
     within which a person or persons act, or are designated to act, towards some purpose.
     """
 
-    __organizationIdentifier: OrganizationIdentifier
-    __organizationFormalName: OrganizationFormalName
-    __organizationDescriptionText: OrganizationDescriptionText
-    __tribalCode: TribalCode
+    __organizationIdentifier: OrganizationIdentifier = None
+    __organizationFormalName: OrganizationFormalName = None
+    __organizationDescriptionText: OrganizationDescriptionText = None
+    __tribalCode: TribalCode = None
 
     def __init__(
         self,
@@ -54,7 +54,9 @@ class OrganizationDescription:
 
     @organizationIdentifier.setter
     def organizationIdentifier(self, val: OrganizationIdentifier) -> None:
-        self.__organizationIdentifier = OrganizationIdentifier(val)
+        self.__organizationIdentifier = (
+            None if val is None else OrganizationIdentifier(val)
+        )
 
     @property
     def organizationFormalName(self) -> OrganizationFormalName:
@@ -62,7 +64,9 @@ class OrganizationDescription:
 
     @organizationFormalName.setter
     def organizationFormalName(self, val: OrganizationFormalName) -> None:
-        self.__organizationFormalName = OrganizationFormalName(val)
+        self.__organizationFormalName = (
+            None if val is None else OrganizationFormalName(val)
+        )
 
     @property
     def organizationDescriptionText(self) -> OrganizationDescriptionText:
