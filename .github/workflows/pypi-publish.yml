@@ -19,6 +19,7 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install build twine
+        python3 -m pip install --no-warn-script-location -r requirements.txt
     - name: Run unit tests
       run: python3 -m unittest
     - name: Build module
