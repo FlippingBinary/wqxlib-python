@@ -86,6 +86,7 @@ Look in the `examples` directory for a more complete example with sample data.
         with WQXSubmission(filename='example.xml') as submission:
             # Manipulate submission object properties
 
+4. After creating the submission, submit it using the `wqxweblib` package or manually in WQX Web.
 
 ## Package Versioning
 
