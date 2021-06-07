@@ -18,17 +18,17 @@ WQXOrganizationAddressType = NewType("WQXOrganizationAddress", WQXOrganizationAd
 
 
 class WQXSubmission(Document, Header, OrganizationDescription):
-    __fileName: str = None
+    __filename: str = None
     __electronicAddress: List[WQXElectronicAddressType] = []
     __telephonic: List[WQXTelephonicType] = []
     __organizationAddress: List[WQXOrganizationAddressType] = []
     __activity: List[WQXActivityType] = []
 
-    def __init__(self, fileName: str = None):
+    def __init__(self, filename: str = None):
         OrganizationDescription.__init__(self)
         Header.__init__(self)
         Document.__init__(self)
-        self.__fileName = fileName
+        self.__filename = filename
         self.title = "WQX"
         self.__electronicAddress = []
         self.__telephonic = []
@@ -44,12 +44,12 @@ class WQXSubmission(Document, Header, OrganizationDescription):
             print(exception_value)
             print(exception_traceback)
             return
-        if self.__fileName is not None:
-            filetype = self.__fileName[-4:].upper()
+        if self.__filename is not None:
+            filetype = self.__filename[-4:].upper()
             if filetype.upper() == ".ZIP":
-                self.generateZIP(fileName=self.__fileName)
+                self.generateZIP(fileName=self.__filename)
             elif filetype.upper() == ".XML":
-                self.generateXML(fileName=self.__fileName)
+                self.generateXML(fileName=self.__filename)
         # else do nothing because we assume it was handled inside the 'with'.
 
     def electronicAddress(self) -> WQXElectronicAddress:
