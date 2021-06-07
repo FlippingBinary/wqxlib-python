@@ -19,10 +19,14 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install build twine
-    - name: Build and publish
+        python3 -m pip install --no-warn-script-location -r requirements.txt
+    - name: Run unit tests
+      run: python3 -m unittest
+    - name: Build module
+      run: python3 -m build
+    - name: Publish module on PyPi
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        python3 -m build
-        echo python3 -m twine upload dist/*
+        python3 -m twine upload dist/*

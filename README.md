@@ -137,9 +137,9 @@ The following classes describe the building blocks of a v3.0 XML document for WQ
 
 All of the described classes come directly from the XSD files which are used by WQX to validate input.
 
-To import any of the following types, pull them from `wqxlib.wqx_v3_0` like this:
+To import any of the following types, pull them from `wqxlib` like this:
 
-    from wqxlib.wqx_v3_0 import (
+    from wqxlib import (
       MonitoringLocation,
       MonitoringLocationGeospatial,
       MonitoringLocationIdentity,
