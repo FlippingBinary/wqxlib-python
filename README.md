@@ -71,9 +71,21 @@ This code is supported by the National Science Foundation under Award No. OIA-14
 
 ## Getting Started
 
-Install this package using `pip`
+Look in the `examples` directory for a more complete example with sample data.
 
-    pip install wqxlib
+1. Install this package using `pip`
+
+        pip install wqxlib
+
+2. Import the `WQXSubmission` class
+
+        from wqxlib import WQXSubmission
+
+3. Use the `with ... as` syntax to create the submission
+
+        with WQXSubmission(filename='example.xml') as submission:
+            # Manipulate submission object properties
+
 
 ## Package Versioning
 
@@ -87,7 +99,7 @@ It is a good practice to lock the first three digits of the version in your `req
 
 # WQXLib XML API Reference
 
-The following classes describe the larger structure of a valid XML document for WQXWeb submission. These classes will contain the building blocks provided by WQX v3.0.
+The following low-level classes describe the larger structure of a valid XML document for WQXWeb submission. These classes contain the building blocks provided by WQX v3.0. You are not required to interact with these directly. Use of the `with ... as` syntax is highly recommended.
 
 ## Document
 
