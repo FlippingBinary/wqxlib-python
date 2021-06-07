@@ -1,4 +1,4 @@
-# WQX Web API version
+# WQX API version
 wqx_v = "3.0"
 # Major version: breaking changes
 major_v = "0"
