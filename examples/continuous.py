@@ -33,6 +33,9 @@ median = csv.groupby(
     [("Site", "Date", "Year"), ("Site", "Date", "Month"), ("Site", "Date", "Day")]
 ).median()
 
+# Drop the first and last days as they may be incomplete
+median = median.drop(median.index[[0, -1]])
+
 # This is our starting point. It creates a new submission and specifies where to save it
 with WQXSubmission(fileName="test.submission.xml") as submission:
     submission.comment = "new data"
