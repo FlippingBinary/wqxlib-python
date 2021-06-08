@@ -28,9 +28,15 @@ class WQXMonitoringLocation(
         return self
 
     def __exit__(self, exception_type, exception_value, exception_traceback):
-        pass
+        self.normalize()
 
     def attachedBinaryObject(self) -> WQXAttachedBinaryObject:
         tmp = WQXAttachedBinaryObject()
         self.__attachedBinaryObjects.append(tmp)
         return tmp
+
+    def normalize(self) -> None:
+        self.monitoringLocationGeospatial = MonitoringLocationGeospatial(self)
+        self.monitoringLocationIdentity = MonitoringLocationIdentity(self)
+        self.wellInformation = WellInformation(self)
+        self.attachedBinaryObject = self.__attachedBinaryObjects
