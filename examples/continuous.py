@@ -37,7 +37,7 @@ median = csv.groupby(
 median = median.drop(median.index[[0, -1]])
 
 # This is our starting point. It creates a new submission and specifies where to save it
-with WQXSubmission(fileName="test.submission.xml") as submission:
+with WQXSubmission(fileName="continuous.xml") as submission:
     submission.comment = "new data"
     submission.id = "72420"
     submission.author = "John Doe"
