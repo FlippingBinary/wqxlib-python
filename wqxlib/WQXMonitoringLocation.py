@@ -38,5 +38,6 @@ class WQXMonitoringLocation(
     def normalize(self) -> None:
         self.monitoringLocationGeospatial = MonitoringLocationGeospatial(self)
         self.monitoringLocationIdentity = MonitoringLocationIdentity(self)
-        self.wellInformation = WellInformation(self)
+        if self.wellTypeText is not None:
+            self.wellInformation = WellInformation(self)
         self.attachedBinaryObject = self.__attachedBinaryObjects
