@@ -36,20 +36,20 @@ with WQXSubmission(filename="monitoring_location.xml") as submission:
         address.postalCode = "80525"
         address.countryCode = "US"
 
-    with submission.monitoringLocation() as ml:
-        with ml.monitoringLocationGeospatial() as geospatial:
-            geospatial.latitudeMeasure = "38.6470"
-            geospatial.longitudeMeasure = "-82.8587"
-            geospatial.sourceMapScale = "2400"
-            geospatial.horizontalCollectionMethodName = "Interpolation-Map"
-            geospatial.horizontalCoordinateReferenceSystemDatumName = "NAD83"
-            geospatial.countryCode = "US"
-            geospatial.stateCode = "WV"
-            geospatial.countyCode = "039"
-        with ml.monitoringLocationIdentity() as identity:
-            identity.monitoringLocationIdentifier = "GREENUP"
-            identity.monitoringLocationName = "Greenup Dam"
-            identity.monitoringLocationTypeName = "River/Stream"
-            identity.hucEightDigitCode = "05090103"
-            identity.hucTwelveDigitCode = "050901030107"
-            identity.tribalLandIndicator = False
+    with submission.monitoringLocation() as location:
+        # Geospatial
+        location.latitudeMeasure = "38.6470"
+        location.longitudeMeasure = "-82.8587"
+        location.sourceMapScale = "2400"
+        location.horizontalCollectionMethodName = "Interpolation-Map"
+        location.horizontalCoordinateReferenceSystemDatumName = "NAD83"
+        location.countryCode = "US"
+        location.stateCode = "WV"
+        location.countyCode = "039"
+        # Identity
+        location.monitoringLocationIdentifier = "GREENUP"
+        location.monitoringLocationName = "Greenup Dam"
+        location.monitoringLocationTypeName = "River/Stream"
+        location.hucEightDigitCode = "05090103"
+        location.hucTwelveDigitCode = "050901030107"
+        location.tribalLandIndicator = False
