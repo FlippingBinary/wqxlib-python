@@ -17,14 +17,14 @@ class WellInformation:
     Description of the attributes of a well.
     """
 
-    __wellTypeText: WellTypeText
-    __aquiferTypeName: AquiferTypeName
-    __nationalAquiferCode: NationalAquiferCode
-    __aquiferInformation: AquiferInformation
-    __formationTypeText: FormationTypeText
-    __wellHoleDepthMeasure: MeasureCompact
-    __constructionDate: ConstructionDate
-    __wellDepthMeasure: MeasureCompact
+    __wellTypeText: WellTypeText = None
+    __aquiferTypeName: AquiferTypeName = None
+    __nationalAquiferCode: NationalAquiferCode = None
+    __aquiferInformation: AquiferInformation = None
+    __formationTypeText: FormationTypeText = None
+    __wellHoleDepthMeasure: MeasureCompact = None
+    __constructionDate: ConstructionDate = None
+    __wellDepthMeasure: MeasureCompact = None
 
     def __init__(
         self,
@@ -76,7 +76,7 @@ class WellInformation:
 
     @wellTypeText.setter
     def wellTypeText(self, val: WellTypeText) -> None:
-        self.__wellTypeText = WellTypeText(val)
+        self.__wellTypeText = None if val is None else WellTypeText(val)
 
     @property
     def aquiferTypeName(self) -> AquiferTypeName:
