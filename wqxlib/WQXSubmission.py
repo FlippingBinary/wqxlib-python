@@ -58,11 +58,7 @@ class WQXSubmission(Document, Header, OrganizationDescription):
             print(exception_traceback)
             return
         if self.__filename is not None:
-            filetype = self.__filename[-4:].upper()
-            if filetype.upper() == ".ZIP":
-                self.generateZIP(fileName=self.__filename)
-            elif filetype.upper() == ".XML":
-                self.generateXML(fileName=self.__filename)
+            self.export(self.__filename)
         # else do nothing because we assume it was handled inside the 'with'.
 
     def activity(self) -> WQXActivity:
@@ -130,28 +126,68 @@ class WQXSubmission(Document, Header, OrganizationDescription):
         self.normalize()
         return self.list_rule_violations()
 
-    def generateXML(self, fileName: str = None) -> str:
-        self.normalize()
-        if fileName is None:
-            return super().generateXML()
-        else:
-            with open(fileName, "w") as out:
-                out.write(super().generateXML())
+    def generateXML(self, fileName: str = None) -> None:
+        """
+        Generate an XML file from the WQXSubmission object
 
-    def generateZIP(self, fileName: str = None):
-        if not isinstance(fileName, str):
-            raise TypeError("Parameter 'fileName' must be a string.")
+        :param fileName: Filename of the file to create
+        :return: None
 
-        mem = BytesIO()
-        zip = ZipFile(mem, mode="w")
+        .. deprecated:: 3.0.0.6.0
+           Use the export function instead. This function may be removed in a future major release.
+        """
+        self.export(fileName)
 
-        zip.writestr("submission.xml", self.generateXML())
+    def generateZIP(self, fileName: str = None) -> None:
+        """
+        Generate a ZIP file containing an XML file from the WQXSubmission object
 
-        # TODO: Add attachment files, if necessary. Example:
-        #   zip.writestr('rawdata.csv', self.data)
+        :param fileName: Filename of the file to create
+        :return: None
 
-        zip.close()
-        mem.seek(0)
+        .. deprecated:: 3.0.0.6.0
+           Use the export function instead. This function may be removed in a future major release.
+        """
+        self.export(fileName)
 
-        with open(fileName, "wb") as out:
-            out.write(mem.read())
+    def export(self, filename: str = None) -> str:
+        self.header = Header(self)
+        self.payload = [
+            Payload(
+                operation="Update-Insert",
+                wqx=WQX(
+                    organization=Organization(
+                        organizationDescription=OrganizationDescription(self),
+                        electronicAddress=self.__electronicAddresses,
+                        telephonic=self.__telephonics,
+                        organizationAddress=self.__organizationAddresses,
+                        # project=self.__projects,
+                        monitoringLocation=self.__monitoringLocations,
+                        # biologicalHabitatIndex=self.__biologicalHabitatIndex,
+                        activity=self.__activities,
+                        # activityGroup=self.__activityGroups,
+                    )
+                ),
+            )
+        ]
+        xml = super().generateXML()
+        if filename is not None:
+            filetype = filename[-4:].upper()
+            if filetype == ".XML":
+                with open(filename, "w") as out:
+                    out.write(xml)
+            elif filetype == ".ZIP":
+                mem = BytesIO()
+                zip = ZipFile(mem, mode="w")
+
+                zip.writestr("submission.xml", xml)
+
+                # TODO: Add attachment files, if necessary. Example:
+                #   zip.writestr('rawdata.csv', self.data)
+
+                zip.close()
+                mem.seek(0)
+
+                with open(filename, "wb") as out:
+                    out.write(mem.read())
+        return xml
